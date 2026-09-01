@@ -1,0 +1,94 @@
+---
+Task ID: 35
+Agent: full-stack-developer
+Task: Rebuild the complete Intellectual Creativity website (rebrand + liquid glass + cinematic preloader + contact backend) after the project was reset to scaffold.
+
+Work Log:
+- Ran the fullstack init script to confirm the dev environment (port 3000 already running, dev.sh started).
+- Inspected the existing scaffold: confirmed shadcn/ui components intact in `src/components/ui/*`, `src/lib/{db,utils}.ts`, hooks `use-mobile/use-toast`, default `globals.css`/`layout.tsx`/`page.tsx` were the bare Next.js scaffold.
+- Created `public/brand/` and downloaded the real white-text logo (`logo-white.png`, 898×418) and the favicon (`favicon.png`, 192×192) from intellectualcf.com via curl. Verified both are valid PNGs.
+- Edited `prisma/schema.prisma` to add the `ContactMessage` model (id, firstName, lastName, phone?, email, message, createdAt). Ran `bun run db:push` then `bun run db:generate` to apply to SQLite (`db/custom.db`) and regenerate the client.
+- Rewrote `src/app/globals.css` from scratch: kept the original `@import "tailwindcss" + tw-animate-css + @custom-variant dark` lines, added `@theme inline` (incl. `--font-display` for Space Grotesk, brand color tokens), `:root` (light) and `.dark` (dark) blocks with full shadcn tokens + brand-cyan/sky/gold/navy tokens + `--gt-*` gradient-text tokens + `--glass-*` + `--nav-*` variables. Added the `@layer base` (html scroll-behavior/padding-top, body bg/text, ::selection, scrollbar) and `@layer utilities` blocks (`.logo-adaptive` invert-in-light, `.text-accent-cyan/sky/gold` adaptive deep/neon, `.gradient-text`, `.gradient-text-cool`, `.gradient-brand[-gold]`, `.liquid-glass` with `::before` sheen + light-mode override, `.liquid-border` animated gradient, `.glass-spotlight` cursor vars, `.aurora`, `.dot-grid`, `.line-grid`, `.glow-cyan/sky/gold`, `.text-balance`, `.nav-glass` + light override, `.cv-auto`, `.contain-paint`, `.shimmer-text` + light override, marquee/orb/float/status/breathe/shimmer-pan/orbit/boot-blink/scan animations). Added the `prefers-reduced-motion` block disabling every non-essential animation + the glass sheen.
+- Rewrote `src/app/layout.tsx`: imported Geist, Geist_Mono and Space_Grotesk (weights 500/600/700, `--font-space-grotesk`). Set full SEO metadata (title, description, keywords, authors, icons `/brand/favicon.png`, openGraph, twitter, robots). Set `<html lang="en" className="dark" suppressHydrationWarning>` with `<head>` preconnect/dns-prefetch for `https://maps.google.com`. Body has all 3 font variables + antialiased + bg-background text-foreground font-sans. Wrapped children in `ThemeProvider` (attribute="class", defaultTheme="dark", enableSystem=false, disableTransitionOnChange), then `<Preloader />` + `{children}` + the radix `Toaster` + the sonner `Toaster` (bottom-right, richColors, closeButton).
+- Built the two client hooks: `src/hooks/use-mounted.ts` (`useMounted` SSR-safe + `useReducedMotionPref` live-subscribed) and `src/hooks/use-count-up.ts` (framer-motion `useInView` + rAF easeOutCubic, supports prefix/suffix/decimals, reduced-motion short-circuit).
+- Built the motion toolkit in `src/components/motion/`:
+  - `scroll-progress.tsx` — fixed top gradient bar, `useScroll` + `useSpring` scaleX, mounted-gated, z-[100].
+  - `magnetic-button.tsx` — `motion.div` translates toward cursor (cap 7px), spring-smoothed, reduced-motion static fallback.
+  - `spotlight-card.tsx` — sets `--mx`/`--my` from pointer for `.glass-spotlight::after`.
+  - `tilt-card.tsx` — 3D tilt (max 6°), perspective 1000, spring, reduced-motion static.
+  - `animated-text.tsx` — word-by-word blur+rise reveal with optional `highlightRange` for gradient words.
+  - `stagger-group.tsx` — exports `SectionReveal` (fade+rise whileInView), `StaggerGroup` + `StaggerItem` (container/item variants via `motion[as]`), reduced-motion fallbacks.
+  - `draw-line.tsx` — SVG `motion.line` self-draws via pathLength when scrolled into view, supports horizontal/vertical/diagonal.
+  - `goo-filter.tsx` — hidden SVG defining `<filter id="goo">` for hero blob merging.
+  - `lazy-map.tsx` — IntersectionObserver defers mounting the heavy Google Maps iframe (rootMargin 300px) with a placeholder prop.
+- Built the site components in `src/components/site/`:
+  - `theme-provider.tsx` — next-themes provider wrapper.
+  - `theme-toggle.tsx` — mount-aware Sun/Moon toggle, animated icon swap.
+  - `preloader.tsx` — the full cinematic preloader: two-panel curtain that parts on exit, ambient cyan glow + drifting aurora + dot-grid (radial-mask), two concentric self-drawing hexagon SVGs, three rotating rings (slow dashed sky / reverse sky-particle / fast gold-particle with second particle at 3 o'clock), segmented gradient progress ring counting to 100%, logo materializes with blur+scale + glitch scanline sweep (mix-blend overlay), shimmer "Creativity for Information Technology" caption, terminal boot sequence (3 lines typed with blinking cursor), linear progress bar + live % counter (rAF ease-out-cubic). Plays on every load (no session gating); reduced-motion users get an instant dismiss. Mounted-gated to avoid SSR mismatch.
+  - `navbar.tsx` — fixed top, transparent → `.nav-glass` plate on scroll (`useScroll` + `useMotionValueEvent`), logo-adaptive Image, animated underline nav links (Home/Services/About/Contact), MagneticButton "Get Started" CTA, mobile Sheet (mount-gated, SheetDescription sr-only for a11y).
+  - `hero.tsx` — eyebrow chip "IT & Trading Specialists — Dubai, UAE", AnimatedText H1 "Creativity for intelligent information technology" (gradient highlight on words 2–5), subhead ("We Meant For Solutions & Services" + who-we-are), primary "Get Started" → #contact + secondary "Our Services" → #services, Trust/Integrity/Teamwork chips with icons. Right column = "Network Operations · Advanced Threat Protection" glass dashboard with TiltCard + SpotlightCard + liquid-glass + liquid-border, animated throughput bars. Background uses goo-filtered orbs with whole-page scrollY parallax via `useScroll`/`useTransform`.
+  - `trust-bar.tsx` — SectionReveal + StaggerGroup of the 5 vendor wordmarks (Cisco, Nokia, Siemens-Unify, Lucent-Alcatel, Avaya).
+  - `services.tsx` — AnimatedText heading "We provide a wide range of services", 6 real service cards (Telephone IP/PABX, AVC Audio-Video & PA, Networking/Cabling, CCTV, Smart Electronic, Help & Support/Building Automation) each StaggerItem + TiltCard + SpotlightCard + liquid-glass, lucide icons, gradient icon chips, hover ArrowUpRight.
+  - `stats.tsx` — `.aurora` band, 4 count-up stats (120+ / 90+ / 25+ / 12+) via `useCountUp`.
+  - `why-us.tsx` — AnimatedText heading "Why Intellectual", 5 differentiator cards (Distinguished References, IntellectualCf Property, Why Intellectual Cf, Fostering Relationships, World Class Vendors); the AI for Advanced Threat Protection card uses `.liquid-border` + `.animate-breathe` for a prominent gold-ringed feature.
+  - `process.tsx` — 4-step timeline 01-04 (Discover/Design/Implement/Operate) with `DrawLine` SVG connectors between steps on md+, StaggerGroup, liquid-glass icon chips, SLA/AMC/Frame Agreements support band.
+  - `tech-stack.tsx` — infinite CSS marquee (two rows, opposite directions, pause-on-hover, edge-mask gradient) of IT portfolio items as liquid-glass pills.
+  - `work.tsx` — 3 portfolio cards (Unified Communication & Collaboration, Physical Security & CCTV, Data Center & Network Infrastructure) each StaggerItem + TiltCard + SpotlightCard + liquid-glass + liquid-border with pure-CSS browser-window mock previews (grid of breathing tiles, CCTV camera grid, uptime bar chart).
+  - `testimonials.tsx` — exactly 2 LARGE cards for the real testimonials (Ahmed + Zawahir) with continuous slow float, SpotlightCard + liquid-glass + liquid-border, gradient avatars, Quote icon.
+  - `team.tsx` (exports `About`) — id="about": 3 value cards (Trust/Integrity/Teamwork), mission block with AnimatedText, "Efficient servers" highlight block with liquid-glass + liquid-border + aurora + status-pulse "All systems operational".
+  - `contact.tsx` — AnimatedText heading, left column: contact info (+9666666625, info@intellectualcf.com, Dubai UAE), social icons (Facebook/Twitter/Instagram "#"), LazyMap Dubai iframe. Right column: react-hook-form + zod (First Name req, Last Name req, Phone optional, Email req+valid, Message req min 10) → POST `/api/contact` → sonner toast → reset; Field component with floating label + animated focus underline + "Sent ✓" micro-animation; MagneticButton Send with loading/sent states.
+  - `footer.tsx` — sticky footer (renders last as `<footer className="mt-auto">`), lazy logo-adaptive logo, blurb, Quick Links + Services + Contact columns, social icons, bottom bar with the exact copyright "Copyright © 2024 – intellectualcf.com – All Rights Reserved | Designed by Azmi DigiSol", Privacy/Terms/Security "#" links, "Status: All systems operational" emerald pulse + back-to-top button.
+  - `section-heading.tsx` — reusable eyebrow + AnimatedText title + subtitle component (kept for any future section use).
+- Rewrote `src/app/page.tsx` as a server component: root `<div id="top" className="relative min-h-screen flex flex-col bg-background text-foreground">` with `<ScrollProgress />`, `<GooFilter />`, `<Navbar />`, `<main className="relative flex-1">` containing `<Hero />` (always rendered) plus two `.cv-auto` wrappers (TrustBar/Services/Stats/WhyUs/Process; TechStack/Work/Testimonials/About/Contact), and `<Footer />` as the last child for the mandatory sticky-footer layout.
+- Built `src/app/api/contact/route.ts` — `POST`: zod-validate body { firstName req, lastName req, phone?, email req+email, message req min 10 } → 400 `{ok:false,error,errors}` on fail → `db.contactMessage.create()` → 200 `{ok:true,id}` on success → 500 on DB error. `GET`: `db.contactMessage.count()` → `{count}`.
+- Ran `bun run lint` → passes clean (no warnings/errors).
+- Fixed one runtime issue caught during smoke test: `lucide-react` had no `SmartHome` export in v0.525 — swapped to `HouseWifi` (a perfect fit for "Smart Electronic System"). After the fix, `/` returns 200 cleanly.
+- End-to-end smoke tests:
+  - `curl /` → 200 (12 sections rendered in SSR HTML, `id="top/services/about/contact/process/why-us/work/testimonials/tech-stack"` all present, Toaster mounted).
+  - `curl /brand/logo-white.png` → 200; `curl /brand/favicon.png` → 200.
+  - `curl POST /api/contact` valid → `{"ok":true,"id":"..."}` (200); invalid → `{"ok":false,"error":"Validation failed","errors":{...}}` (400); `curl GET /api/contact` → `{"count":2}` after inserting 2 real test rows.
+  - `dev.log` tail shows only `GET / 200` / `POST /api/contact 200` / `GET /api/contact 200` / `POST /api/contact 400` (expected) — no hydration, runtime, or console errors. The "Fast Refresh had to perform a full reload" warnings were a one-off from the SmartHome→HouseWifi fix and have stopped.
+- Wrote this worklog.
+
+Stage Summary:
+- Full production-ready Intellectual Creativity website rebuilt from the Next.js scaffold. Dark-mode default (next-themes, `attribute="class"`, `defaultTheme="dark"`, `enableSystem=false`) with clean light-mode parity via the `.logo-adaptive` invert + `.text-accent-cyan/sky/gold` adaptive accent utilities. Liquid-glass surfaces (`.liquid-glass` + `::before` sheen, `.liquid-border` animated gradient border, `.glass-spotlight` cursor-follow), aurora/dot-grid/line-grid backgrounds, and framer-motion throughout (ScrollProgress, SectionReveal, StaggerGroup/Item, AnimatedText word-by-word, TiltCard, SpotlightCard, MagneticButton, DrawLine). Cinematic Preloader on every load with curtain exit, hexagonal mesh, 3 orbit rings, segmented gradient progress ring, glitch scanline logo, shimmer caption, terminal boot sequence and live % counter (reduced-motion safe). Sticky footer with the exact real copyright. Real brand content used verbatim.
+- Files created:
+  - `public/brand/logo-white.png`, `public/brand/favicon.png` (downloaded)
+  - `src/hooks/use-mounted.ts`, `src/hooks/use-count-up.ts`
+  - `src/components/motion/{scroll-progress,magnetic-button,spotlight-card,tilt-card,animated-text,stagger-group,draw-line,goo-filter,lazy-map}.tsx`
+  - `src/components/site/{theme-provider,theme-toggle,preloader,navbar,hero,trust-bar,services,stats,why-us,process,tech-stack,work,testimonials,team,contact,footer,section-heading}.tsx`
+  - `src/app/api/contact/route.ts`
+- Files modified:
+  - `prisma/schema.prisma` (added `ContactMessage`)
+  - `src/app/globals.css` (full rewrite)
+  - `src/app/layout.tsx` (full rewrite)
+  - `src/app/page.tsx` (full rewrite)
+- Decisions:
+  - Used `HouseWifi` instead of `SmartHome` for the Smart Electronic System icon (lucide-react v0.525 has no `SmartHome` export).
+  - `useCountUp` uses `useInView` from framer-motion (already installed) + rAF ease-out-cubic, with reduced-motion short-circuit returning the final value immediately.
+  - `StaggerGroup`/`StaggerItem` resolve `motion[as]` at runtime (not a static map) so `as="li"|"ul"|"article"|"span"` all work without a manual map.
+  - Preloader's progress ring uses a `motion.circle` with `strokeDasharray="471"` (circumference for r=75) and `strokeDashoffset` driven by the live `progress` state from a rAF `animate()` motion value; reduced-motion path bypasses both the rAF and the boot typing and dismisses immediately.
+  - Used `bg-foreground/`, `border-foreground/`, `text-accent-*`, `bg-brand-*/` color-mix families everywhere (never `bg-white/` or raw `text-cyan-300` etc.) so both themes stay readable.
+
+---
+Task ID: 36
+Agent: main-orchestrator
+Task: Verify the rebuilt Intellectual Creativity site after the project reset; fix the strokeDashoffset warning; confirm server stays up.
+
+Work Log:
+- Discovered the project had been reset to the original Next.js scaffold — all custom components, brand assets, enhanced CSS, and Prisma ContactMessage model were wiped. Dispatched full-stack-developer (Task ID 35) to rebuild the complete site.
+- After rebuild: server LISTENING, HTTP 200, lint clean. Contact API working (INSERT + GET count logged in dev.log).
+- Agent Browser verification:
+  - Title = "Intellectual — Creativity for Information Technology", <html class="dark">, 2 logo images render.
+  - Brand content fully intact: hasIntellectual=true, hasDubai=true, hasQuanta=false (no leftover), email info@intellectualcf.com, phone 9666666625, all 5 vendors (Cisco/Nokia/Siemens-Unify/Lucent-Alcatel/Avaya), both testimonials (Ahmed/Zawahir), copyright "Azmi DigiSol".
+  - Preloader plays at load (VLM confirmed "A loading/preloader screen with a logo and progress") and dismisses after ~2.2s.
+  - One console warning: "You are trying to animate strokeDashoffset from 'undefined' to '471'" in the preloader's circular progress ring (motion.circle had no initial value).
+- FIX: added `initial={{ strokeDashoffset: 471 }}` to the motion.circle in src/components/site/preloader.tsx so framer-motion has a defined starting value. Re-verified: console now blank=clean (zero warnings).
+- Contact form end-to-end test: filled First/Last/Phone/Email/Message → clicked "Send message" → success toast "Message sent — Thanks — we'll be in touch shortly." → form fields reset to empty → API persisted (count: 3).
+- Responsive: mobile 375px nav collapses to "Open menu" hamburger; sticky footer verified (footerVisible=true, footerAtDocBottom=0 zero gap, hasMtAuto=true, parentFlexCol=true).
+- Server stays up across commands (LISTENING). Console clean in both checks.
+
+Stage Summary:
+- Site fully rebuilt and verified: preloader (cinematic multi-act), all 14 sections, real brand content, contact form end-to-end functional (toast+reset+persisted), responsive, sticky footer, dark theme default.
+- Fixed the strokeDashoffset warning — console now 100% clean (zero errors/warnings).
+- Lint clean; server LISTENING on :3000; HTTP 200. Screenshots: verify-rebuild-preload.png, verify-rebuild-final.png, verify-rebuild-mobile.png.
