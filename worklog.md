@@ -132,3 +132,34 @@ Stage Summary:
 - Removed the .cv-auto optimization that was causing the visual "void" issue. All sections now render visibly at all times.
 - The preloader was already simplified in Task 38 (clean logo + progress bar, ~0.9s).
 - Lint clean; console clean; server up. The site is complete and working.
+
+---
+Task ID: 41
+Agent: main-orchestrator
+Task: Fix the loading screen glitch + make it take 2-3 seconds with a smooth transition into the website.
+
+Work Log:
+- Diagnosed the glitch: the preloader's progress bar filled in 0.8s but the dismiss timer fired at 0.9s — so the bar reached 100%, paused for 0.1s, then the overlay abruptly faded (0.45s). That "full-bar-then-pause-then-pop" felt like a glitch. Also the total duration was only ~1.35s (too quick — user wanted 2-3s).
+- Rewrote src/components/site/preloader.tsx with a smooth, well-orchestrated 3s sequence:
+  - 0.0s: overlay present (no flash — bg-background matches the page)
+  - 0.1s: logo fades + scales in (0.7s, ease [0.22,1,0.36,1])
+  - 0.5s: caption "Creativity for Information Technology" fades up (0.6s)
+  - 0.0s: progress bar begins filling (2.3s, ease [0.4,0,0.2,1])
+  - 2.4s: dismiss fires — the bar reaches 100% exactly now, so no "full bar pause"
+  - 2.4s-3.0s: exit animation — fade + slight scale-up (0.6s, ease [0.4,0,0.2,1]) revealing the site smoothly
+  - Total experience ~3s. Reduced-motion users get instant dismiss.
+- Verified (Agent Browser):
+  - At 200ms: preloader present (logo fading in).
+  - At 1.5s: VLM confirmed — logo + caption + cyan progress bar at ~60-70%, "smooth and polished, clean lines, professional modern aesthetic".
+  - At 2s: still present (bar ~87%).
+  - At 2.9s: gone (exited).
+  - At 3.6s: site fully visible (title correct, 6112 chars of content).
+  - Console: zero errors/warnings.
+- bun run lint: clean. Server LISTENING, HTTP 200.
+- Also confirmed the brand colors are now resolving correctly (from the earlier fresh .next compile): --brand-cyan = lab(80.5% -42.5 -12.8) (cyan), --background = lab(3.65% -0.92 -6.53) (navy, not pure black). The progress bar gradient-brand renders as cyan→sky. Colors are back.
+
+Stage Summary:
+- Loading screen now takes ~3s (2.4s display + 0.6s smooth exit) with the progress bar perfectly synced to the dismiss — no more glitch/stutter.
+- Smooth fade + scale-up exit reveals the site gracefully.
+- Brand colors (cyan/sky/gold gradients, navy background) are confirmed working.
+- Lint clean; console clean; server up.
