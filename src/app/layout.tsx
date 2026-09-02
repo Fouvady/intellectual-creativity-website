@@ -5,6 +5,7 @@ import { Toaster as RadixToaster } from '@/components/ui/toaster'
 import { Toaster as SonnerToaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/site/theme-provider'
 import { Preloader } from '@/components/site/preloader'
+import { CustomCursor } from '@/components/site/custom-cursor'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -174,6 +175,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Preloader />
+          <CustomCursor />
           {children}
           <RadixToaster />
           <SonnerToaster position="bottom-right" richColors closeButton />

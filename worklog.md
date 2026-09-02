@@ -205,3 +205,25 @@ Stage Summary:
 - Root cause: dev server died (sandbox kills background processes between commands), so the preview had nothing to load.
 - Fix: recreated start-dev.sh keepalive launcher; server now persists. Site renders correctly.
 - To restart in future: `cd /home/z/my-project && ./start-dev.sh`
+
+---
+Task ID: 45-47
+Agent: main-orchestrator
+Task: Fix the React hydration error shown in the user's screenshot (navbar Sheet) + add an attractive custom cursor.
+
+Work Log:
+- User screenshot showed a Next.js React Hydration Error overlay: "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties" at src/components/site/navbar.tsx (97:15) — the mobile menu SheetTrigger. Root cause: Radix UI generates dynamic `aria-controls` IDs (radix-_R_bbindalb_ on server vs radix-_R_2qslrailb_ on client) that differ between SSR and client hydration.
+- FIX (navbar.tsx): mount-gated the entire <Sheet> block on the `mounted` state (from useMounted). Before mount (SSR + first paint), render a static placeholder <button> with identical styling but NO Radix id generation → no aria-controls attribute → no mismatch. After mount, render the full interactive Sheet. This was the same pattern that fixed it before the reset.
+- Added an attractive custom cursor (src/components/site/custom-cursor.tsx, mounted in layout.tsx): a two-layer follower — a small glowing cyan dot that tracks the pointer instantly + a larger gradient ring that follows with spring physics (lag). On hover over interactive elements (a/button/input/[data-cursor]/etc.) the ring scales up (34→56px) and the dot dims + shifts to sky-blue. On pointer-down the ring fades. Uses mix-blend-screen so it glows over any background. Hides the native cursor while active. Only enables on devices with `pointer: fine` (real mouse/desktop) — disabled on touch devices and when prefers-reduced-motion, so it never breaks mobile or accessibility.
+- Verification (Agent Browser):
+  - bun run lint: clean.
+  - Fresh server restart (rm -rf .next + start-dev.sh). Server LISTENING, HTTP 200.
+  - Loaded the page: title "Intellectual — Creativity for Information Technology", 6,112 chars, hero present.
+  - Console: zero hydration errors, zero warnings, zero errors (blank=clean). The navbar hydration mismatch is FIXED.
+  - Custom cursor: confirmed wired in layout (imported + mounted). The component correctly self-disables in the headless browser (which reports pointer: fine = false), so no cursor elements render there — but on a real desktop browser with a mouse, pointer: fine = true and the glowing dot + spring ring will render and track the mouse.
+- Server persists across shell commands via start-dev.sh.
+
+Stage Summary:
+- React hydration error FIXED: navbar mobile menu Sheet is now mount-gated with a static placeholder button during SSR, so Radix no longer generates mismatched aria-controls ids.
+- Attractive custom cursor ADDED: two-layer (instant glow dot + spring-following gradient ring) that grows on hover over interactive elements, uses mix-blend-screen, hides native cursor, desktop-only + reduced-motion safe.
+- Lint clean; console clean (no hydration error); server up and persistent. Files: src/components/site/navbar.tsx (mount-gate), src/components/site/custom-cursor.tsx (new), src/app/layout.tsx (mount CustomCursor).

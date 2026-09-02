@@ -87,60 +87,76 @@ export function Navbar() {
             </MagneticButton>
           </a>
 
-          {/* Mobile menu */}
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger
-              asChild
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-foreground/15 bg-foreground/5 text-foreground/80 md:hidden"
+          {/* Mobile menu — mount-gated to avoid a Radix `aria-controls` ID
+              hydration mismatch (Radix generates the id on the client, so
+              SSR + client differ). Before mount we render a static,
+              non-interactive placeholder button with identical styling. */}
+          {mounted ? (
+            <Sheet open={open} onOpenChange={setOpen}>
+              <SheetTrigger
+                asChild
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-foreground/15 bg-foreground/5 text-foreground/80 md:hidden"
+                aria-label="Open menu"
+              >
+                <button type="button">
+                  <Menu className="h-5 w-5" aria-hidden />
+                </button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="w-80 max-w-[80vw] border-l border-foreground/10 bg-background/95 backdrop-blur-xl"
+              >
+                <SheetTitle className="px-4 pt-4 font-display text-lg font-semibold">
+                  <Image
+                    src="/brand/logo-white.png"
+                    alt="Intellectual Creativity"
+                    width={160}
+                    height={38}
+                    className="logo-adaptive h-8 w-auto"
+                  />
+                </SheetTitle>
+                <SheetDescription className="sr-only">
+                  Site navigation menu
+                </SheetDescription>
+                <nav className="flex flex-col gap-1 px-4 py-4">
+                  {NAV_LINKS.map((l) => (
+                    <Link
+                      key={l.href}
+                      href={l.href}
+                      onClick={() => setOpen(false)}
+                      className="flex items-center justify-between rounded-lg px-3 py-3 text-base font-medium text-foreground/85 transition-colors hover:bg-foreground/5 hover:text-foreground"
+                    >
+                      {l.label}
+                    </Link>
+                  ))}
+                </nav>
+                <div className="mt-auto px-4 pb-6">
+                  <SheetClose asChild>
+                    <a
+                      href="#contact"
+                      className="block w-full rounded-full bg-gradient-brand px-5 py-3 text-center text-sm font-semibold text-primary-foreground shadow-lg shadow-brand-cyan/30"
+                    >
+                      Get Started
+                    </a>
+                  </SheetClose>
+                </div>
+              </SheetContent>
+            </Sheet>
+          ) : (
+            /* Static placeholder rendered during SSR + before hydration so
+               the layout/visual is identical, but no Radix id is generated
+               server-side → no hydration mismatch. */
+            <button
+              type="button"
               aria-label="Open menu"
+              tabIndex={-1}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-foreground/15 bg-foreground/5 text-foreground/80 md:hidden"
             >
-              <button type="button">
-                <Menu className="h-5 w-5" aria-hidden />
-              </button>
-            </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-80 max-w-[80vw] border-l border-foreground/10 bg-background/95 backdrop-blur-xl"
-            >
-              <SheetTitle className="px-4 pt-4 font-display text-lg font-semibold">
-                <Image
-                  src="/brand/logo-white.png"
-                  alt="Intellectual Creativity"
-                  width={160}
-                  height={38}
-                  className="logo-adaptive h-8 w-auto"
-                />
-              </SheetTitle>
-              <SheetDescription className="sr-only">
-                Site navigation menu
-              </SheetDescription>
-              <nav className="flex flex-col gap-1 px-4 py-4">
-                {NAV_LINKS.map((l) => (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="flex items-center justify-between rounded-lg px-3 py-3 text-base font-medium text-foreground/85 transition-colors hover:bg-foreground/5 hover:text-foreground"
-                  >
-                    {l.label}
-                  </Link>
-                ))}
-              </nav>
-              <div className="mt-auto px-4 pb-6">
-                <SheetClose asChild>
-                  <a
-                    href="#contact"
-                    className="block w-full rounded-full bg-gradient-brand px-5 py-3 text-center text-sm font-semibold text-primary-foreground shadow-lg shadow-brand-cyan/30"
-                  >
-                    Get Started
-                  </a>
-                </SheetClose>
-              </div>
-            </SheetContent>
-          </Sheet>
+              <Menu className="h-5 w-5" aria-hidden />
+            </button>
+          )}
         </div>
       </nav>
-      {!mounted && null}
     </header>
   )
 }
