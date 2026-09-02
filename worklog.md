@@ -163,3 +163,28 @@ Stage Summary:
 - Smooth fade + scale-up exit reveals the site gracefully.
 - Brand colors (cyan/sky/gold gradients, navy background) are confirmed working.
 - Lint clean; console clean; server up.
+
+---
+Task ID: 42-43
+Agent: main-orchestrator
+Task: Fix the glitch where the user sees the actual website content flash BEFORE the loading screen appears (hydration race), then smooth the whole sequence.
+
+Work Log:
+- Diagnosed via the user's screenshot: the screenshot showed the full hero ("Network Operations / Advanced Threat Protection" dashboard with uptime/threats/endpoints stats) rendering FIRST, then the preloader appearing on top. Root cause: the React <Preloader /> is a client component that only mounts after hydration, but the SSR'd page content paints on the very first frame — so the user sees the real site for a split second before the preloader covers it. Classic Next.js hydration race.
+- FIX: added a BLOCKING HTML preloader directly in src/app/layout.tsx <body> as the very first element (before ThemeProvider/children). It's a fixed full-viewport overlay (z-9999) with the logo + a CSS-animated cyan→sky progress bar (keyframes injected inline), painted on the first frame before React runs. An inline script exposes window.__icf_preloader_ready and has a 2.6s failsafe auto-remove.
+- Updated src/components/site/preloader.tsx React <Preloader /> to call window.__icf_preloader_ready() as soon as it mounts — so the blocking HTML overlay hands off cleanly to the React overlay (both have the same bg-background + centered logo, so the handoff is invisible — no double-flash, no gap). The React preloader keeps its 2.4s display + 0.6s fade+scale exit (~3s total).
+- Restarted dev server with a fresh .next compile (rm -rf .next) to pick up the layout change.
+- Verified (Agent Browser + VLM, full sequence):
+  - SSR HTML contains `initial-preloader` (6 refs) so it's in the first paint.
+  - First paint (150ms): VLM "loading screen (logo + progress bar)" — NOT the site content. Flash fixed.
+  - Mid-load (1.5s): VLM "loading screen, progress bar partially filled with cyan, smooth".
+  - ~3s: preloader gone, site visible.
+  - Final: title "Intellectual — Creativity for Information Technology", 6,112 chars, hero present, preloaderGone:true.
+  - VLM sequence: firstpaint=loading screen, midload=loading screen, exit=actual website, site=full website content.
+  - Console: zero errors/warnings.
+- bun run lint: clean. Server LISTENING, HTTP 200.
+
+Stage Summary:
+- The "site flashes before the loading screen" glitch is FIXED: a blocking HTML overlay now covers the page on the very first paint (before React hydrates), then hands off invisibly to the React preloader, which runs ~3s and exits smoothly.
+- No more flash of unstyled/actual content before the loading screen.
+- Lint clean; console clean; server up. Files: src/app/layout.tsx (blocking preloader + handoff script), src/components/site/preloader.tsx (calls __icf_preloader_ready on mount).

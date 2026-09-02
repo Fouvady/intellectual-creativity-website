@@ -30,6 +30,18 @@ export function Preloader() {
   // another 0.6s, so the whole experience is ~3s).
   React.useEffect(() => {
     if (!mounted) return
+    // As soon as this React preloader mounts, dismiss the blocking HTML
+    // preloader (#initial-preloader) — it has done its job of covering the
+    // first paint, and this one is now on top (same bg + centered logo).
+    try {
+      // @ts-expect-error — injected by the inline script in layout.tsx
+      if (typeof window.__icf_preloader_ready === 'function') {
+        // @ts-expect-error – same
+        window.__icf_preloader_ready()
+      }
+    } catch {
+      /* ignore */
+    }
     const t = setTimeout(() => setDone(true), reduced ? 0 : 2400)
     return () => clearTimeout(t)
   }, [mounted, reduced])
