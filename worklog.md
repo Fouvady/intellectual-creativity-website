@@ -188,3 +188,20 @@ Stage Summary:
 - The "site flashes before the loading screen" glitch is FIXED: a blocking HTML overlay now covers the page on the very first paint (before React hydrates), then hands off invisibly to the React preloader, which runs ~3s and exits smoothly.
 - No more flash of unstyled/actual content before the loading screen.
 - Lint clean; console clean; server up. Files: src/app/layout.tsx (blocking preloader + handoff script), src/components/site/preloader.tsx (calls __icf_preloader_ready on mount).
+
+---
+Task ID: 44
+Agent: main-orchestrator
+Task: User reported the preview wasn't showing the website (showed the Z.ai chat chrome / a stuck "Reload" state instead of the Intellectual Creativity site).
+
+Work Log:
+- Diagnosed: the dev server had DIED (port 3000 not listening, HTTP 000, no next processes). The preview iframe had nothing to load, so the chat app showed its own chrome/Z.ai logo instead of the website. The sandbox keeps killing background `bun run dev` processes when shell sessions end.
+- Fix: recreated /home/z/my-project/start-dev.sh — a keepalive launcher that uses `setsid bash -c '...exec bun run dev' </dev/null >> dev.log 2>&1 & disown` to fully detach the dev server into its own session/process group so it survives the launching shell's exit. Pings :3000 for up to 30s.
+- Restarted via ./start-dev.sh. Verified the server PERSISTS across shell commands (STILL LISTENING in a new shell).
+- Verified the site fully renders: title "Intellectual — Creativity for Information Technology", 6,112 chars of content, hero present, preloader present on first paint then dismissed. Console clean.
+- The "Reload" tooltip the user saw in their screenshot was the browser prompting a reload because the preview's target (the dev server) had died — once the server is back up, the preview loads the site normally.
+
+Stage Summary:
+- Root cause: dev server died (sandbox kills background processes between commands), so the preview had nothing to load.
+- Fix: recreated start-dev.sh keepalive launcher; server now persists. Site renders correctly.
+- To restart in future: `cd /home/z/my-project && ./start-dev.sh`
