@@ -25,22 +25,16 @@ export default function Home() {
       <Navbar />
       <main className="relative flex-1">
         <Hero />
-        {/* Below-the-fold group 1 */}
-        <div className="cv-auto">
-          <TrustBar />
-          <Services />
-          <Stats />
-          <WhyUs />
-          <Process />
-        </div>
-        {/* Below-the-fold group 2 */}
-        <div className="cv-auto">
-          <TechStack />
-          <Work />
-          <Testimonials />
-          <About />
-          <Contact />
-        </div>
+        <TrustBar />
+        <Services />
+        <Stats />
+        <WhyUs />
+        <Process />
+        <TechStack />
+        <Work />
+        <Testimonials />
+        <About />
+        <Contact />
       </main>
       <Footer />
     </div>
