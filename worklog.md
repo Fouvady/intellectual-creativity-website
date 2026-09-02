@@ -249,3 +249,27 @@ Stage Summary:
 - The initial-preloader hydration error is FIXED: all inline styles moved to a CSS class so SSR + client markup match exactly. No more style-attribute mismatch.
 - Both previous hydration errors (navbar Sheet + initial-preloader) are now resolved — console is 100% clean.
 - Lint clean; server up and persistent. Files: src/app/layout.tsx (class-based preloader markup), src/app/globals.css (#initial-preloader CSS block).
+
+---
+Task ID: 50
+Agent: main-orchestrator
+Task: Eliminate ALL errors/issues AND fix the double loading-screen (load → blank page → load again → site).
+
+Work Log:
+- User reported: "0 errors 0 issues" demanded, AND a double-load bug — "It loads and takes me to blank page and then again load and takes me to actual website".
+- Diagnosed the double-load: two preloaders were fighting. (1) Blocking HTML #initial-preloader covered the first paint. (2) React <Preloader /> mounted and called __icf_preloader_ready() to dismiss the blocking one — BUT the React preloader's logo was animating in from opacity:0 with a 0.1s delay + 0.7s duration. So during the handoff there was a brief moment where the blocking overlay was fading out while the React logo was still at low opacity → a visible BLANK gap → then the React preloader finished fading in → then it ran 2.4s → then exited to the site. That read as "load → blank → load → site".
+- FIX (src/components/site/preloader.tsx): made the React preloader appear at FULL OPACITY from the very first frame — removed the logo fade-in (initial opacity:0 → scale 0.92) and the caption fade-up; now the logo + caption are immediately visible (matching the blocking overlay exactly). When the React preloader mounts and dismisses the blocking overlay, the handoff is INVISIBLE (both show the same logo + bg at full opacity) — one continuous loading screen. Also shortened the hold to 2s + 0.6s exit (~2.6s total, snappier). Kept the smooth progress bar (2s fill) synced to the dismiss.
+- Verified (Agent Browser, full sequence):
+  - bun run lint: clean.
+  - Fresh server restart (rm -rf .next + start-dev.sh). LISTENING, HTTP 200.
+  - At 200ms: blocking + React preloader both present (handoff).
+  - At 1s: blocking gone, React preloader visible, body has 6,151 chars of content behind it (no blank page — the site IS there, just covered).
+  - At 2.5s: React preloader exited.
+  - At 3.3s: site fully visible — title "Intellectual — Creativity for Information Technology", 6,112 chars.
+  - VLM sequence: 200ms=loading screen, 1s=loading screen (seamless, no blank), 3.3s=actual website. ONE continuous loading screen.
+  - Console: BLANK = CLEAN (zero errors, zero warnings, zero hydration errors, zero CSS errors).
+
+Stage Summary:
+- Double loading-screen FIXED: the React preloader now appears at full opacity immediately so the handoff from the blocking HTML overlay is invisible — one seamless loading screen, no blank gap, no double-load.
+- ZERO errors/issues: console is 100% clean (no hydration errors, no CSS errors, no warnings). Lint clean. Server up and persistent.
+- Total load experience ~2.6s: blocking overlay (first paint) → seamless handoff to React preloader (full opacity, progress bar fills 2s) → gentle fade+scale exit → site.

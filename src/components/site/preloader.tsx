@@ -6,18 +6,14 @@ import Image from 'next/image'
 import { useMounted, useReducedMotionPref } from '@/hooks/use-mounted'
 
 /**
- * Preloader — a smooth, well-orchestrated brand intro on every page load.
+ * Preloader — a SINGLE seamless brand intro on every page load.
  *
- * Timing (~3s total experience):
- *   0.0s  overlay fades in (instant — no flash)
- *   0.1s  logo fades + scales in (0.7s)
- *   0.5s  caption fades up (0.6s)
- *   0.0s  progress bar begins filling (2.3s, synced to the dismiss)
- *   2.4s  overlay exits — fade + slight scale-up (0.6s) revealing the site
- *
- * The progress bar reaches 100% exactly as the exit begins, so there's no
- * awkward "full bar pause" that would feel like a glitch. The exit is a
- * gentle fade + scale so the site is revealed smoothly, not popped in.
+ * A blocking HTML #initial-preloader covers the very first paint (defined in
+ * layout.tsx). When this React Preloader mounts, it instantly appears at
+ * FULL opacity (no fade-in) so the handoff from the blocking overlay is
+ * invisible — no blank gap, no double-load feel. It then runs a smooth
+ * progress bar for ~2s and exits with a gentle fade+scale to reveal the
+ * site. Total visible experience ~2.6s, one continuous loading screen.
  *
  * Reduced-motion users get an instant dismiss.
  */
@@ -26,15 +22,12 @@ export function Preloader() {
   const reduced = useReducedMotionPref()
   const [done, setDone] = React.useState(false)
 
-  // Hold the preloader for 2.4s before dismissing (the exit animation adds
-  // another 0.6s, so the whole experience is ~3s).
   React.useEffect(() => {
     if (!mounted) return
-    // As soon as this React preloader mounts, dismiss the blocking HTML
-    // preloader (#initial-preloader) — it has done its job of covering the
-    // first paint, and this one is now on top (same bg + centered logo).
+    // Immediately dismiss the blocking HTML preloader — this React one is
+    // already at full opacity (no fade-in), so the handoff is invisible.
     try {
-      // @ts-expect-error — injected by the inline script in layout.tsx
+      // @ts-expect-error – injected by the inline script in layout.tsx
       if (typeof window.__icf_preloader_ready === 'function') {
         // @ts-expect-error – same
         window.__icf_preloader_ready()
@@ -42,7 +35,8 @@ export function Preloader() {
     } catch {
       /* ignore */
     }
-    const t = setTimeout(() => setDone(true), reduced ? 0 : 2400)
+    // Hold for ~2s, then exit over 0.6s. Total ~2.6s.
+    const t = setTimeout(() => setDone(true), reduced ? 0 : 2000)
     return () => clearTimeout(t)
   }, [mounted, reduced])
 
@@ -57,17 +51,15 @@ export function Preloader() {
           role="status"
           aria-live="polite"
           className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-background"
+          // Starts at full opacity (matches the blocking overlay) so the
+          // handoff is seamless. Exits with a gentle fade + slight scale-up.
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, scale: 1.03 }}
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         >
-          {/* Logo — fade + scale in */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92, y: 8 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="px-6"
-          >
+          {/* Logo — already visible (no fade-in) to match the blocking overlay */}
+          <div className="px-6">
             <Image
               src="/brand/logo-white.png"
               alt="Intellectual Creativity — for Information Technology"
@@ -76,25 +68,19 @@ export function Preloader() {
               priority
               className="logo-adaptive h-auto w-[min(60vw,280px)]"
             />
-          </motion.div>
+          </div>
 
-          {/* Caption — fades up after the logo */}
-          <motion.p
-            initial={{ opacity: 0, y: 6 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 text-[11px] font-medium uppercase tracking-[0.32em] text-muted-foreground sm:text-xs"
-          >
+          {/* Caption */}
+          <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.32em] text-muted-foreground sm:text-xs">
             Creativity for Information Technology
-          </motion.p>
+          </p>
 
-          {/* Progress bar — fills over 2.3s so it reaches 100% right as the
-              exit begins (dismiss at 2.4s). No "full bar pause" glitch. */}
+          {/* Progress bar — fills over 2s, reaching 100% as the exit begins */}
           <div className="mt-7 h-[3px] w-48 overflow-hidden rounded-full bg-foreground/10">
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 2.3, ease: [0.4, 0, 0.2, 1] }}
+              transition={{ duration: 2, ease: [0.4, 0, 0.2, 1] }}
               style={{ transformOrigin: '0% 50%' }}
               className="h-full w-full rounded-full gradient-brand"
             />
@@ -104,3 +90,4 @@ export function Preloader() {
     </AnimatePresence>
   )
 }
+
