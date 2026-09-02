@@ -77,71 +77,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-background text-foreground font-sans`}
       >
-        {/* === Blocking preloader (raw HTML) ===
+        {/* === Blocking preloader (raw HTML, class-styled) ===
             Painted on the very first frame BEFORE React hydrates, so the user
             never sees the site content flash before the loading screen.
-            A tiny inline script removes this once the React <Preloader />
-            has mounted and taken over (or after a 3s failsafe). The overlay
-            matches the page background + centers the logo so it looks
-            identical to the React preloader. */}
-        <div
-          id="initial-preloader"
-          aria-hidden="true"
-          style={{
-            position: 'fixed',
-            inset: '0',
-            zIndex: 9999,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: 'var(--background, #0a0f1a)',
-            transition: 'opacity 0.6s ease',
-          }}
-        >
-          <div style={{ textAlign: 'center', padding: '0 1.5rem' }}>
+            Styles live in globals.css (#initial-preloader) so SSR + client
+            markup are byte-identical — no hydration mismatch. A tiny inline
+            script removes this once the React <Preloader /> mounts (or a
+            2.6s failsafe). */}
+        <div id="initial-preloader" aria-hidden="true">
+          <div className="icf-pl-inner">
             <img
               src="/brand/logo-white.png"
               alt=""
-              width="240"
-              height="112"
-              style={{
-                width: 'min(60vw, 260px)',
-                height: 'auto',
-                margin: '0 auto',
-                opacity: 0.96,
-                filter:
-                  'invert(0)', /* dark theme default — JS adjusts for light */
-              }}
+              width={240}
+              height={112}
+              className="icf-pl-logo"
             />
-            <div
-              style={{
-                marginTop: '1.25rem',
-                height: '3px',
-                width: '180px',
-                margin: '1.25rem auto 0',
-                borderRadius: '999px',
-                background: 'rgba(255,255,255,0.08)',
-                overflow: 'hidden',
-              }}
-            >
-              <div
-                style={{
-                  height: '100%',
-                  width: '100%',
-                  transformOrigin: '0% 50%',
-                  background:
-                    'linear-gradient(120deg, #22d3ee, #38bdf8)',
-                  borderRadius: '999px',
-                  animation: 'icf-preload-fill 2.3s cubic-bezier(0.4,0,0.2,1) forwards',
-                }}
-              />
+            <div className="icf-pl-track">
+              <div className="icf-pl-bar" />
             </div>
           </div>
         </div>
-        {/* Inline keyframes for the blocking preloader + handoff script.
-            Runs before hydration, no flash of unstyled content. */}
-        <style>{`@keyframes icf-preload-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}`}</style>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -156,13 +112,6 @@ export default function RootLayout({
                 // fallback: remove after 2.6s regardless so the site always shows.
                 window.__icf_preloader_ready = removeInitialPreloader;
                 setTimeout(removeInitialPreloader, 2600);
-                // Match the logo invert to the active theme (dark default).
-                try {
-                  if (document.documentElement.classList.contains('light')) {
-                    var img = document.querySelector('#initial-preloader img');
-                    if (img) img.style.filter = 'invert(1)';
-                  }
-                } catch(e) {}
               })();
             `,
           }}

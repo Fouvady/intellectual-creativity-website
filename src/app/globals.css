@@ -163,6 +163,56 @@
     scroll-padding-top: 5rem;
     -webkit-text-size-adjust: 100%;
   }
+
+  /* === Blocking preloader (rendered in raw HTML before hydration) ===
+     Defined as a real CSS class (not inline style) so the server-rendered
+     and client-hydrated markup are byte-identical — no hydration mismatch. */
+  #initial-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--background, #0a0f1a);
+    transition: opacity 0.6s ease;
+  }
+  #initial-preloader .icf-pl-inner {
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+  #initial-preloader .icf-pl-logo {
+    width: min(60vw, 260px);
+    height: auto;
+    margin: 0 auto;
+    opacity: 0.96;
+  }
+  /* Light-mode logo invert (dark theme = no invert) */
+  html:not(.dark) #initial-preloader .icf-pl-logo {
+    filter: invert(1);
+  }
+  #initial-preloader .icf-pl-track {
+    height: 3px;
+    width: 180px;
+    margin: 1.25rem auto 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+  }
+  #initial-preloader .icf-pl-bar {
+    height: 100%;
+    width: 100%;
+    transform-origin: 0% 50%;
+    background: linear-gradient(120deg, #22d3ee, #38bdf8);
+    border-radius: 999px;
+    animation: icf-preload-fill 2.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  @keyframes icf-preload-fill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;

@@ -227,3 +227,25 @@ Stage Summary:
 - React hydration error FIXED: navbar mobile menu Sheet is now mount-gated with a static placeholder button during SSR, so Radix no longer generates mismatched aria-controls ids.
 - Attractive custom cursor ADDED: two-layer (instant glow dot + spring-following gradient ring) that grows on hover over interactive elements, uses mix-blend-screen, hides native cursor, desktop-only + reduced-motion safe.
 - Lint clean; console clean (no hydration error); server up and persistent. Files: src/components/site/navbar.tsx (mount-gate), src/components/site/custom-cursor.tsx (new), src/app/layout.tsx (mount CustomCursor).
+
+---
+Task ID: 48-49
+Agent: main-orchestrator
+Task: Fix the NEW hydration error (initial-preloader inline style mismatch) shown in user's screenshot at src/app/layout.tsx (87:9).
+
+Work Log:
+- User screenshot showed a new hydration error: "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties" at src/app/layout.tsx (87:9) — the #initial-preloader div. Root cause: the blocking preloader used inline `style={{...}}` objects, and React serializes style objects differently on server vs client (property ordering/serialization), causing a mismatch.
+- FIX: moved ALL the initial-preloader styles from inline `style={{...}}` objects in layout.tsx into a real CSS class block (#initial-preloader + .icf-pl-inner / .icf-pl-logo / .icf-pl-track / .icf-pl-bar + @keyframes icf-preload-fill) in globals.css under @layer base. The JSX now uses className + id only — no inline styles — so SSR and client markup are byte-identical. The light-mode logo invert is handled in CSS via `html:not(.dark) #initial-preloader .icf-pl-logo { filter: invert(1) }` (removed the inline JS that was setting img.style.filter which would re-introduce the mismatch).
+- Hit a CSS syntax error during the edit (a `body {` block got the preloader rules nested inside it → "Unclosed block at globals.css:157"). Fixed by restructuring so #initial-preloader rules are siblings of `body`, not nested in it.
+- Verification (Agent Browser):
+  - bun run lint: clean.
+  - Fresh server restart (rm -rf .next + start-dev.sh). LISTENING, HTTP 200.
+  - Loaded page: title "Intellectual — Creativity for Information Technology", 6,112 chars, hero present, preloader gone.
+  - Console: BLANK = CLEAN (zero hydration errors, zero CSS errors, zero warnings). Both the layout.tsx:87 hydration error AND the navbar Sheet error from before are gone.
+  - VLM: "properly rendered IT company website featuring a dark-themed hero section with headline 'Creativity for intelligent information technology'... navigation bar, CTA button, interactive dashboard widget with network security metrics."
+- Server persists across shell commands via start-dev.sh.
+
+Stage Summary:
+- The initial-preloader hydration error is FIXED: all inline styles moved to a CSS class so SSR + client markup match exactly. No more style-attribute mismatch.
+- Both previous hydration errors (navbar Sheet + initial-preloader) are now resolved — console is 100% clean.
+- Lint clean; server up and persistent. Files: src/app/layout.tsx (class-based preloader markup), src/app/globals.css (#initial-preloader CSS block).
