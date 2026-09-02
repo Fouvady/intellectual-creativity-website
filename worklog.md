@@ -273,3 +273,25 @@ Stage Summary:
 - Double loading-screen FIXED: the React preloader now appears at full opacity immediately so the handoff from the blocking HTML overlay is invisible — one seamless loading screen, no blank gap, no double-load.
 - ZERO errors/issues: console is 100% clean (no hydration errors, no CSS errors, no warnings). Lint clean. Server up and persistent.
 - Total load experience ~2.6s: blocking overlay (first paint) → seamless handoff to React preloader (full opacity, progress bar fills 2s) → gentle fade+scale exit → site.
+
+---
+Task ID: 51-52
+Agent: main-orchestrator
+Task: Fix missing theme toggle (sun/moon) button + Get Started button in the navbar top-right (user reported them gone).
+
+Work Log:
+- User screenshot showed the top-right nav area completely empty — no theme toggle, no Get Started button. Diagnosed: the navbar.tsx had a comment "CTA + ThemeToggle" but the actual <ThemeToggle /> component was never imported or rendered — only the Get Started button was wired (and the ThemeToggle was omitted entirely during the rebuild). The theme-toggle.tsx component file existed but wasn't used.
+- FIX (src/components/site/navbar.tsx): added `import { ThemeToggle } from '@/components/site/theme-toggle'` and rendered <ThemeToggle /> as the first element inside the right-side `flex items-center gap-2` group (before the Get Started button). The ThemeToggle is mount-gated internally (useMounted) to avoid hydration mismatch — shows a Sun icon in light mode, Moon in dark mode, rotates/scales on toggle.
+- Verified (Agent Browser):
+  - bun run lint: clean.
+  - Fresh server restart. LISTENING, HTTP 200.
+  - ThemeToggle button present (button[aria-label="Toggle theme"]) at x:1174, y:18, width 36px.
+  - Get Started button present and visible at x:1218, y:16, width 118px, height 40px, on-screen.
+  - Theme toggle WORKS: dark → click → light → click → dark. <html> class flips correctly.
+  - Console: blank = clean (zero errors/warnings).
+  - Server persists across shell commands via start-dev.sh.
+
+Stage Summary:
+- Theme toggle (sun/moon) button RESTORED in the navbar top-right — switches dark↔light mode correctly.
+- Get Started button confirmed visible next to it.
+- Console clean; lint clean; server up and persistent. File: src/components/site/navbar.tsx (added ThemeToggle import + render).

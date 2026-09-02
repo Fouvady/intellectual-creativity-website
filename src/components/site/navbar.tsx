@@ -16,6 +16,7 @@ import {
   SheetDescription,
 } from '@/components/ui/sheet'
 import { MagneticButton } from '@/components/motion/magnetic-button'
+import { ThemeToggle } from '@/components/site/theme-toggle'
 
 const NAV_LINKS = [
   { label: 'Home', href: '#top' },
@@ -79,6 +80,7 @@ export function Navbar() {
 
         {/* CTA + ThemeToggle */}
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <a href="#contact" className="hidden sm:block">
             <MagneticButton>
               <span className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-brand-cyan/30 transition-shadow hover:shadow-brand-cyan/50">
