@@ -30,7 +30,7 @@ export function Testimonials() {
     <section
       id="testimonials"
       aria-label="Testimonials"
-      className="relative scroll-mt-20 py-20 sm:py-24"
+      className="cv-auto relative scroll-mt-20 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-3 text-center">
@@ -51,7 +51,7 @@ export function Testimonials() {
         <StaggerGroup className="mt-12 grid gap-6 md:grid-cols-2">
           {TESTIMONIALS.map((t, i) => (
             <StaggerItem key={t.author} className="animate-float" >
-              <SpotlightCard className="liquid-glass liquid-border h-full">
+              <SpotlightCard className="card-airy liquid-border h-full">
                 <div className="relative z-[2] flex h-full flex-col gap-6 p-8 sm:p-10">
                   <Quote className="h-9 w-9 text-accent-cyan opacity-80" aria-hidden />
                   <blockquote className="font-display text-xl font-medium leading-relaxed text-balance sm:text-2xl">

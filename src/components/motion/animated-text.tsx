@@ -46,7 +46,7 @@ export function AnimatedText({
           <React.Fragment key={`${w}-${i}`}>
             <motion.span
               className={cn(
-                'inline-block will-change-[transform,opacity,filter]',
+                'inline-block will-change-transform',
                 inRange && 'gradient-text',
               )}
               variants={{

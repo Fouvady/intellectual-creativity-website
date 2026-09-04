@@ -59,7 +59,7 @@ export function TiltCard({ children, className, max = 6 }: Props) {
         transformPerspective: 1000,
         transformStyle: 'preserve-3d',
       }}
-      className={cn('will-change-transform', className)}
+      className={cn('', className)}
     >
       {children}
     </motion.div>

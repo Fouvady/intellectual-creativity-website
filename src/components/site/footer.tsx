@@ -121,7 +121,7 @@ export function Footer() {
             </ul>
             <a
               href="#contact"
-              className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-brand-cyan/30"
+              className="mt-5 inline-flex items-center justify-center gap-2 rounded-full gradient-brand px-5 py-2.5 text-sm font-semibold text-[oklch(0.16_0.025_250)] shadow-lg shadow-brand-cyan/30"
             >
               Start a project
             </a>
@@ -130,8 +130,8 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-foreground/10 pt-6 sm:flex-row sm:items-center">
           <p className="text-xs leading-relaxed text-foreground/55">
-            Copyright © 2024 – intellectualcf.com – All Rights Reserved | Designed
-            by Azmi DigiSol
+            Copyright © 2026 – intellectualcf.com – All Rights Reserved | Designed
+            by Mohammed Abdur Rahman
           </p>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3 text-xs text-foreground/55">

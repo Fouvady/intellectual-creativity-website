@@ -80,7 +80,7 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-3">
               <a href="#contact" className="inline-flex">
                 <MagneticButton strength={8}>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-brand-cyan/30 transition-shadow hover:shadow-brand-cyan/60">
+                  <span className="inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-[oklch(0.16_0.025_250)] shadow-lg shadow-brand-cyan/30 transition-shadow hover:shadow-brand-cyan/60">
                     Get Started
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </span>

@@ -1,7 +1,6 @@
 'use client'
 
 import * as React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 import { Menu } from 'lucide-react'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
@@ -22,8 +21,55 @@ const NAV_LINKS = [
   { label: 'Home', href: '#top' },
   { label: 'Services', href: '#services' },
   { label: 'About', href: '#about' },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' },
 ]
+
+/**
+ * Smoothly scroll to an in-page anchor with a fast, natural glide (~500ms,
+ * ease-in-out) — not the jarring instant snap, and not the slow ~1s default.
+ * Includes a subtle "whoosh" scale effect on the target section for a premium feel.
+ */
+function scrollToAnchor(href: string) {
+  if (typeof document === 'undefined') return
+  const id = href.replace('#', '')
+  let target = 0
+  if (id === 'top' || href === '#top') {
+    target = 0
+  } else {
+    const el = id ? document.getElementById(id) : null
+    if (!el) return
+    target = Math.max(0, el.getBoundingClientRect().top + window.scrollY - 80)
+  }
+
+  const start = window.scrollY
+  const distance = target - start
+  if (Math.abs(distance) < 2) return
+
+  const duration = 500
+  const startTime = performance.now()
+  const ease = (t: number) =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+
+  // Add a subtle highlight pulse to the target section
+  const targetEl = id && id !== 'top' ? document.getElementById(id) : null
+  if (targetEl) {
+    targetEl.style.transition = 'box-shadow 0.6s ease'
+    setTimeout(() => {
+      targetEl.style.boxShadow = 'inset 0 0 0 2px color-mix(in oklch, var(--brand-cyan) 40%, transparent)'
+      setTimeout(() => {
+        targetEl.style.boxShadow = ''
+      }, 600)
+    }, 400)
+  }
+
+  const step = (now: number) => {
+    const p = Math.min((now - startTime) / duration, 1)
+    window.scrollTo(0, start + distance * ease(p))
+    if (p < 1) requestAnimationFrame(step)
+  }
+  requestAnimationFrame(step)
+}
 
 export function Navbar() {
   const mounted = useMounted()
@@ -37,7 +83,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
+        'fixed inset-x-0 top-0 z-[200] transition-all duration-300',
         scrolled ? 'nav-glass py-2 shadow-sm' : 'bg-transparent py-4',
       )}
     >
@@ -46,8 +92,12 @@ export function Navbar() {
         aria-label="Primary"
       >
         {/* Logo */}
-        <Link
+        <a
           href="#top"
+          onClick={(e) => {
+            e.preventDefault()
+            scrollToAnchor('#top')
+          }}
           className="flex items-center gap-2"
           aria-label="Intellectual Creativity home"
         >
@@ -59,31 +109,35 @@ export function Navbar() {
             className="logo-adaptive h-7 w-auto sm:h-9"
             priority
           />
-        </Link>
+        </a>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((l) => (
-            <Link
+            <a
               key={l.href}
               href={l.href}
+              onClick={(e) => {
+                e.preventDefault()
+                scrollToAnchor(l.href)
+              }}
               className="group relative rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
             >
               <span>{l.label}</span>
               <span
                 aria-hidden
-                className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 bg-gradient-brand transition-transform duration-300 group-hover:scale-x-100"
+                className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 gradient-brand transition-transform duration-300 group-hover:scale-x-100"
               />
-            </Link>
+            </a>
           ))}
         </div>
 
         {/* CTA + ThemeToggle */}
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <a href="#contact" className="hidden sm:block">
+          <a href="#contact" className="hidden sm:block" onClick={(e) => { e.preventDefault(); scrollToAnchor('#contact') }}>
             <MagneticButton>
-              <span className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-brand-cyan/30 transition-shadow hover:shadow-brand-cyan/50">
+              <span className="inline-flex items-center gap-2 rounded-full gradient-brand px-5 py-2.5 text-sm font-semibold text-[oklch(0.16_0.025_250)] shadow-lg shadow-brand-cyan/30 transition-shadow hover:shadow-brand-cyan/50">
                 Get Started
               </span>
             </MagneticButton>
@@ -122,21 +176,25 @@ export function Navbar() {
                 </SheetDescription>
                 <nav className="flex flex-col gap-1 px-4 py-4">
                   {NAV_LINKS.map((l) => (
-                    <Link
+                    <a
                       key={l.href}
                       href={l.href}
-                      onClick={() => setOpen(false)}
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setOpen(false)
+                        requestAnimationFrame(() => scrollToAnchor(l.href))
+                      }}
                       className="flex items-center justify-between rounded-lg px-3 py-3 text-base font-medium text-foreground/85 transition-colors hover:bg-foreground/5 hover:text-foreground"
                     >
                       {l.label}
-                    </Link>
+                    </a>
                   ))}
                 </nav>
                 <div className="mt-auto px-4 pb-6">
                   <SheetClose asChild>
                     <a
                       href="#contact"
-                      className="block w-full rounded-full bg-gradient-brand px-5 py-3 text-center text-sm font-semibold text-primary-foreground shadow-lg shadow-brand-cyan/30"
+                      className="block w-full rounded-full gradient-brand px-5 py-3 text-center text-sm font-semibold text-[oklch(0.16_0.025_250)] shadow-lg shadow-brand-cyan/30"
                     >
                       Get Started
                     </a>

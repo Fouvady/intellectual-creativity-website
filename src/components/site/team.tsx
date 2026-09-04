@@ -33,7 +33,7 @@ export function About() {
     <section
       id="about"
       aria-label="About"
-      className="relative scroll-mt-20 py-20 sm:py-24"
+      className="cv-auto relative scroll-mt-20 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-3 text-center">
@@ -55,7 +55,7 @@ export function About() {
         <StaggerGroup className="mt-12 grid gap-5 md:grid-cols-3">
           {VALUES.map((v) => (
             <StaggerItem key={v.title}>
-              <SpotlightCard className="liquid-glass group h-full">
+              <SpotlightCard className="card-airy group h-full">
                 <div className="relative z-[2] flex h-full flex-col gap-4 p-6">
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-cyan/30 to-brand-cyan/5 text-accent-cyan shadow-lg shadow-brand-cyan/20">
                     <v.icon className="h-6 w-6" aria-hidden />
@@ -73,7 +73,7 @@ export function About() {
         {/* Mission */}
         <div className="mt-10 grid gap-6 md:grid-cols-5 md:items-stretch">
           <SectionReveal className="md:col-span-3">
-            <div className="liquid-glass h-full p-8 sm:p-10">
+            <div className="card-airy h-full p-8 sm:p-10">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-foreground/55 font-display">
                 Our mission
               </p>
@@ -86,7 +86,7 @@ export function About() {
             </div>
           </SectionReveal>
           <SectionReveal delay={0.1} className="md:col-span-2">
-            <SpotlightCard className="liquid-glass liquid-border h-full overflow-hidden">
+            <SpotlightCard className="card-airy liquid-border h-full overflow-hidden">
               <div className="aurora" aria-hidden />
               <div className="relative z-[2] flex h-full flex-col justify-between gap-6 p-8 sm:p-10">
                 <Server className="h-9 w-9 text-accent-cyan" aria-hidden />

@@ -88,7 +88,7 @@ function Field({
       <span
         aria-hidden
         className={cn(
-          'absolute inset-x-3 -bottom-px h-px origin-left scale-x-0 bg-gradient-brand transition-transform duration-300 peer-focus:scale-x-100',
+          'absolute inset-x-3 -bottom-px h-px origin-left scale-x-0 gradient-brand transition-transform duration-300 peer-focus:scale-x-100',
         )}
       />
       {error && (
@@ -147,7 +147,7 @@ export function Contact() {
     <section
       id="contact"
       aria-label="Contact"
-      className="relative scroll-mt-20 py-20 sm:py-24"
+      className="cv-auto relative scroll-mt-20 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-3 text-center">
@@ -173,7 +173,7 @@ export function Contact() {
         <div className="mt-12 grid gap-6 md:grid-cols-2 md:items-stretch">
           {/* Left: info + map */}
           <SectionReveal className="flex flex-col gap-5">
-            <div className="liquid-glass p-6">
+            <div className="card-airy p-6">
               <ul className="flex flex-col gap-4">
                 {CONTACTS.map((c) => (
                   <li key={c.label}>
@@ -212,7 +212,7 @@ export function Contact() {
                 ))}
               </div>
             </div>
-            <div className="liquid-glass relative min-h-[280px] flex-1 overflow-hidden p-2">
+            <div className="card-airy relative min-h-[280px] flex-1 overflow-hidden p-2">
               <LazyMap
                 src="https://maps.google.com/maps?q=Dubai&output=embed"
                 title="Intellectual Creativity — Dubai, UAE"
@@ -231,7 +231,7 @@ export function Contact() {
             <form
               onSubmit={handleSubmit(onSubmit)}
               noValidate
-              className="liquid-glass liquid-border h-full p-6 sm:p-8"
+              className="card-airy liquid-border h-full p-6 sm:p-8"
             >
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field
@@ -290,7 +290,7 @@ export function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-brand-cyan/30 transition-all hover:shadow-brand-cyan/50 disabled:opacity-70"
+                    className="inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-[oklch(0.16_0.025_250)] shadow-lg shadow-brand-cyan/30 transition-all hover:shadow-brand-cyan/50 disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <>

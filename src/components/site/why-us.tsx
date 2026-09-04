@@ -49,7 +49,7 @@ export function WhyUs() {
     <section
       id="why-us"
       aria-label="Why us"
-      className="relative scroll-mt-20 py-20 sm:py-24"
+      className="cv-auto relative scroll-mt-20 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-3 text-center">
@@ -75,7 +75,7 @@ export function WhyUs() {
             >
               <SpotlightCard
                 className={cn(
-                  'liquid-glass group h-full',
+                  'card-airy group h-full',
                   d.featured && 'liquid-border animate-breathe',
                 )}
               >

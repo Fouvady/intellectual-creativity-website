@@ -77,7 +77,7 @@ export function Services() {
     <section
       id="services"
       aria-label="Services"
-      className="relative scroll-mt-20 py-20 sm:py-24"
+      className="cv-auto relative scroll-mt-20 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-3 text-center">
@@ -106,7 +106,7 @@ export function Services() {
             return (
               <StaggerItem key={s.title}>
                 <TiltCard max={5} className="h-full">
-                  <SpotlightCard className="liquid-glass group h-full">
+                  <SpotlightCard className="card-airy group h-full">
                     <div className="relative z-[2] flex h-full flex-col gap-4 p-6">
                       <div
                         className={cn(
@@ -124,7 +124,7 @@ export function Services() {
                         {s.desc}
                       </p>
                       <div className="mt-auto flex items-center justify-between pt-2">
-                        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/45">
+                        <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-foreground/45">
                           0{i + 1}
                         </span>
                         <ArrowUpRight

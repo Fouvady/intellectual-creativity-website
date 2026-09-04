@@ -53,7 +53,7 @@ function BrowserMock({ kind, accent }: { kind: Project['preview']; accent: Proje
         <span className="h-2 w-2 rounded-full bg-[color-mix(in_oklch,var(--destructive)_75%,transparent)]" />
         <span className="h-2 w-2 rounded-full bg-amber-500/70" />
         <span className="h-2 w-2 rounded-full bg-emerald-500/70" />
-        <span className="ml-3 inline-flex h-4 flex-1 items-center rounded bg-foreground/6 px-2 font-mono text-[10px] text-foreground/45">
+        <span className="ml-3 inline-flex h-4 flex-1 items-center rounded bg-foreground/6 px-2 font-sans text-[10px] text-foreground/45">
           intellectualcf.com/{kind}
         </span>
       </div>
@@ -85,7 +85,7 @@ function BrowserMock({ kind, accent }: { kind: Project['preview']; accent: Proje
                 key={i}
                 className="relative overflow-hidden rounded-sm bg-foreground/6"
               >
-                <div className="absolute left-1 top-1 font-mono text-[8px] uppercase tracking-wider text-foreground/40">
+                <div className="absolute left-1 top-1 font-sans text-[8px] uppercase tracking-wider text-foreground/40">
                   CAM 0{i + 1}
                 </div>
                 <div
@@ -107,7 +107,7 @@ function BrowserMock({ kind, accent }: { kind: Project['preview']; accent: Proje
                 />
               ))}
             </div>
-            <div className="flex items-center justify-between font-mono text-[10px] text-foreground/55">
+            <div className="flex items-center justify-between font-sans text-[10px] text-foreground/55">
               <span>uptime</span>
               <span className={ACCENT_TEXT[accent]}>99.9%</span>
             </div>
@@ -123,7 +123,7 @@ export function Work() {
     <section
       id="work"
       aria-label="Work"
-      className="relative scroll-mt-20 py-20 sm:py-24"
+      className="cv-auto relative scroll-mt-20 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-3 text-center">
@@ -145,7 +145,7 @@ export function Work() {
           {PROJECTS.map((p) => (
             <StaggerItem key={p.title}>
               <TiltCard max={5} className="h-full">
-                <SpotlightCard className="liquid-glass liquid-border group h-full">
+                <SpotlightCard className="card-airy liquid-border group h-full">
                   <div className="relative z-[2] flex h-full flex-col gap-4 p-5">
                     <BrowserMock kind={p.preview} accent={p.accent} />
                     <span

@@ -61,7 +61,7 @@ export function MagneticButton({
       onMouseMove={onMove}
       onMouseLeave={reset}
       style={{ x: sx, y: sy }}
-      className={cn('inline-flex will-change-transform', className)}
+      className={cn('inline-flex ', className)}
       {...rest}
     >
       {children}

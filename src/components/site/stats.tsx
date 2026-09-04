@@ -35,7 +35,7 @@ export function Stats() {
   return (
     <section
       aria-label="Stats"
-      className="relative scroll-mt-20 overflow-hidden py-16 sm:py-20"
+      className="cv-auto relative scroll-mt-20 overflow-hidden py-16 sm:py-20"
     >
       <div className="aurora" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">

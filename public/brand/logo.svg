@@ -1,0 +1,50 @@
+<svg width="460" height="196" viewBox="0 0 460 196" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Intellectual Creativity — for Information Technology">
+  <!-- Original logo recreation: a stylized human head in profile (facing right)
+       with a central vertical spine + 4 horizontal circuit traces extending
+       to the left, each ending in a filled node. Clean vector — razor-sharp
+       at any size. Uses currentColor so it inherits the parent's text color
+       (white in dark mode, dark in light mode — no invert filter needed). -->
+  <g stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Head silhouette: rounded cranium (wider at top), tapering to a chin.
+         The left side holds the circuit traces; the right is a smooth curve. -->
+    <path d="M70 16
+             C 40 18, 22 42, 22 74
+             C 22 104, 36 122, 52 134
+             L 56 162
+             L 78 162
+             L 80 136
+             L 100 134
+             C 112 132, 118 122, 118 108
+             L 118 96
+             L 132 92
+             L 132 78
+             L 118 74
+             L 118 56
+             L 104 52
+             L 96 38
+             L 96 22
+             C 96 18, 90 16, 84 16
+             Z" />
+    <!-- Central vertical spine (the main neural pathway down the head) -->
+    <path d="M84 30 L 84 150" />
+    <!-- 4 horizontal circuit traces extending LEFT from the spine, each
+         ending in a filled node (circle). Top → bottom. -->
+    <path d="M84 50 L 44 50" />
+    <path d="M84 78 L 52 78" />
+    <path d="M84 106 L 48 106" />
+    <path d="M84 132 L 56 132" />
+    <!-- Nodes (filled dots) at the end of each trace -->
+    <circle cx="44" cy="50" r="3.4" fill="currentColor" stroke="none" />
+    <circle cx="52" cy="78" r="3.4" fill="currentColor" stroke="none" />
+    <circle cx="48" cy="106" r="3.4" fill="currentColor" stroke="none" />
+    <circle cx="56" cy="132" r="3.4" fill="currentColor" stroke="none" />
+  </g>
+
+  <!-- Wordmark: two lines to the right of the icon, left-aligned. -->
+  <g fill="currentColor" font-family="'Geist', 'Space Grotesk', system-ui, sans-serif">
+    <!-- Primary: INTELLECTUAL CREATIVITY (bold, slightly expanded tracking) -->
+    <text x="148" y="96" font-size="34" font-weight="700" letter-spacing="1.2">INTELLECTUAL CREATIVITY</text>
+    <!-- Secondary: FOR INFORMATION TECHNOLOGY (lighter, wider tracking) -->
+    <text x="150" y="124" font-size="13" font-weight="500" letter-spacing="4.6">FOR INFORMATION TECHNOLOGY</text>
+  </g>
+</svg>

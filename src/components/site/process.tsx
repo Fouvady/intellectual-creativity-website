@@ -48,7 +48,7 @@ export function Process() {
     <section
       id="process"
       aria-label="Process"
-      className="relative scroll-mt-20 py-20 sm:py-24"
+      className="cv-auto relative scroll-mt-20 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-3 text-center">
@@ -72,7 +72,7 @@ export function Process() {
             <StaggerItem key={s.num}>
               <div className="relative flex h-full flex-col gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="liquid-glass inline-flex h-12 w-12 items-center justify-center rounded-2xl">
+                  <div className="card-airy inline-flex h-12 w-12 items-center justify-center rounded-2xl">
                     <s.icon className="h-6 w-6 text-accent-cyan" aria-hidden />
                   </div>
                   <span className="font-display text-2xl font-semibold text-foreground/30">
@@ -104,7 +104,7 @@ export function Process() {
 
         {/* Support band */}
         <SectionReveal delay={0.1} className="mt-12">
-          <div className="liquid-glass mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3 px-6 py-5">
+          <div className="card-airy mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3 px-6 py-5">
             <span className="text-xs font-medium uppercase tracking-[0.18em] text-foreground/55 font-display">
               Support agreements
             </span>
