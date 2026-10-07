@@ -1357,3 +1357,70 @@ Stage Summary:
 - All 11 service images regenerated using the user's exact detailed prompts (photorealistic 8k quality). Each image replaced the previous low-quality AI-generated version. Files at /home/z/my-project/public/services/{pabx,avc,network,cctv,smart,automation,signage,pos,elv,time,aivoip}-1.png.
 - Gallery image array reduced from 33 → 11 unique images (removed the -2 and -3 variants). Each service now represented by exactly one high-quality photorealistic image.
 - Lint clean; console clean; server up. Files touched: src/components/site/gallery-section.tsx (rewritten with heading + eyebrow + subtitle), src/components/ui/3d-parallax-unfurling-gallery.tsx (SERVICE_IMAGES reduced from 33 to 11 entries + updated comment), public/services/*-1.png (11 images regenerated using user's exact prompts).
+
+---
+Task ID: 137
+Agent: main-orchestrator
+Task: When users fill the contact form and click a button, redirect them to their WhatsApp (with pre-filled message) OR open their email client (with pre-filled email) — addressed to the company — instead of submitting to a backend API.
+
+Work Log:
+- Step 1 — Diagnosed the existing contact form behavior:
+  - src/components/site/contact.tsx had a single "Send message" submit button that POSTed to /api/contact (saved to a SQLite DB via Prisma).
+  - The user wanted the form to open WhatsApp or the user's email client with the form data pre-filled.
+
+- Step 2 — Replaced the single submit button with TWO buttons:
+  - "Send via WhatsApp" (primary, gradient-brand style, MessageCircle icon) — calls `handleSubmit(sendWhatsApp)()` to validate the form first. On valid: opens `https://wa.me/966537727004?text=<pre-filled>` in a new tab via `window.open(url, '_blank', 'noopener,noreferrer')`, shows a success toast "Opening WhatsApp — Your message is pre-filled — just hit send in WhatsApp.", resets the form.
+  - "Send via Email" (secondary, outlined style, Mail icon) — calls `handleSubmit(sendEmail)()` to validate. On valid: sets `window.location.href` to a `mailto:info@intellectualcf.com?subject=<prefilled>&body=<prefilled>` URL, shows a success toast "Opening your email client — Your message is pre-filled — just hit send in your email app.", resets the form.
+  - Both buttons have `type="button"` (not `type="submit"`) so they don't trigger a double-submit. The form's `onSubmit={(e) => e.preventDefault()}` prevents the default form submission entirely — only the button onClick handlers fire.
+
+- Step 3 — Implemented URL builders:
+  - `buildWhatsAppUrl(d: FormData)` — produces a wa.me URL addressed to `966537727004` (company WhatsApp). The pre-filled text body is multi-line:
+    ```
+    Hello, I'm {firstName} {lastName}.
+    
+    {message}
+    
+    — My contact details —
+    Phone: {phone || 'Not provided'}
+    Email: {email}
+    ```
+  - `buildMailtoUrl(d: FormData)` — produces a mailto: URL addressed to `info@intellectualcf.com` (company email). Subject: `Project enquiry from {firstName} {lastName}`. Body:
+    ```
+    Name: {firstName} {lastName}
+    Phone: {phone || 'Not provided'}
+    Email: {email}
+    
+    Message:
+    {message}
+    ```
+  - Both use `encodeURIComponent()` for proper URL encoding (whitespace → %20, newlines → %0A, etc.).
+  - Company destination constants extracted to `COMPANY_WHATSAPP` and `COMPANY_EMAIL` at the top of the file.
+
+- Step 4 — Updated the section subtitle:
+  - Was: "Tell us about your project and our team in Riyadh will reach out."
+  - Now: "Fill in your details and pick WhatsApp or email — we'll reply from our Riyadh office."
+  - Also updated the helper text below the form: "Pick how you'd like to send — we never store your details." (was "We never share your details.")
+
+- Step 5 — Removed the unused backend API integration:
+  - Removed the `async function onSubmit(values)` that POSTed to `/api/contact`.
+  - Removed `isSubmitting` from formState destructuring (no longer needed).
+  - Removed `sent` state and the `setSent(true)` / `setTimeout(() => setSent(false), 2400)` logic.
+  - Removed the `Loader2` (spinner) and `Check` (sent checkmark) and `Send` (paper plane) icon imports — they're no longer used.
+  - The `/api/contact` route still exists on disk but is no longer called — can be removed separately if desired.
+
+- Self-verification (Agent Browser):
+  - Verified 2 buttons present in the form: `[{type: "button", text: "Send via WhatsApp"}, {type: "button", text: "Send via Email"}]`.
+  - Verified validation works: clicking WhatsApp with empty form → 1 error shown ("Message must be at least 10 characters"). Clicking with all fields valid → 0 errors.
+  - Verified WhatsApp URL building: filled the form (firstName=Mir, lastName=Wahed Ali, phone=+966555123456, email=mir@example.com, message="Hello, I need a PABX system installed..."), intercepted `window.open`, clicked WhatsApp button. Captured URL: `https://wa.me/966537727004?text=Hello%2C%20I'm%20Mir%20Wahed%20Ali.%0A%0AHello%2C%20I%20need%20a%20PABX%20system%20installed%20at%20my%20office%20in%20Riyadh.%20Please%20quote.%0A%0A%E2%80%94%20My%20contact%20details%20%E2%80%94%0APhone%3A%20%2B966555123456%0AEmail%3A%20mir%40example.com`. URL is correctly addressed to company WhatsApp (966537727004) with all form data pre-filled in the message body (URL-encoded).
+  - Verified Email button: clicking with valid form data → 0 errors (validation passed). The mailto: redirect happens via `window.location.href = url` which a headless browser can't intercept, but the toast notification appeared and form was reset (confirming the success path executed).
+  - Lint clean (`bun run lint` → no errors).
+  - Dev log: all GET / 200, clean compiles.
+
+Stage Summary:
+- Contact form behavior changed from "submit to /api/contact backend" → "open WhatsApp or Email client with pre-filled message addressed to the company".
+- Two buttons replaced the single "Send message" button: "Send via WhatsApp" (primary) and "Send via Email" (secondary). Both trigger form validation first via `handleSubmit(callback)()` — if validation fails, errors are shown; if it passes, the WhatsApp/mailto URL is opened.
+- WhatsApp: opens `https://wa.me/966537727004?text=<URL-encoded pre-filled message>` in a new tab. The pre-filled body includes the user's name, their typed message, and their contact details (phone + email).
+- Email: opens `mailto:info@intellectualcf.com?subject=Project enquiry from {firstName} {lastName}&body=<URL-encoded pre-filled body>` via `window.location.href`. Subject includes the user's name. Body includes name, phone, email, and the typed message.
+- Updated section subtitle to "Fill in your details and pick WhatsApp or email — we'll reply from our Riyadh office." and form helper text to "Pick how you'd like to send — we never store your details."
+- Removed the unused onSubmit function, isSubmitting/sent state, and Loader2/Check/Send icon imports (no longer needed).
+- Lint clean; console clean; server up. Files touched: src/components/site/contact.tsx (rewrote submit area with two buttons + URL builders + removed backend fetch).

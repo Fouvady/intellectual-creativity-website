@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { toast } from 'sonner'
-import { Mail, Phone, MapPin, MessageCircle, Send, Loader2, Check } from 'lucide-react'
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 import { AnimatedText } from '@/components/motion/animated-text'
 import { SectionReveal } from '@/components/motion/stagger-group'
 import { MagneticButton } from '@/components/motion/magnetic-button'
@@ -22,6 +22,11 @@ const SOCIALS = [
   { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/966537727004' },
 ]
 
+// Company destination constants — the form opens WhatsApp / email client
+// addressed to the company, with the user's form data pre-filled.
+const COMPANY_WHATSAPP = '966537727004'
+const COMPANY_EMAIL = 'info@intellectualcf.com'
+
 const schema = z.object({
   firstName: z.string().min(1, 'First name is required'),
   lastName: z.string().min(1, 'Last name is required'),
@@ -31,6 +36,36 @@ const schema = z.object({
 })
 
 type FormData = z.infer<typeof schema>
+
+/** Build a wa.me URL addressed to the company WhatsApp, with the user's form
+ *  data (name + message + contact details) pre-filled as the message body. */
+function buildWhatsAppUrl(d: FormData): string {
+  const body = [
+    `Hello, I'm ${d.firstName} ${d.lastName}.`,
+    '',
+    d.message,
+    '',
+    '— My contact details —',
+    `Phone: ${d.phone || 'Not provided'}`,
+    `Email: ${d.email}`,
+  ].join('\n')
+  return `https://wa.me/${COMPANY_WHATSAPP}?text=${encodeURIComponent(body)}`
+}
+
+/** Build a mailto: URL addressed to the company email, with subject + body
+ *  pre-filled from the user's form data. */
+function buildMailtoUrl(d: FormData): string {
+  const subject = `Project enquiry from ${d.firstName} ${d.lastName}`
+  const body = [
+    `Name: ${d.firstName} ${d.lastName}`,
+    `Phone: ${d.phone || 'Not provided'}`,
+    `Email: ${d.email}`,
+    '',
+    'Message:',
+    d.message,
+  ].join('\n')
+  return `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+}
 
 function Field({
   id,
@@ -103,7 +138,7 @@ export function Contact() {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -114,31 +149,23 @@ export function Contact() {
       message: '',
     },
   })
-  const [sent, setSent] = React.useState(false)
 
-  async function onSubmit(values: FormData) {
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
-      })
-      const data = await res.json()
-      if (!res.ok || !data.ok) {
-        throw new Error(data?.error || 'Failed to send message')
-      }
-      setSent(true)
-      toast.success('Message sent', {
-        description: "Thanks — we'll be in touch shortly.",
-      })
-      reset()
-      setTimeout(() => setSent(false), 2400)
-    } catch (e) {
-      toast.error('Could not send message', {
-        description:
-          (e as Error)?.message || 'Something went wrong. Please try again.',
-      })
-    }
+  /** Validate the form, then open WhatsApp with the pre-filled message. */
+  function sendWhatsApp(data: FormData) {
+    window.open(buildWhatsAppUrl(data), '_blank', 'noopener,noreferrer')
+    toast.success('Opening WhatsApp', {
+      description: 'Your message is pre-filled — just hit send in WhatsApp.',
+    })
+    reset()
+  }
+
+  /** Validate the form, then open the user's email client with the pre-filled email. */
+  function sendEmail(data: FormData) {
+    window.location.href = buildMailtoUrl(data)
+    toast.success('Opening your email client', {
+      description: 'Your message is pre-filled — just hit send in your email app.',
+    })
+    reset()
   }
 
   return (
@@ -163,7 +190,8 @@ export function Contact() {
           />
           <SectionReveal delay={0.08}>
             <p className="mx-auto max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
-              Tell us about your project and our team in Riyadh will reach out.
+              Fill in your details and pick WhatsApp or email — we&apos;ll
+              reply from our Riyadh office.
             </p>
           </SectionReveal>
         </div>
@@ -227,7 +255,7 @@ export function Contact() {
           {/* Right: form */}
           <SectionReveal delay={0.08}>
             <form
-              onSubmit={handleSubmit(onSubmit)}
+              onSubmit={(e) => e.preventDefault()}
               noValidate
               className="card-airy liquid-border h-full p-6 sm:p-8"
             >
@@ -280,34 +308,32 @@ export function Contact() {
                 />
               </div>
 
-              <div className="mt-6 flex items-center justify-between gap-3">
+              <div className="mt-6 flex flex-col gap-3">
                 <p className="text-xs text-foreground/50">
-                  We never share your details.
+                  Pick how you&apos;d like to send — we never store your details.
                 </p>
-                <MagneticButton strength={5}>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-[oklch(0.16_0.025_250)] shadow-lg shadow-brand-cyan/30 transition-all hover:shadow-brand-cyan/50 disabled:opacity-70"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-                        Sending…
-                      </>
-                    ) : sent ? (
-                      <>
-                        <Check className="h-4 w-4" aria-hidden />
-                        Sent ✓
-                      </>
-                    ) : (
-                      <>
-                        Send message
-                        <Send className="h-4 w-4" aria-hidden />
-                      </>
-                    )}
-                  </button>
-                </MagneticButton>
+                <div className="flex flex-wrap items-center gap-3">
+                  <MagneticButton strength={5}>
+                    <button
+                      type="button"
+                      onClick={() => handleSubmit(sendWhatsApp)()}
+                      className="inline-flex items-center gap-2 rounded-full gradient-brand px-6 py-3 text-sm font-semibold text-[oklch(0.16_0.025_250)] shadow-lg shadow-brand-cyan/30 transition-all hover:shadow-brand-cyan/50"
+                    >
+                      <MessageCircle className="h-4 w-4" aria-hidden />
+                      Send via WhatsApp
+                    </button>
+                  </MagneticButton>
+                  <MagneticButton strength={5}>
+                    <button
+                      type="button"
+                      onClick={() => handleSubmit(sendEmail)()}
+                      className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-foreground/5 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-foreground/10"
+                    >
+                      <Mail className="h-4 w-4" aria-hidden />
+                      Send via Email
+                    </button>
+                  </MagneticButton>
+                </div>
               </div>
             </form>
           </SectionReveal>
