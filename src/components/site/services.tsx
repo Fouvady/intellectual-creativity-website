@@ -1,7 +1,20 @@
 'use client'
 
 import * as React from 'react'
-import { ArrowUpRight, Phone, AudioLines, Network, Cctv, HouseWifi, LifeBuoy } from 'lucide-react'
+import {
+  ArrowUpRight,
+  Phone,
+  AudioLines,
+  Network,
+  Cctv,
+  HouseWifi,
+  LifeBuoy,
+  MonitorPlay,
+  CreditCard,
+  Layers,
+  CalendarClock,
+  BrainCircuit,
+} from 'lucide-react'
 import { AnimatedText } from '@/components/motion/animated-text'
 import { SectionReveal, StaggerGroup, StaggerItem } from '@/components/motion/stagger-group'
 import { TiltCard } from '@/components/motion/tilt-card'
@@ -66,6 +79,46 @@ const SERVICES: Service[] = [
     image: '/services/automation-1.png',
     accent: 'gold',
   },
+  {
+    icon: MonitorPlay,
+    title: 'Digital Signage & Video Walls',
+    shortLabel: 'Digital Signage',
+    desc: 'Large-format LED/LCD displays, video walls and content-distribution systems for retail malls, control rooms, lobbies and outdoor installations.',
+    image: '/services/signage-1.png',
+    accent: 'cyan',
+  },
+  {
+    icon: CreditCard,
+    title: 'Point of Sale (POS) Solutions',
+    shortLabel: 'POS Solutions',
+    desc: 'Touchscreen POS terminals, integrated card readers, receipt printers and self-service kiosks for retail, F&B and hospitality.',
+    image: '/services/pos-1.png',
+    accent: 'sky',
+  },
+  {
+    icon: Layers,
+    title: 'Unified Low Current (ELV) Systems',
+    shortLabel: 'ELV Systems',
+    desc: 'One umbrella contract covering all extra-low-voltage subsystems — cabling, CCTV, access control, PA, fire alarm and building automation.',
+    image: '/services/elv-1.png',
+    accent: 'gold',
+  },
+  {
+    icon: CalendarClock,
+    title: 'Time & Attendance Management',
+    shortLabel: 'Time & Attendance',
+    desc: 'Biometric and RFID time-clock terminals with workforce-management software: schedules, late/absent tracking, overtime and exportable payroll reports.',
+    image: '/services/time-1.png',
+    accent: 'cyan',
+  },
+  {
+    icon: BrainCircuit,
+    title: 'Smart AI Analytics & Standalone VoIP',
+    shortLabel: 'AI Analytics & VoIP',
+    desc: 'AI video analytics (object detection, face recognition, heatmaps, people counting) and standalone VoIP softphone/PBX solutions — branded and separated as dedicated offerings.',
+    image: '/services/aivoip-1.png',
+    accent: 'sky',
+  },
 ]
 
 const ACCENT = {
@@ -111,8 +164,9 @@ export function Services() {
           />
           <SectionReveal delay={0.1}>
             <p className="mx-auto max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
-              From telephony and structured cabling to security and smart
-              automation — engineered to the highest standards across Riyadh.
+              From telephony, security and smart automation to digital signage,
+              POS, ELV and AI analytics — engineered to the highest standards
+              across Riyadh.
             </p>
           </SectionReveal>
         </div>

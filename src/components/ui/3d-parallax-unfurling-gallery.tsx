@@ -9,7 +9,7 @@ import React, {
 } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
-// 18 unique AI-generated service images (3 per service × 6 services).
+// 33 unique AI-generated service images (3 per service × 11 services).
 // No duplicates — each image is a distinct visual of one of our service sectors.
 const SERVICE_IMAGES = [
   // 1. PABX / Telephone systems
@@ -36,6 +36,26 @@ const SERVICE_IMAGES = [
   "/services/automation-1.png",
   "/services/automation-2.png",
   "/services/automation-3.png",
+  // 7. Digital Signage & Video Walls
+  "/services/signage-1.png",
+  "/services/signage-2.png",
+  "/services/signage-3.png",
+  // 8. Point of Sale (POS) Solutions
+  "/services/pos-1.png",
+  "/services/pos-2.png",
+  "/services/pos-3.png",
+  // 9. Unified Low Current (ELV) Systems
+  "/services/elv-1.png",
+  "/services/elv-2.png",
+  "/services/elv-3.png",
+  // 10. Time & Attendance Management
+  "/services/time-1.png",
+  "/services/time-2.png",
+  "/services/time-3.png",
+  // 11. Smart AI Analytics & Standalone VoIP
+  "/services/aivoip-1.png",
+  "/services/aivoip-2.png",
+  "/services/aivoip-3.png",
 ] as const;
 
 interface ImageCardProps {

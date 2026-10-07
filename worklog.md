@@ -996,3 +996,158 @@ Stage Summary:
 - VLM-verified: colored logo, transparent background, no sticker box, brand colors (navy + cyan) visible.
 - No code changes needed (navbar/hero-3d-scroll/preloader all already point to /brand/logo-white.png with width=367 height=269).
 - Lint clean; console clean; server up.
+
+---
+Task ID: 4-A
+Agent: image-gen-signage
+Task: Generate 3 AI images for the Digital Signage & Video Walls service sector
+
+Work Log:
+- Read existing worklog.md and confirmed /home/z/my-project/public/services/ already contained 18 prior service images (cctv, pabx, network, automation, avc, smart sectors). No signage images existed yet.
+- Verified z-ai CLI tool is installed at /usr/local/bin/z-ai and supports the 1344x768 landscape size.
+- Crafted 3 distinct prompts aligned to brand palette (cyan #22d3ee, sky #38bdf8, gold #eab308 — no indigo, no blue-as-primary). Each prompt includes Riyadh/Saudi Arabia context and the required "high quality, professional photography, 4K, sharp focus" suffix.
+- Launched all 3 z-ai image commands in parallel with & + wait. signage-2.png and signage-3.png completed successfully; signage-1.png failed with HTTP 429 (rate-limit from parallel requests).
+- After a 20-second backoff, re-ran signage-1.png sequentially. Succeeded.
+- Verified all 3 files exist with `ls -la` and `file`. All are 1344x768 landscape and well above the 50KB validity threshold (157KB / 176KB / 189KB).
+
+Stage Summary:
+- Generated 3 images at /home/z/my-project/public/services/signage-{1,2,3}.png (each 1344x768 landscape)
+- Image concepts:
+  - signage-1.png: Large 4x3 bezel-less video wall in a modern Network Operations Center (Riyadh), dark navy control room with cyan/sky ambient lighting, operator silhouettes at workstations, world maps/dashboards/KPIs/camera feeds on screens.
+  - signage-2.png: Modern luxury retail mall interior (Riyadh) with a large ceiling-suspended indoor digital signage display showing cyan/sky fashion ads, polished marble floor, glass storefronts, escalator in background, warm ambient lighting with cyan accents, no people.
+  - signage-3.png: Large outdoor LED display mounted on the side of a modern glass-and-steel commercial building (Riyadh) at dusk / blue hour, advertisement with cyan and gold accents, sharp focus on the LED screen.
+- File sizes verified:
+  - signage-1.png: 160,938 bytes (~157 KB)
+  - signage-2.png: 180,499 bytes (~176 KB)
+  - signage-3.png: 193,352 bytes (~189 KB)
+
+---
+Task ID: 4-E
+Agent: image-gen-aivoip
+Task: Generate 3 AI images for the Smart AI Analytics & Standalone VoIP service sector
+
+Work Log:
+- Read worklog.md to understand prior agents' work (existing /public/services/ directory already had other sectors' images).
+- Confirmed output directory /home/z/my-project/public/services/ exists with sibling images (cctv, pabx, avc, network, automation, smart).
+- Launched all 3 z-ai image generation commands in parallel (aivoip-1, aivoip-2, aivoip-3) at 1344x768.
+- aivoip-1 and aivoip-2 succeeded on first run; aivoip-3 hit an HTTP 429 rate-limit error from the upstream API.
+- Waited 30 seconds and retried aivoip-3 alone, which succeeded.
+- Verified all 3 files exist and each exceeds 50KB (valid PNG).
+- Each prompt incorporated the brand palette (cyan #22d3ee, gold #eab308, dark navy theme), Riyadh Saudi Arabia context, and the required quality tags ("high quality, professional photography, 4K, sharp focus"). No indigo or blue-as-primary colors were used.
+
+Stage Summary:
+- Generated 3 images at /home/z/my-project/public/services/aivoip-{1,2,3}.png (each 1344x768)
+- Image concepts:
+  - aivoip-1.png: AI video analytics dashboard — live CCTV feeds with real-time object-detection bounding boxes (people/vehicles/faces), facial recognition tags, analytics sidebar; security operations desk; dark navy + cyan/gold accents.
+  - aivoip-2.png: VoIP softphone UI on a desktop screen — active call (contact, timer, hold/transfer/mute), call-history sidebar, remote-caller video feed, headset on desk; cyan ambient lighting, dark navy + gold accents.
+  - aivoip-3.png: Retail heatmap analytics wall display — store floor plan with color-coded heat zones (cyan=low, gold=high), people-count graphs and dwell-time charts; three-quarter angle showing dashboard and retail floor.
+- File sizes verified:
+  - aivoip-1.png: 152,595 bytes (~149 KB)
+  - aivoip-2.png: 95,461 bytes (~93 KB)
+  - aivoip-3.png: 89,381 bytes (~87 KB)
+
+---
+Task ID: 4-D
+Agent: image-gen-time
+Task: Generate 3 AI images for the Time & Attendance Management service sector
+
+Work Log:
+- Read /home/z/my-project/worklog.md to review prior project context (Task 35 full-stack rebuild of the Intellectual Creativity for Information Technology website in Riyadh, Saudi Arabia; brand palette cyan #22d3ee, sky #38bdf8, gold #eab308 on dark navy; service photos used as WhatsApp-style hero photos on service cards AND in 3D parallax gallery). Reviewed prior image-gen tasks (3-A pabx, 3-B avc, 3-C network, 3-D cctv, 3-E smart, 3-F automation) to learn that parallel z-ai calls hit HTTP 429 rate limits and that the z-ai CLI writes JPEG bytes under .png extensions (so a PIL re-encode to true PNG is required).
+- Verified z-ai CLI is installed at /usr/local/bin/z-ai and that the `image` sub-command supports `-s 1344x768` (the required landscape size).
+- Confirmed /home/z/my-project/public/services/ exists and contains the previously generated service images (avc-*, automation-*, cctv-*, network-*, pabx-*, smart-*) — no time-*.png files existed, so nothing to overwrite.
+- Crafted 3 visually distinct prompts, each enforcing the brand palette (cyan #22d3ee + sky #38bdf8 + gold #eab308 accents on dark navy/charcoal) and explicitly avoiding indigo and blue-as-primary colors. Each prompt also includes "Riyadh, Saudi Arabia" context + "high quality, professional photography, 4K, sharp focus, cinematic lighting" suffix.
+  - time-1.png → modern biometric time & attendance terminal on a marble wall next to an office door: dark charcoal housing, small color touchscreen showing clock + employee photo, fingerprint scanner pad, face-recognition camera lens, cyan LED edge accent.
+  - time-2.png → workforce management software dashboard on a large ultrawide monitor in a Riyadh office: monthly calendar with color-coded present/absent/late statuses, total-hours bar graph, employee check-in/out list, department summary; dark navy UI with cyan + sky + gold accents; keyboard silhouette in foreground.
+  - time-3.png → close-up documentary photo of an employee's hand tapping a white RFID access card on a wall-mounted time clock terminal at a Riyadh office lobby entrance; terminal display shows "Welcome, Ahmed - Check-in 08:32", glowing green LED indicator; only hand + card visible, no face.
+- Launched all 3 z-ai image commands in parallel (`&` + `wait`). time-2.png and time-3.png succeeded on the first attempt. time-1.png hit an HTTP 429 "Too many requests" rate-limit error (same behavior as prior image-gen tasks).
+- Waited 20s for the rate limit to clear, then retried time-1.png sequentially — succeeded.
+- Inspected the generated files with `file` and confirmed the z-ai CLI writes JPEG-encoded byte streams under the .png extension (Content-Type mismatch risk when Next.js serves them as image/png). Re-encoded all 3 with PIL to true PNG format (`im.save(path, 'PNG', optimize=True)`) so the byte format matches the .png extension and browsers / next/image won't complain — same approach used in Tasks 3-B and 3-C.
+- Verified final state with `ls -la` + `file` — all 3 are valid PNG image data at 1344 x 768, 8-bit/color RGB, non-interlaced, well above the 50KB validity threshold.
+
+Stage Summary:
+- Generated 3 images at /home/z/my-project/public/services/time-{1,2,3}.png (each 1344x768 landscape, true PNG format)
+- Image concepts:
+  - time-1.png — Modern biometric time & attendance terminal mounted on a marble wall next to an office door in Riyadh: dark charcoal housing, color touchscreen (clock + employee photo), fingerprint scanner, face-recognition camera, cyan LED accent; softly blurred office corridor with cream marble walls and gold door frame in background; slight three-quarter angle product photography.
+  - time-2.png — Workforce management dashboard on a large ultrawide monitor in a Riyadh office: monthly calendar with color-coded present (cyan) / absent (gold) / late (sky) statuses, total-hours bar graph, employee check-in/out list, department summary; dark navy UI theme with cyan/sky/gold accents; keyboard silhouette in foreground.
+  - time-3.png — Close-up documentary photo of an employee's hand tapping a white RFID access card on a wall-mounted time clock terminal at a modern Riyadh office lobby entrance; terminal display reads "Welcome, Ahmed - Check-in 08:32" with glowing green LED indicator; softly blurred marble lobby floor + glass walls with cyan ambient lighting; only hand + card visible, no face.
+- File sizes verified:
+  - time-1.png: 733,693 bytes (~716 KB)
+  - time-2.png: 615,225 bytes (~601 KB)
+  - time-3.png: 800,122 bytes (~781 KB)
+- All 3 are valid PNG image data at 1344x768, 8-bit/color RGB, non-interlaced. All >50KB threshold ✓. All visually distinct (biometric terminal vs. software dashboard vs. RFID card terminal).
+
+---
+Task ID: 4-C
+Agent: image-gen-elv
+Task: Generate 3 AI images for the Unified Low Current (ELV) Systems service sector
+
+Work Log:
+- Read worklog.md to review prior agent activity; confirmed project layout and existing /public/services/ image set (pabx, cctv, network, automation, smart, avc — each 1/2/3).
+- Verified /home/z/my-project/public/services/ directory exists with sibling service images.
+- Crafted 3 distinct ELV image prompts aligned to brand palette (cyan #22d3ee, sky #38bdf8, gold #eab308 accents, dark navy base) with explicit "no indigo / no blue-as-primary" guidance.
+- Ran 3 z-ai image generations at 1344x768 (landscape) in parallel: elv-1 (control room), elv-2 (distribution cabinets), elv-3 (management dashboard).
+- elv-1.png and elv-2.png generated successfully on first run; elv-3.png hit a context-deadline timeout (transient SDK hang) — retried sequentially with a longer timeout and it succeeded.
+- Verified all 3 files exist with `ls -la` and confirmed each is well above the 50KB validity threshold (192KB / 146KB / 119KB).
+
+Stage Summary:
+- Generated 3 images at /home/z/my-project/public/services/elv-{1,2,3}.png (each 1344x768)
+- Image concepts: (1) Modern ELV integrated control room with patch panels + CCTV video wall + access control + PA amp in a Riyadh commercial building, cool cyan lighting; (2) ELV distribution room with multiple wall-mounted gray cabinets (switches, NVR, access panels, PA amps, fire alarm) plus neatly organized overhead color-coded cable trays, industrial technical photo, no people; (3) Building ELV management dashboard on a large wall-mounted touchscreen with subsystem status tiles (CCTV, Access Control, PA, Fire Alarm, HVAC, Network) + floor plan in a modern Riyadh office, dark navy + cyan/gold theme, three-quarter angle.
+- File sizes verified: elv-1.png = 192,131 bytes; elv-2.png = 145,595 bytes; elv-3.png = 118,522 bytes (all valid PNGs > 50KB).
+
+---
+Task ID: 4-B
+Agent: image-gen-pos
+Task: Generate 3 AI images for the Point of Sale (POS) Solutions service sector
+
+Work Log:
+- Read worklog.md to review prior agent work and confirmed /home/z/my-project/public/services/ already contains images for other service sectors (pabx, cctv, network, avc, automation, smart).
+- Verified z-ai CLI tool availability and target output directory exists.
+- Generated pos-1.png: Modern POS terminal (dark charcoal) at a retail counter in Riyadh with touchscreen checkout interface, integrated card reader, receipt printer, soft cyan accent lighting, and gold accents. Close-up professional product photography. (Initial parallel run succeeded.)
+- Generated pos-2.png: Restaurant POS setup with a tablet-based ordering system on a wooden table; server silhouette (no face) holding a tablet showing menu/order interface, with a small receipt printer and card reader on the side, warm wood accents, cyan ambient lighting, documentary-style shallow depth of field. (First attempt timed out at the tooling layer; file was not produced. Retried with extended timeout and succeeded.)
+- Generated pos-3.png: Self-service kiosk with a large vertical touchscreen showing a vibrant food menu, card reader, and receipt slot in a fast-food restaurant in Riyadh. Modern interior with subtle cyan and gold accent lighting. Wide architectural photography, no people. (Parallel run succeeded.)
+- All prompts include "Riyadh, Saudi Arabia" context and "high quality, professional photography, 4K, sharp focus" tags, and explicitly forbid indigo / blue-as-primary colors, enforcing the brand palette of cyan (#22d3ee), sky (#38bdf8), and gold (#eab308).
+- Verified all three files exist with `ls -la` and confirmed each file exceeds 50KB (valid PNG threshold).
+
+Stage Summary:
+- Generated 3 images at /home/z/my-project/public/services/pos-{1,2,3}.png (each 1344x768)
+- Image concepts: (1) dark-charcoal touchscreen POS terminal at Riyadh retail counter with cyan + gold accents; (2) restaurant tablet POS held by a faceless server silhouette at a wooden table with cyan ambient lighting; (3) vertical touchscreen self-service kiosk in a Riyadh fast-food restaurant with cyan + gold accent lighting, no people.
+- File sizes verified: pos-1.png = 78,918 bytes (~77KB); pos-2.png = 115,942 bytes (~113KB); pos-3.png = 124,195 bytes (~121KB). All three exceed the 50KB validity threshold.
+
+---
+Task ID: 133
+Agent: main-orchestrator
+Task: Add 5 new services to the "We provide a wide range of services" section + generate suitable images for each. New services per user: Digital Signage & Video Walls, Point of Sale (POS) Solutions, Unified Low Current (ELV) Systems, Time & Attendance Management, Smart AI Analytics & Standalone VoIP.
+
+Work Log:
+- Step 1 — Generated 15 new AI images via 5 parallel subagents (Task IDs 4-A through 4-E), 3 images per new service × 5 services = 15 unique images:
+  - Digital Signage & Video Walls: signage-1.png (NOC video wall), signage-2.png (mall indoor signage), signage-3.png (outdoor LED display)
+  - Point of Sale (POS) Solutions: pos-1.png (retail touchscreen POS), pos-2.png (restaurant tablet POS), pos-3.png (self-service kiosk)
+  - Unified Low Current (ELV) Systems: elv-1.png (ELV control room), elv-2.png (ELV distribution cabinets), elv-3.png (ELV management dashboard)
+  - Time & Attendance Management: time-1.png (biometric terminal), time-2.png (workforce dashboard), time-3.png (RFID card terminal)
+  - Smart AI Analytics & Standalone VoIP: aivoip-1.png (AI video analytics), aivoip-2.png (VoIP softphone), aivoip-3.png (heatmap analytics)
+  - All 1344×768, brand palette respected (cyan/sky/gold accents, no indigo/blue-as-primary). Stored at /home/z/my-project/public/services/.
+
+- Step 2 — Added 5 new service cards to src/components/site/services.tsx:
+  - Imported 5 new Lucide icons: MonitorPlay (signage), CreditCard (POS), Layers (ELV), CalendarClock (time), BrainCircuit (AI/VoIP).
+  - Added 5 new entries to the SERVICES array with: icon, title, shortLabel, desc, image, accent (cycled cyan/sky/gold to match existing pattern).
+  - Updated the section subtitle to: "From telephony, security and smart automation to digital signage, POS, ELV and AI analytics — engineered to the highest standards across Riyadh."
+
+- Step 3 — Added 15 new images to the gallery src/components/ui/3d-parallax-unfurling-gallery.tsx:
+  - Updated SERVICE_IMAGES array from 18 → 33 unique images (added signage-1/2/3, pos-1/2/3, elv-1/2/3, time-1/2/3, aivoip-1/2/3).
+  - Updated header comment to reflect "33 unique AI-generated service images (3 per service × 11 services)".
+
+- Self-verification (Agent Browser + VLM):
+  - Services section now has 11 cards. Verified titles in DOM order: PABX, AVC, Networking, CCTV, Smart Electronics, Building Automation, Digital Signage, POS, ELV, Time & Attendance, AI Analytics & VoIP.
+  - 11 service images referenced in cards (one per card).
+  - Gallery has 33 unique service image paths (no duplicates).
+  - VLM confirmed all 5 new services are visible with their proper photos and matching layout (photo on top + dark banner with icon + label at bottom).
+  - Specifically verified cards 10 & 11: card 10 shows the biometric time & attendance terminal photo, card 11 shows the security command center / AI analytics photo. Both have proper dark banner with icon + label + title + description.
+  - Lint clean (`bun run lint` → no errors).
+  - Dev log: all GET / 200, clean compiles.
+
+Stage Summary:
+- Added 5 new service cards to the "We provide a wide range of services" section: Digital Signage & Video Walls, Point of Sale (POS) Solutions, Unified Low Current (ELV) Systems, Time & Attendance Management, Smart AI Analytics & Standalone VoIP. Total services now 11 (was 6).
+- Generated 15 unique AI images for the 5 new services (3 per service) at /home/z/my-project/public/services/{signage,pos,elv,time,aivoip}-{1,2,3}.png. All 1344×768, brand palette respected.
+- Gallery now shows 33 unique AI images (was 18) — still no duplicates.
+- All 5 new cards use the same WhatsApp-style layout (photo on top + dark banner with icon + label at bottom) as the existing 6 cards.
+- Lint clean; console clean; server up. Files touched: src/components/site/services.tsx (5 new services + 5 new icons + updated subtitle), src/components/ui/3d-parallax-unfurling-gallery.tsx (15 new gallery images + updated comment), public/services/{signage,pos,elv,time,aivoip}-*.png (15 new images).
