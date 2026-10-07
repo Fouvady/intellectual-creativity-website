@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { toast } from 'sonner'
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Send, Loader2, Check } from 'lucide-react'
+import { Mail, Phone, MapPin, MessageCircle, Send, Loader2, Check } from 'lucide-react'
 import { AnimatedText } from '@/components/motion/animated-text'
 import { SectionReveal } from '@/components/motion/stagger-group'
 import { MagneticButton } from '@/components/motion/magnetic-button'
@@ -13,15 +13,13 @@ import { LazyMap } from '@/components/motion/lazy-map'
 import { cn } from '@/lib/utils'
 
 const CONTACTS = [
-  { icon: Phone, label: 'Phone', value: '+9666666625', href: 'tel:+9666666625' },
+  { icon: Phone, label: 'Phone', value: '+966537727004', href: 'tel:+966537727004' },
   { icon: Mail, label: 'Email', value: 'info@intellectualcf.com', href: 'mailto:info@intellectualcf.com' },
-  { icon: MapPin, label: 'Location', value: 'Dubai, UAE', href: '#' },
+  { icon: MapPin, label: 'Location', value: 'Riyadh, Saudi Arabia', href: '#' },
 ]
 
 const SOCIALS = [
-  { icon: Facebook, label: 'Facebook', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
-  { icon: Instagram, label: 'Instagram', href: '#' },
+  { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/966537727004' },
 ]
 
 const schema = z.object({
@@ -165,7 +163,7 @@ export function Contact() {
           />
           <SectionReveal delay={0.08}>
             <p className="mx-auto max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
-              Tell us about your project and our team in Dubai will reach out.
+              Tell us about your project and our team in Riyadh will reach out.
             </p>
           </SectionReveal>
         </div>
@@ -214,12 +212,12 @@ export function Contact() {
             </div>
             <div className="card-airy relative min-h-[280px] flex-1 overflow-hidden p-2">
               <LazyMap
-                src="https://maps.google.com/maps?q=Dubai&output=embed"
-                title="Intellectual Creativity — Dubai, UAE"
+                src="https://maps.google.com/maps?q=Riyadh&output=embed"
+                title="Intellectual Creativity — Riyadh, Saudi Arabia"
                 className="h-full min-h-[260px] w-full rounded-lg"
                 placeholder={
                   <div className="flex h-full w-full items-center justify-center text-sm text-foreground/45">
-                    Loading Dubai map…
+                    Loading Riyadh map…
                   </div>
                 }
               />

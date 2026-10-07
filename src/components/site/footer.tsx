@@ -3,7 +3,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Facebook, Twitter, Instagram, ArrowUp } from 'lucide-react'
+import { MessageCircle, ArrowUp } from 'lucide-react'
 import { SectionReveal } from '@/components/motion/stagger-group'
 
 const QUICK_LINKS = [
@@ -21,9 +21,7 @@ const SERVICES = [
   'Building Automation',
 ]
 const SOCIALS = [
-  { icon: Facebook, label: 'Facebook', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
-  { icon: Instagram, label: 'Instagram', href: '#' },
+  { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/966537727004' },
 ]
 
 export function Footer() {
@@ -37,14 +35,14 @@ export function Footer() {
               <Image
                 src="/brand/logo-white.png"
                 alt="Intellectual Creativity"
-                width={220}
-                height={52}
+                width={300}
+                height={46}
                 loading="lazy"
                 className="logo-adaptive h-12 w-auto"
               />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Intellectual Creativity for Information Technology — a Dubai-based
+              Intellectual Creativity for Information Technology — a Riyadh-based
               IT &amp; telecommunications partner delivering telephone systems,
               networking, security and smart-building solutions.
             </p>
@@ -103,10 +101,10 @@ export function Footer() {
             <ul className="mt-4 flex flex-col gap-2.5 text-sm text-muted-foreground">
               <li>
                 <a
-                  href="tel:+9666666625"
+                  href="tel:+966537727004"
                   className="transition-colors hover:text-foreground"
                 >
-                  +9666666625
+                  +966537727004
                 </a>
               </li>
               <li>
@@ -117,7 +115,7 @@ export function Footer() {
                   info@intellectualcf.com
                 </a>
               </li>
-              <li>Dubai, UAE</li>
+              <li>Riyadh, Saudi Arabia</li>
             </ul>
             <a
               href="#contact"

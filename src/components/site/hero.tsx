@@ -56,7 +56,7 @@ export function Hero() {
           <SectionReveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-foreground/70 font-display">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan animate-status" aria-hidden />
-              IT &amp; Trading Specialists — Dubai, UAE
+              IT &amp; Trading Specialists — Riyadh, Saudi Arabia
             </span>
           </SectionReveal>
 
@@ -70,7 +70,7 @@ export function Hero() {
 
           <SectionReveal delay={0.12}>
             <p className="max-w-xl text-balance text-base text-muted-foreground sm:text-lg">
-              We Meant For Solutions &amp; Services. We are a Dubai-based IT &amp;
+              We Meant For Solutions &amp; Services. We are a Riyadh-based IT &amp;
               telecommunications partner delivering telephone systems, networking,
               security and smart-building solutions that keep businesses running.
             </p>

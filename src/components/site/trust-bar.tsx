@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { SectionReveal, StaggerGroup, StaggerItem } from '@/components/motion/stagger-group'
 
-const VENDORS = ['Cisco', 'Nokia', 'Siemens-Unify', 'Lucent-Alcatel', 'Avaya']
+const VENDORS = ['Microsoft', 'Intel', 'VMware', 'Oracle', 'Symantec', 'McAfee', 'HP']
 
 export function TrustBar() {
   return (

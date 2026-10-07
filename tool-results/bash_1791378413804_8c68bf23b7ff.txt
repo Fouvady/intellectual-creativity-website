@@ -1,0 +1,2823 @@
+=== try pdftotext ===
+/usr/bin/pdftotext
+Intellectual Creativity Foundation for Communications and Information Technology
+
+‫مؤسسة اﻻبداع الفكري‬
+‫لﻼتصاﻻت و تقنية المعلومات‬
+‫تحويل اﻷعمال والخبرة‬
+TRANSFORMATION OF BUSINESS & EXPERIENCE
+INTELLECTUAL CREATIVITY FOUNDATION FOR
+COMMUNICATIONS AND INFORMATION
+TECHNOLOGY
+
+Intellectual Creativity Foundation for Communications and Information Technology
+
+‫اﻻبتكار هو القدرة على اتخاذ‬
+.‫ كفرصة‬،‫التغيير‬
+INNOVATION
+IS THE ABILITY TO SEE CHANGE AS AN
+OPPORTUNITY
+
+Intellectual Creativity Foundation for Communications and Information Technology
+
+STRENGHT
+
+
+We have over 150 of the region’s best-trained IT consultants sharing
+the new information, being responsive to change, and working
+through problems & solutions together and taking part to the
+responsibilities towards the fast growing world of Technology.
+
+Solution
+WE OFFER BOTH SOFTWARE, SECURITY AND NETWORKING , SECURITY
+CONSULTING –LED INTEGRATED PORTFOLIO OF IT, AND IT-ENABLED
+SERVICES DELIVERED THROUGH ITS DISTINCTIVE BUSINESS DELIVERY
+MODEL, WHICH IS THE STANDARD OF EXCELLENCE THROUGH STRONG
+RELATIONSHIP AND VALUES.
+
+RESULTS
+
+
+Delivering competitively unmatched and guaranteed real business
+solutions in IT services and consultancy in the region
+
+Customer Centric Support
+
+
+Our Team deals in a variety of technology related platforms that
+expand from provising our end users with the best, transforming and
+reliable solutions aliging to the organic need with vendor support.
+
+Business Strategy
+
+
+The Business strategy we have adopted is a long-term plan of action
+designed to achieve a client’s satisfaction oriented business. Our
+strategy is to strengthen the performance of the enterprise class
+services to its clients in the region. We try and achieve the same
+through:
+
+
+
+Growth
+
+
+
+Business Opportunities
+
+
+
+Operational efficiency
+
+
+
+New Initiatives.
+
+
+
+Aligned consulting
+
+
+
+Reputation Risk
+
+
+
+Operational Risk
+
+
+
+Internal Efficiency
+
+
+
+Total cost of owner ship
+
+Business Solutions
+.
+
+We provide the below business offerings in the region
+Business Infrastructure
+
+Cloud Computing
+
+• Infrastructure Performance Analysis
+
+• Private Deployment
+
+• Storage IOPS – GAP Analysis
+
+• Hybrid Deployment
+
+• Microsoft Infrastructure Review
+
+• Public Deployment
+
+• Virtualization – Business Strategy
+
+• Infrastructure as a Services
+
+• Adoption – Open Source
+
+• Software as a Services
+
+• Communication & Collaboration
+
+• Platform as a Services
+
+Business Solutions
+Business Impact Analysis
+
+Business Consulting
+
+IOT And SAP HANA
+Initiatives
+
+• Disaster Recovery Consulting
+
+• Penetration Testing
+
+• SAP HANA
+
+• Business Continuity Strategy
+
+• Vulnerability Assessment
+
+• IoT Initiatives
+
+• Review of RTO/RPO
+
+• Network Design Audits
+
+• Business Intelligence
+
+• Traditional Backup
+
+• Network Design & Planning
+
+• HPC Solution
+
+• Appliance Backup
+
+• Data Center Design
+
+• Cloud Backup Services
+
+• Redundancy & Co-Location
+
+Business Solutions
+Risk Management
+
+Cybersecurity Initiatives
+
+• Risk Management
+
+• Web/email/Data Security
+
+• Mobile Device Security
+
+• Risk Detection
+
+• Firewall Solutions
+
+• Real-Time Classification
+
+• Risk Intelligence
+
+• Vulnerability Management
+
+• Anti-Malware Engines
+
+• Risk Landscape
+
+• Sandboxing
+
+• Reputation Analysis
+
+• IT Governance
+
+• Managed Security
+
+• Advanced Threat Dashboard
+
+ IT Compliance
+
+• Incident Response
+
+• Advance Threat Dashboard
+
+• Anti – Phishing Services
+
+• SIEM
+
+Our IT service Portfolio
+1.
+
+NETWORK INFRASTRUCTURE.
+
+2.
+
+PHYSICAL SECURITY.
+
+3.
+
+NETWORK SOLUTIONS.
+
+4.
+
+DATA SECURITY.
+
+5.
+
+DATA CENTER SOLUTIONS.
+
+6.
+
+UNIFIED COMMUNICATION & COLLABORATION.
+
+Network infrastructure
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+
+RACKS
+UPS SYSTEMS
+STRUCTURED CABLING
+ENVIRONMENT MONITORING
+RAISED FLOOR
+FIRE PROTECTION
+DATA CENTER DESIGN
+CRITICAL POWER COOLING.
+
+Physical security
+1.
+
+VIDEO SURVEILLANCE
+
+2.
+
+INTRUSION DETECTION
+
+3.
+
+UNIFIED REPORTING
+
+4.
+
+ACCESS CONTROL
+
+5.
+
+IDENTITY RECOGNITION
+
+6.
+
+SMS (SECURITY MANAGEMENT SYSTEM
+
+Network solutions
+1.
+
+LOAD BALANCING.
+
+2.
+
+NETWORK MANAGEMENT.
+
+3.
+
+WAN OPTIMIZATION ROUTING & SWITCHING.
+
+4.
+
+SDN (SOFTWARE DRIVEN NETWORKS).
+
+5.
+
+SDC (SOFTWARE DRIVEN DATA CENTER).
+
+Data security
+1.
+
+CONTENT MANAGEMENT.
+
+2.
+
+BYOD SOLUTIONS.
+
+3.
+
+DATA PROTECTION SOLUTIONS.
+
+4.
+
+DATA PROTECTION SERVICES
+
+5.
+
+SOFTWARE DEFINED DATA CENTER
+
+6.
+
+BUSINESS CONTINUITY & AVAILABILITY
+
+Datacenter solution
+1.
+
+CLOUD SOLUTION.
+
+2.
+
+IT VIRTUALIZATION.
+
+3.
+
+ENTERPRISE SERVERS
+
+4.
+
+CONVERGED INFRASTRUCTURE
+
+5.
+
+VIRTUAL DATA CENTERS SECURITY
+
+6.
+
+NEXT GENERATION SECURITY SYSTEMS.
+
+7.
+
+DATA SCIENCE & BIG DATA ANALYTICS.
+
+Unified communication &
+collaboration
+1.
+
+SMART OFFICES – CREATION.
+
+2.
+
+MOBILE COLLABORATION.
+
+3.
+
+IP TELEPHONY SOLUTIONS.
+
+4.
+
+CUSTOMER COLLABORATION.
+
+5.
+
+TELEPRESENCE SOLUTIONS.
+
+6.
+
+SOCIAL MEDIA COLLABORATION.
+
+Banking Architectures - Automation & Renovation Frameworks
+Resources, Portfolio & Operations - Automation
+• Project-Life-Cycle-Automation (Portfolio  Programs  Projects  Tasks), PMO’s Automation
+• Operations-Life-Cycle-Automation (Service-Strategy  Design  Transition  Operations  CSI), ITSM Automation
+
+Geographical Architecture - Automation
+• Head Office  Regional Offices  Branches  Contact-Centers  Cash-Centers  Investment-Centers 
+Remittance-Centers  ATMs  Data-Centers  Alternate-Data-Centers  Disaster-Recovery-Centers
+
+IT Infrastructure Architecture - Automation
+• Segments  Hardware  Software  Firmware  Storage  Database  Network  Backup  OS  NOS etc.
+
+IT Application Architecture - Automation
+• Back-Office  Front-Office  Infra-Apps  Security-Apps  Governance-Apps  Monitoring-Apps  Business-Apps
+(RBG, CBG etc.) Core & Non-Core-Banking  Integrations  ETLs  Middleware  Batch Process  Web-Services
+
+IT Business Architecture - Automation
+• Retail-Banking  Corporate-Banking  Investment-Banking  Remittance-Banking  Trade-Finance etc.
+
+Client & Customer Serving Architecture - Automation
+• Provisioning Professional Individuals  Bulk-Recruitment  Managed-Services  Helpdesk-Management etc.
+
+Clients & Customers-Architecture is Managed by Business-Architecture is Managed by Applications-Architecture is Managed by InfrastructureArchitecture & Resides in Geographical-Architecture. All-Architectures are Managed by Organization’s Resources, Process & Functions.
+
+Resources &
+End-Users
+
+Organization’s
+Resources, Process
+and Functions
+
+A
+
+Geographical
+architecture
+
+Head-Office,
+Regional-Office,
+Contact-Centers,
+Cash-Centers,
+Cheque-ProcessingCenters, RBG/CBGBranches,
+Remittance-Centers,
+Investment-Centers,
+Data-Centers &
+Alternate-DataCenters: Is Operated
+& and Managed
+by Its
+B
+Staff or Users.
+
+Infrastructure
+architecture
+
+Hardware, Software,
+Networking, Storage,
+Information Security
+and Compliance: ITInfrastructureArchitecture resides
+onto Geographical
+C
+Architecture.
+
+Applications
+architecture
+
+Core & Non-core
+applications:
+ApplicationsArchitecture resides
+onto IT-Infrastructure
+Architecture for its
+compositions,
+executions,
+operations &
+D
+transformation.
+
+Business
+architecture
+
+BusinessDepartment/Entity
+Strategies &
+Architecture resides
+onto Application
+Architecture for its
+compositions,
+executions,
+operations &
+E
+transformation.
+
+Client &
+Customer
+
+Client & Customer:
+Needs are fulfilled &
+Delivered by Business
+Department.
+
+F
+
+We Serve our clients to supplement their organization with implementing entire turnkey-systems & solutions as a solution provider or
+undertaking programs & projects, maintaining IT services, operations, infrastructure & applications as a service-provider, providing
+contract staff or completely outsource their department & units
+
+Banking Architecture - Automation & Renovation
+
+Clients & Customers-Architecture is Managed by Business-Architecture is Managed by Applications-Architecture is
+Managed by Infrastructure-Architecture & Resides in Geographical-Architecture. All-Architectures are Managed by
+Organization’s Resources, Process & Functi
+
+F
+
+Clients &
+Customers
+
+• Clients & Customers Interacts via eChannels, Branches, Remittance-Centers, InvestmentCenters, ATMs and POS etc.
+• Our Managed-Services: Serve Entire Client/Customer Serving Bodies
+
+Business Dept.
+
+E
+
+D
+
+(Serve Clients / Business)
+RBG, CBG, Investment
+
+• Our Managed-Services serve Client in building its: Business Architectures
+(Formation, Implementation & Maintenance)
+
+Apps Implementation & Support
+(Serve Organization’s Business)
+CBS, Back-Office & Business Apps
+
+C
+
+Infrastructure Implementation & Support
+(Serve Organization’s Applications)
+DC, ADC, DRC, Servers, Network, Storage etc.
+
+B
+
+Geographical Setup & Support
+(Holds Organization’s Infrastructure)
+Head Office, Regional Offices, Branches, Remittance-Centers,
+Contact-Centers, Cash-Centers etc.
+
+A
+
+Resources, Portfolio & Operations Management
+(Resources, Manages the all above Architectures & Operations)
+Resources, End-users, Teams, Departments Manages Portfolios & Operations
+
+• Our Managed-Services serve Client in building its: Application
+Farm/Architectures (Formation, Implementation & Maintenance)
+
+• Our Managed-Services serve Client in building its:
+Infrastructure Architectures (Formation, Implementation
+& Maintenance)
+• Our Managed-Services serve Client in building its:
+Geographical Architectures (Formation,
+Implementation & Maintenance)
+• Our Managed-Services serve Client to
+Automate (PMO & ITSM) &
+Consolidate Resource, Process &
+Function
+
+Resources, Portfolios & Operations Automation
+
+Resources, Process (Portfolio & Operations) and Functions (hierarchy) Automation - PMO &
+ITSM Automation & Consolidation
+
+
+
+For PMO’s: It’s quite time taking routine (daily, weekly, monthly, quarterly etc.) to manually Manage each & every delegate, Sequence, Compose & Distribute all “Portfolios & Operations” “Updates &
+Reports” to Management & Delegates, Hence We Provide a Complete Customized ITSM’s Flow Automation/Solution by which Management can trace/react with the latest/historic updates of their ongoing
+Portfolios & Operations with a single click.
+
+
+
+a.
+
+Portfolio Flow (Programs, Projects and Tasks) in its Project-Life-Cycle (PMI Methodology)
+
+b.
+
+Operations Flow (Strategy, Design, Transition, Operations and CSI in its Production-Life-Cycle (ITIL Methodology)
+
+Benefits:
+a.
+
+Accurate Portfolios & Operations Management, Accurate PMO’s Process Automation
+
+b.
+
+Instant Management/Updates/Follow-ups/Escalations/Reporting of each & every individual involved & all happenings in entire Portfolios & Operations.
+
+c.
+
+Root Cause Analysis & Performance Measurement Report: Knowledge of each & every resources activities & their performance report with how each resource is currently handling the tasks (latest)
+& how he was handling earlier (historic)
+
+d.
+
+Statistics: how many resources are involved in each program/project (who are all involved) & which resource is engaged in how many projects/tasks.
+
+e.
+
+Eliminating the tracking/following-ups need via emails, documents & reports etc. Eliminating resources dedicated to perform reporting & follow-up & escalation activities.
+
+f.
+
+Centralized Repository containing all information about entire Portfolios & Operations including Updates, Data, Documents/Attachments and Emails etc. (AD Integrated)
+
+A
+
+Resources, Process (Portfolio & Operations) and Functions (hierarchy) Automation - PMO -Department Automation & Consolidation
+
+Portfolio
+
+IT
+
+Programs
+
+IT Infrastructure
+
+IT Infra
+Upgradation
+
+Projects
+Assessment
+
+Tasks
+A
+
+B
+
+C
+
+Core Banking
+Revamp
+
+Decisions
+
+D
+
+E
+
+Per Resources
+Status
+
+Resource-1
+(Dev)
+
+Current
+Activity in
+Proj-A
+
+Resource-2
+(Infra)
+
+Current
+Activity in
+Proj-B
+
+Resource-3
+(Apps)
+
+Current
+Activity in
+Proj-c
+
+Resource-4
+(InfoSec)
+
+Historic
+Record in
+Proj-A
+
+Resource-5
+(Proc)
+
+Historic
+Record in
+Proj-B
+
+IT Applications
+
+IT Infra
+Renovation
+
+Conclusions
+
+Per Project
+Status
+
+Non-Core
+Banking Apps
+Upgradation
+
+Implementations
+
+F
+
+G
+
+H
+
+Resources
+Latest Updates:
+1. Integration reviews ongoing
+
+Historic Updates
+1. Batch-Process reviewed & Report submitted
+2. Web-Services reviewed & Report submitted
+3. ETLs reviewed & Report submitted
+
+Updates
+
+Historic
+Record in
+Proj-C
+
+4. Middle-ware reviewed & Report submitted
+
+Strategy
+
+Initialization
+Design
+
+Planning
+Transition
+
+Execution
+Operations
+
+Monitoring
+Closure
+
+CSI
+
+B Head Office  Regional Offices  Branches  Data-Centers  Alternate-Data-Centers  Disaster-Recovery Centers Automation & Consolidation
+As an enterprise industry, banking is a business that indeed executes its operations by geographically spreading itself across & operates through Each Premises segregated in the form of Departments
+with their relates, commitments & assignments, Each Department has its own nature of dedicated deliverables segregated in the form of multiple Groups & Units, Each Group has its own nature of
+dedicated deliverables segregated to each Staff as roles/designations. Hence we involve & assist in establishing overall setups from IT perspectives using the following strategies:
+OS Master Images, Profiles Standardization & Naming Conventions: for Efficiency & Enhancements, Remote-Support, Inventories and Audits Activities and ease Deployments, Each Profile Compliance
+for Staff productivity (by configuring their desktops/profiles in a way by which they can not do any further than their assignments.
+ Based upon Premises: Head-Office, Regional-Office, Contact-Centers, Cash-Centers, Processing-Centers, RBG/CBG-Branches, Remittance-Centers, Investment-Centers, Data-Centers and
+Alternate-Data-Centers etc.
+ Based upon Regions: Central-Region, Eastern-Region, Western-Region, Northern-Region and Southern-Region etc.
+ Based upon Cities: Makkah, Medina, Dammam, Jeddah and Riyadh etc.
+ Based upon Computers: Managers, Supervisors, Tellers and Customer-Service etc.
+
+Cash-Centers
+Cheque-ProcessingCenters
+RBG/CBG Branches
+Remittance-Centers
+Investment-Centers
+Data-Centers
+Alternate-DataCenters
+
+Makkah
+
+Eastern-Region
+
+Medina
+
+Western-Region
+Northern-Region
+Southern-Region
+
+Dammam
+Jeddah
+Riyadh
+
+Managers
+•wsruhb100m01
+•wsruhb100m02
+Supervisors
+•wsruhb100s01
+•wsruhb100s01
+Tellers
+•wsruhb100t01
+•wsruhb100t02
+Customer Support
+•wsruhb100c01
+•wsruhb100c02
+
+Managers
+
+Users Naming Conventions
+
+Contact-Centers
+
+Central-Region
+
+Computers Naming Conventions
+
+Regional Offices
+
+Cities Naming Conventions
+
+Head Offices
+
+Regional Naming Conventions
+
+Premises Naming Convention
+
+ Based upon Users-Groups: Managers (Mr. A, Mr. B etc.), Supervisors (Mr. C, Mr. D etc.), Tellers (Mr. E, Mr. F etc.)
+
+•Mr. A
+•Mr. B
+Supervisors
+•Mr. C
+•Mr. D
+Tellers
+•Mr. E
+•Mr. F
+Customer Support
+•Mr. G
+•Mr. H
+
+B Head Office  Regional Offices  Branches  Data-Centers  Alternate-Data-Centers  Disaster-Recovery Centers Automation & Consolidation
+As an enterprise industry, banking is a business that indeed executes its operations by geographically spreading itself across & operates through Each Premises segregated in the form of Departments
+with their relates, commitments & assignments, Each Department has its own nature of dedicated deliverables segregated in the form of multiple Groups & Units, Each Group has its own nature of
+dedicated deliverables segregated to each Staff as roles/designations. Hence we involve & assist in establishing overall setups from IT perspectives using the following strategies:
+OS Master Images, Profiles Standardization & Naming Conventions: for Efficiency & Enhancements, Remote-Support, Inventories and Audits Activities and ease Deployments, Each Profile Compliance
+for Staff productivity (by configuring their desktops/profiles in a way by which they can not do any further than their assignments.
+ Based upon Premises: Head-Office, Regional-Office, Contact-Centers, Cash-Centers, Processing-Centers, RBG/CBG-Branches, Remittance-Centers, Investment-Centers, Data-Centers and
+Alternate-Data-Centers etc.
+ Based upon Regions: Central-Region, Eastern-Region, Western-Region, Northern-Region and Southern-Region etc.
+ Based upon Cities: Makkah, Medina, Dammam, Jeddah and Riyadh etc.
+ Based upon Computers: Managers, Supervisors, Tellers and Customer-Service etc.
+
+Cash-Centers
+Cheque-ProcessingCenters
+RBG/CBG Branches
+Remittance-Centers
+Investment-Centers
+Data-Centers
+Alternate-DataCenters
+
+Makkah
+
+Eastern-Region
+
+Medina
+
+Western-Region
+Northern-Region
+Southern-Region
+
+Dammam
+Jeddah
+Riyadh
+
+Managers
+•wsruhb100m01
+•wsruhb100m02
+Supervisors
+•wsruhb100s01
+•wsruhb100s01
+Tellers
+•wsruhb100t01
+•wsruhb100t02
+Customer Support
+•wsruhb100c01
+•wsruhb100c02
+
+Managers
+
+Users Naming Conventions
+
+Contact-Centers
+
+Central-Region
+
+Computers Naming Conventions
+
+Regional Offices
+
+Cities Naming Conventions
+
+Head Offices
+
+Regional Naming Conventions
+
+Premises Naming Convention
+
+ Based upon Users-Groups: Managers (Mr. A, Mr. B etc.), Supervisors (Mr. C, Mr. D etc.), Tellers (Mr. E, Mr. F etc.)
+
+•Mr. A
+•Mr. B
+Supervisors
+•Mr. C
+•Mr. D
+Tellers
+•Mr. E
+•Mr. F
+Customer Support
+•Mr. G
+•Mr. H
+
+B Head Office  Regional Offices  Branches  Data-Centers  Alternate-Data-Centers  Disaster-Recovery Centers Automation & Consolidation
+Active-Directory-Group-Policy and Organization-Units Design Compositions: “Compliance & Governance Framework”
+To best manage resources time & efforts, security and compliance implementations: Like Head-Office though has multiple departments & groups, we leverage & can develop profiles based on the
+functionalities upon analysis & standardize: Non-technical-profiles like: Managers, Supervisors & Users (users couldn’t be able to perform else other than they are supposed to work on: This will
+increase the productivity, efficiencies & decrease time/efforts). We’ll deliver so via Active-Directory-Group-Policy-Configurations. Technical-profiles like: Developers (SIT & UAT), Implementers
+(Production), OS, Applications & DB Admins Profiles, Remote-Users (Internal-Staff / Consultants / Vendors-National/International) to secure environments (SIT, UAT, Production, DR & DMZ etc.)
+ Standardization of Department Profiles: Information-Technology, Retail-Banking-Group and Corporate-Banking-Group etc.
+ Standardization of Group’s Profiles: IT (Production-Support, UAT-Support, SIT-Support and DBAs, etc.)
+ Standardization of Computer’s Profiles: OS-Configurations, Network-Configurations and Applications-Configurations etc.
+ Standardization of User’s Profiles: Managers-Profiles, Supervisors-Profiles and Users-Profiles etc.
+
+Active-Directory-Groups (Security-Groups) & Email-Groups (Distribution-List) Formation:
+To Streamline, Optimize and Standardize Data, Files and Shared-Folders access, since banking is an entity consist of hundreds and thousands of Users. Hence we upon analysis upon uniquely reviewing
+staff functions to enable data security, easy management via ease distribution of Data and emails as since an establishment need to have essentially an appropriate & flexible groups structure to secure
+Data and grant access according to the hierarchy structure only. Upon successfully collecting info, we will develop and implement Active-Directory-Groups along the Share-Folder Structure & Personal
+Folders in the storage farms like NAS/SAN etc. to assign appropriate permissions. We will even contribute in consolidating the existing scattered data to re-organize and streamline accessmanagement and document management solutions...
+
+C We provide clients with complete, latest & robust infrastructure setup framework resulting in enhancement of business efficiency, security,
+and growth in today’s digital landscape.
+
+ Servers
+ Desktops & Laptops
+ Printers & Scanners
+ Backup & Storage elements
+ Power & Cooling elements etc.
+
+ Data Centers
+ Alternate Data Centers
+ Disaster Recovery Centers
+etc.
+
+ Routers
+ Hubs & Switches
+ Gateways
+ Cabling
+ LAN / WAN / WIFI etc.
+
+ Operating Systems
+ Building Management System
+ Cameras & Door Access Systems
+ Back-Office Systems (Active Directory,
+Share-point & Exchange, etc.
+
+ Firewalls
+ Cyber-Security
+ Information-Security
+ Group-Policies
+ Governance, Risk & Compliance etc.
+
+Key Benefits of a well-designed IT infrastructure:
+ Improved efficiency, Productivity, Enhanced Protection & data security,  Increased scalability to accommodate growth,  Reduced IT costs through better resource
+management,  Improved collaboration and communication within the company,  Instant response resolutions to IT issues and emergencies
+
+C Outsourcing: We provide clients with entire hassles free Infrastructure outsourcing framework via beneath, enabling client focusing entirely
+towards business growth, enhancements, expansions & remain competitive.
+
+Infrastructure Assessment
+
+Infrastructure Implementation
+
+Infrastructure Maintenance
+
+Infrastructure Management
+
+Offers best Infrastructure Assessment
+
+We provide clients with complete, latest
+
+We provide clients with not just
+
+Turnkey-System: We Provide Entire
+
+Consideration Options Upon
+
+& robust infrastructure setup
+
+maintenance, but Transform Managed
+
+Infrastructure Assessment,
+
+reviewing the unique needs of Client,
+
+framework resulting in enhancement of
+
+Services Architecture & Consolidate
+
+Implementation, Maintenance &
+
+its goals, and budget.
+
+business efficiency, security, and growth
+
+Infrastructure, for enhanced business
+
+Management from Start Till End, From
+
+in today’s digital landscape.
+
+availability & continuity via Innovation,
+
+Initialization till Closure, From Project
+
+Automation & Optimization
+
+Life-Cycle to Operations Life-Cycle
+
+C IT infrastructure is the core on which the success of a business is built. Security and flexibility of organization depends & comprised in its IT
+infrastructure. We do Analysis  Implementations  Maintenance  Management (Outsourcing / Managed Services)
+
+3
+
+2
+
+1
+
+IT-Infrastructure Composition
+Infrastructure Managed-Service provide
+clients with complete, latest & robust
+infrastructure
+setup
+resulting
+in
+enhancement of business efficiency,
+security, and growth in today’s digital
+landscape.
+
+IT-Infrastructure Maintenance
+We provide clients with not just complete
+infrastructure
+maintenance,
+but
+Transforming
+Managed
+Services
+Architecture & Consolidating backend
+services platform, for enhanced business
+availability & continuity via Innovation,
+Automation and Optimization
+Adapting: Operations-Life-Cycle (ITIL)
+
+IT-Infrastructure Outsourcing
+We provide clients with complete,
+efficient IT Infrastructure Management
+enabling organizations perform better
+and adopt the latest technologies better
+suited to their needs, helping them
+survive in complex environments and
+remain competitive via either Onsite or
+Offshore Infrastructure (IAAS & PAAS)
+Adapting: Information Technology Service
+Management (ITSM)
+
+Adapting: Project-Life-Cycle (PMP)
+
+We Serve our clients to supplement their organization with implementing entire turnkey-systems & solutions as a solution provider or undertaking programs & projects, maintaining IT
+services, operations, infrastructure & applications as a service-provider, providing contract staff or completely outsource their department & units
+
+C Renovation: We provide clients with not just complete infrastructure maintenance, but Transforming Managed Services Architecture &
+Consolidating backend services platform, for enhanced business availability & continuity via Innovation, Automation & Optimization
+
+We Design, Propose, Demonstrate and Deliver with Latest Microsoft frontend, backend & back-office renovation Infrastructure Architecture as part of Continues-ServiceImprovement: comprises of multi-site, multi-environment & virtualization/cloud computing to: Accommodate existing needs at its best & future growing business overloads. To
+enable day-to-day support staffs well understand easy & meaningful infrastructure concepts instead remembering it. Maintain & enhance uniformity. Latest Infrastructure
+Architecture Design, Improvements & Enhancements with the best suitable strategies Includes but not limited to:
+
+Renovating, Upgrading & Migrating from the existing to latest Back-end AD & Back-Office, Backend & Front-ends upgradation, Implement latest comprehensive front-end &
+backend Analytical & comprehensive naming conventions & IP Schemes, Servers Physical, Logical SAN Disks/storage segregations, Mailbox Sizes Grouping & segregations,
+configurations standardizations, re-organize Groups, Group-policies & Security policies, Organization-Units, Assigned Rights. Cross-checking/delivering all business-related
+apps functionalities & integration with other platforms in co-ordination with multiple vendors, Department, Teams, Management, Process and Functions. Virtualization/Cloud:
+To minimize the physical maintenance & enhance management & support: implemented Virtualization/Cloud Migration of All Physical Back Office, Apps and Resource Servers
+to Virtual/Cloud Enhanced Capacity servers & workstations as Migration from Physical to Virtual Servers (virtualization).
+
+Security & Compliance Hardening: enabled auditing of Enterprise & Domain Admin credentials to track & maintained approved controls. Re-evaluate Local Admin Access by
+the concerned staff direct manager, management & information security management to justify the need & grant or reject the privileges. Integration-Layer
+Uniformity/Standardization with other apps, services & shares standardization using only service account to enhance security & uninterruptable functionality (due to the nonexpiry & other dependencies unlike normal user accounts. Composition of Baseline Standard forms, Preventive Maintenance Checklists, Procedure Manuals, Organized Assets
+Inventory & Release/Patch Management Process & Implementation for Domain, DNS, DHCP, Messaging System & Document Management system hosting.
+
+Updates & Releases Automation, Apps, Antivirus. H/W & S/W Inventory of IT Assets, Automated Monitoring Critical Services and Resources Alerts Generations, Incident
+Creations & automated resolutions upon approvals. Enhance Alerts, Event & Incident Management. Storage Segregation and allotment: as Dedicated Software Repository,
+Department File Repository, Users Home Drives Mapped to back up their important data on centralized & safe location in SAN. Standardization of daily, weekly, monthly
+backups.
+
+C We provide clients with complete, latest & robust infrastructure setup framework resulting in enhancement of business efficiency, security,
+and growth in today’s digital landscape.
+
+We understand the Client's Core
+Purpose of an IT infrastructure &
+aids to solve by composing it to
+achieve goals & implement the
+business strategy via
+
+For well-building client’s IT
+Infrastructure: we implies
+
+• Reducing cost for IT Projects
+• Simplifying scaling
+• Increasing the organization's productivity
+
+• Convenient, secure storage and data management
+• Network interaction support, collaborating devices and users
+• Optimal distribution of computing resources
+• Data Protection: unauthorized access and leaks
+• Providing core & noncore applications/services for business execution.
+
+Provide the following IT
+Infrastructure frameworks Types
+
+• Traditional Infrastructure Framework: implies an on-premises/on-site approach, Provisioning with hardware, software, network & security.
+• Cloud Infra: we provides the placement of IT infrastructure components with a cloud provider & maintain uninterrupted operation, along
+technical support and managing it remotely.
+• Hybrid Infra: we provide combined traditional and cloud IT infrastructure “partial infrastructure on client’s premises and partial in cloud services.
+allowing client to evenly distribute the available capacity.
+
+IT Infrastructure Creation from
+Scratch by considering the
+unique needs of the company,
+its goals, and budget.
+
+• Assessment & Variation of Organization’s technological needs depending upon domains (Banking, Telecom, Government/Military, Oil & Gas,
+Hospitals, Mid & Small sized etc.) Data/Resource Management
+• Developing comprehensive IT Architecture setup: hardware, software, network etc. Procuring approved assets/renting / cloud service.
+• Deployment of entire IT infrastructure using best professionals & testing/evaluating to ensure optimal performance, security, and functionality.
+
+C We provide clients with not just complete infrastructure maintenance, but Transforming Managed Services Architecture & Consolidating
+backend services platform, for enhanced business availability & continuity via Innovation, Automation & Optimization
+
+Efficient IT Infrastructure Management Services is key for the efficient operation of modern businesses. Hence we provision supporting daily operations, enhancing security, and
+ensuring scalability, enabling client meeting evolving technological demands. As businesses depend more on technology for service delivery, data management, and
+collaboration, a well-optimized IT infrastructure is crucial for maintaining competitiveness and achieving long-term success. Hence our Service infrastructure management plays a
+vital role in ensuring that systems are secure, reliable, and efficient, contributing directly to business continuity and growth. Key services include:
+
+Ensures Business Continuity
+
+Enhances Security
+
+Downtime can be
+devastating for businesses,
+leading to lost revenue and
+a damaged reputation.
+Hence our IT infrastructure
+management ensures that
+systems are consistently
+monitored and maintained,
+minimizing the risk of
+outages and ensuring
+business continuity. With
+proactive management,
+issues can be detected and
+resolved before they
+escalate.
+
+As businesses become more
+dependent on digital
+technologies, the risk of
+cyber threats increases.
+Thus our IT Infrastructure
+Management Services
+incorporates robust security
+practices, such as regular
+updates, firewall protection,
+and data encryption, to
+protect sensitive information
+and ensure compliance with
+regulatory standards. This is
+crucial to maintain customer
+trust and prevent costly
+security breaches.
+
+Optimizes Performance and
+Efficiency
+
+Supports Scalability and
+Growth
+
+By monitoring the
+performance of entire
+infrastructure, businesses
+can optimize resource
+allocation, streamline
+workflows, and ensure that
+all infrastructure
+components are operating
+at peak efficiency. This leads
+to improved productivity,
+faster decision-making, and
+reduced operational costs.
+
+As businesses grow, their IT
+needs evolve IT
+Infrastructure Management
+Services ensures that
+infrastructure can scale to
+meet growing demands,
+whether that involves
+adding more servers,
+upgrading software, or
+integrating cloud services.
+As a scalable IT
+infrastructure is key to
+supporting business growth
+without disruptions.
+
+Reduces IT Costs
+
+Our Efficient Infrastructure
+management allows
+businesses to identify and
+eliminate inefficiencies,
+optimize resource usage,
+and extend the life of
+hardware. This results in
+significant cost savings over
+time, as businesses can
+avoid costly downtime and
+reduce the need for
+frequent upgrades.
+
+D IT Applications: Analysis  Implementations  Maintenance  Management (Outsourcing / Managed Services), Banking-Applications-Framework: Retail-Banking 
+Corporate-Banking  Investment-Banking  Remittance-Banking  Web-Services  Batch-Process  ETLs  Integration Automation & Consolidation
+
+Comprehensively Banking Applications-Architecture prospective is entirely dominant by Business-Delegates-Strategies via which it
+operates: The most robust applications & its architecture it possesses: the most influential it is.
+Enable its client’s Application Management shifts the focus of IT from technology performance to business performance by
+acquiring and Implementing client’s applications to production upon reviewing business needs, evaluating multiple vendors,
+solution & service providers, and evaluating software functionalities, Supporting and Maintaining in Production & Enhancing with
+several automations, batch process, services, settings & other configurations on timely basis in Co-Ordination with Vendors,
+Solution Providers, Service Providers, Various IT departments & Teams and business representatives.
+
+E Banking & Telecom: Business-Analysis, Renovations & Transformations | Functions & Process Improvements
+Extensively Banking Business-Delegates-Strategies prospective is entirely dominant by its Clients & Customer Satisfaction extent, To Achieve Best results, banking-business-delegates will
+struggle to enquire & deliver what their Clients & Customer needs are. The digital era demands a new approach to business management. Companies need to continuously innovate, evolve
+and integrate their strategies to achieve better business outcomes. In an era of consumerism, digital and data disruption, clients are examining their business and operating models to find a
+solution that will enable a step change in performance. Superior decision making, business outcomes and customer experiences is being achieved by clients prepared to reinvent business
+processes with “intelligent operations” that harness talent, data, and intelligence to deliver the right information where and when it's needed.
+revolutionizing the way business strategies are developed and managed with Liquid Application Management. Our approach to New IT enables our clients to automate their business,
+consolidate IT to improve efficiencies across people, applications and vendors, and to achieve unparalleled speed, agility, productivity and efficiency gains.
+As a liaison between Business & IT, Transformed numerous banking processes from Manual to web-based-Automations delivering in compliance with Business-Application-Infrastructure
+Architectures to benefit bank Business building resilience & to stay with the abreast of renovation, to Increased Accuracy, Quality, Service & Operational efficiencies (missed-entries, records,
+wrong-feeds,
+
+resource-absent
+
+or
+
+left),
+
+Accurate Calculations,
+
+Applying-Exact-Business-Rules
+
+per
+
+each
+
+&
+
+every
+
+record,
+
+Streamlined-Hierarchical-Reviews-Approvals,
+
+Validations/confidentiality, Automated generated entries as logs for Reviews, Audits & Governance to be accessed instantly. Minimize human error across a wide array of activities, Minimized
+Time & Efforts utilized etc.
+will Interact with Business to Gather-Detailed-Requirements, Initiate-Process along Documentation-Compositions (like: PDMs, KOMs, BRDs, PIAs, Detailed-Project/Quality/Resource/RolloutPlans,
+
+RFI/RFQs,
+
+Vendor-Evaluations/Contracts,
+
+Solutions/Technical-Design-Documents,
+
+Deployments/Implementations, Closure-Documentation/Process/Reporting) etc.
+
+Developments
+
+&
+
+UATs,
+
+Training/User/Operations-Manuals-Checklist-Procedures,
+
+F
+
+Operations Support Services - Automation
+Operations 4 phased Support: Acquire  Stabilize  Modernize  Optimize Clients Services for Business Continuity
+
+Executive Abstract
+ Aligning the transition, migration
+and transformation of Client
+support management to your
+technology strategies and key
+business objectives enables you to
+achieve long-term cost reductions,
+service
+improvements
+and
+optimized service use.
+ support management solution
+provides a combination of flexible
+services to help you transition to a
+stabilized
+environment
+and
+ultimately transform to fully
+optimized, leveraged end-user’s
+operations.
+
+Technical Abstract
+ Precisely: upon acquisition, retaining it overall with current ongoing operations life-cycle.
+ Secondly as part of continuous service improvement process CSI, with all deep analysis, rootcause-analysis, will gather reviews from client’s existing Infrastructure, Business and applications
+architecture from various previous support summaries, reports, business delegates, IT
+departments and teams, Vendors, Solution and service providers,
+ will re-establish, implement and segregate to streamline process, functions and resources with
+the entire front-end banking infrastructure management proficient to afford large branch
+network and operations by transforming business all collection requirements into well working
+systems, solutions to ease front-ends continues, daily, weekly, monthly and yearly tasks and
+operations via
+ applying strict following the best support hierarchy (upon developing professional operationsflows, steps, procedures, checklist, forms and operations manual for Management, Technicalsupport & users).
+
+F
+
+Operations Support Services - Automation
+Operations 4 phased Support: Acquire  Stabilize  Modernize  Optimize Clients Services for Business Continuity
+
+When transitioning responsibility to a
+service provider, the most important
+thing is stabilizing the IT environment.
+Changes should be kept to a minimum
+until the existing support environment
+is stable. Matching service levels to you
+needs, we manage and monitor your
+support in the stabilized environment
+24 hours a day, seven days a week. As a
+result, support reliability, security, and
+recoverability increase.
+
+1
+
+Transitioning to a new service provider
+and services create an opportunity for
+you to make improvements to your
+existing front-end environment. When
+taking over support environment, we
+automate service delivery, standardize
+platforms, applications & provide
+decision-support tools for better
+managing your business. During the
+transition, we continue consolidating
+front-ends to eliminate redundancy.
+
+2
+
+Simplifying and modernizing your frontend infrastructure and application stack,
+creating a shared-services front-end
+environment, and making sure your
+users and customers have consistent
+access to data are key features of
+optimizing your front-end environment.
+We help you realize additional business
+value by automated and remote
+support to increase usage of existing
+assets.
+
+3
+
+F
+
+Operations Support Services - Automations
+Helpdesk Process Management System Framework “End-user and Deskside support Service”
+
+Why We? Rather any Deskside support vendors maintain dedicated Deskside support only and rest various banking frontend products has
+additional support providers and contracts, in which bank’s hassles is to: Manage maintaining numerous solutions and service providers and
+contracts, Suffer Support latencies: as often vendors will not accept the accountability of except their products.
+
+Hence we brought a single overall frontend-support-solution to delivers end-user’s overall requirements and offers Implementation & Support Services platform
+(frontends & backend: Hardware-Setup, Network-Setup, OS-Setup, Applications-Setup including Information-Security/Compliance). We have assisted customers
+with the successful deployment of similar business solutions; we are committed to Banking’s success and is confident that our solution addresses Client’s critical
+business requirements.
+
+Aside from hardware and software organizations, We interact with industry leaders Microsoft, McAfee, Symantec, VMware, Intel, SQL, Oracle and business & client’s applications to provide
+best-in-class integrated business solutions consisting of hardware, software and services. The result is a top-performing environment for your business applications delivery maximum
+efficiency, security, productivity, and user satisfactions - geared to how you do business.
+We will suggest you with the best upon which you can select and define which services to use, how to use them, what products to employ, and which security policies to enforce. Using our
+skills, experience, and resources, we not only optimize your current environment, but also advise on and implement programs to improve performance, reduce your total cost of ownership,
+and help enhance the quality of your professional support systems.
+
+F
+
+Operations Support Services
+Helpdesk System Framework “End-user and Deskside support Service”
+
+Help Desk: A single point of contact (Management and consolidation of contract, Parts ordering and management, Single source for problem reporting, escalation and resolution). We’ll provide
+you an online web based Helpdesk system:
+ To log daily problems, track / monitor the status / progress, close them with confirmation.
+ Review them monthly/quarterly/yearly know what was served & to improve further if you feel like.
+ Maintaining Reporting kind of functionality. This will help each one of us to be in sync every often being anywhere.
+ Auto escalation emails with every 3 hours if status left unchanged.
+Help Desk Professional: We’ll provide you with helpdesk personnel:
+ On daily basis, they will be calling each branch every morning to inquire about the system.
+ If there is any problem, they will immediately log the problem in the system & simultaneously arrange an engineer to work on it.
+ Will call engineers every hour to know & update current status.
+ To offer support in ladies & gents, we’ll assign ladies & gents to deal with Client’s personals comfortably. They will be eligible & fluent in English & Arabic speaking.
+ They will enquire & close the logs by the branch personnel verbal, email & dully-form-user-signed confirmations.
+Support Professionals:
+• We’ll provide resident professional field engineers to support Client’s enterprise.
+• Client doesn’t have to guide on every visit with steps to resolve problems by phone spending their time & energy.
+• If enterprise/organization/client provides them remote access, then they could solve their problems remotely with a less time saving their travelling time.
+Support Professional Tools:
+• We’ll provide complete tool kit along including Cable tester, software & firmware etc. for each engineer to resolve Hardware, Software, Operating System, Application & configurations raised
+issues.
+• If an engineer is visiting any branch, he doesn’t have to come back without user acceptance & signed confirmation.
+• We’ll provide complete Checklists, Forms, Procedures & Documents for professional smoother & convenient service delivery.
+In Precise Offers with:
+• Help-Desk System to Log a problem online being anywhere.
+• Help-Desk Members to enable efficient service delivery.
+• Resident Professionals of Solution to Support enterprise/client/organization in each region (Eastern, Central & Western Region).
+• the entire tool kit for each engineer to resolve problems in terms of LAN cabling, software Hardware, Software, firmware, Operating System & Applications level tools along with media to
+resolve problems in single visit itself.
+
+F
+
+Project Support Services
+Project Management & PMO, ITIL & ITSM, Business Continuity Framework
+
+IT Projects Management:
+PMs Team wills establish relationship with various internal / external stakeholders, to garner support required for the projects. Analyze business and technical objectives. Plan,
+Segregate, Formulate & Scope business & systems requirements from Big Picture to detail level work breakdown structure. Executing, Monitoring & Delivering project plans
+keeping a close track of the developments & progress within pre-set budgets and scheduled deadlines by self or by directing & monitoring staff throughout the implementation,
+updating the top management & ensure that all business requirements are incorporated into the design & delivered within time, cost & effort parameters. Keeping abreast of
+SAMA, company strategy and policy and being able to identify its impact on projects & Testing business applications from business perspective. Perform ad hoc analysis and
+problem investigation as needed by acting as a liaison between business & technical stakeholders. Documenting & writing business requirements, cases, statements of work and
+specifications in a manageable and non-intrusive way.
+ITIL & ITSM Management:
+Highly Skilled & Experienced in Service Design, Transition, Operations & Continual Service Improvement best practices & processes and also helping transitioning the existing set
+of clients to the Global process standard. Proficient in working in the domains of Service Level Mgmt., Availability Mgmt., Capacity Mgmt., Change Mgmt., Information Security,
+Release & Deployment Mgmt., Evaluations, Knowledge Mgmt., Operations Mgmt., Technical Mgmt., Service Desk Mgmt., Applications Mgmt., Access Mgmt., Incident, Event &
+Problem Mgmt., Service Reporting & Measurement.
+Business Continuity & Disaster Recovery Management:
+Possess Remarkable experience in managing & implementing business continuity plans & executions. Expertize in & creating a complete as such production banking
+applications replica in Disaster recovery center independently without intervention of any solution/service/support provider or vendor. Developing, designing & documenting
+various standards for performing tests on business continuity plans. Planning & coordinating all business continuity technical and user testing. Periodically testing & verifying
+each and every area to confirm the DR environment is sync up to date & is functional.
+
+F
+
+Project Support Services
+Project Management & PMO, ITIL & ITSM, Business Continuity Framework
+
+IT Projects Management:
+PMs Team wills establish relationship with various internal / external stakeholders, to garner support required for the projects. Analyze business and technical objectives. Plan,
+Segregate, Formulate & Scope business & systems requirements from Big Picture to detail level work breakdown structure. Executing, Monitoring & Delivering project plans
+keeping a close track of the developments & progress within pre-set budgets and scheduled deadlines by self or by directing & monitoring staff throughout the implementation,
+updating the top management & ensure that all business requirements are incorporated into the design & delivered within time, cost & effort parameters. Keeping abreast of
+SAMA, company strategy and policy and being able to identify its impact on projects & Testing business applications from business perspective. Perform ad hoc analysis and
+problem investigation as needed by acting as a liaison between business & technical stakeholders. Documenting & writing business requirements, cases, statements of work and
+specifications in a manageable and non-intrusive way.
+ITIL & ITSM Management:
+Highly Skilled & Experienced in Service Design, Transition, Operations & Continual Service Improvement best practices & processes and also helping transitioning the existing set
+of clients to the Global process standard. Proficient in working in the domains of Service Level Mgmt., Availability Mgmt., Capacity Mgmt., Change Mgmt., Information Security,
+Release & Deployment Mgmt., Evaluations, Knowledge Mgmt., Operations Mgmt., Technical Mgmt., Service Desk Mgmt., Applications Mgmt., Access Mgmt., Incident, Event &
+Problem Mgmt., Service Reporting & Measurement.
+Business Continuity & Disaster Recovery Management:
+Possess Remarkable experience in managing & implementing business continuity plans & executions. Expertize in & creating a complete as such production banking
+applications replica in Disaster recovery center independently without intervention of any solution/service/support provider or vendor. Developing, designing & documenting
+various standards for performing tests on business continuity plans. Planning & coordinating all business continuity technical and user testing. Periodically testing & verifying
+each and every area to confirm the DR environment is sync up to date & is functional.
+
+F
+
+Resource Provisioning
+Our Staffing Services Framework
+
+Managed Services
+Bulk Recruitment
+
+We
+
+Provide
+
+IT
+
+Resource
+
+along
+
+Premises/Offices framework (Bulk Off-
+
+Individual Hiring
+We Provide IT Professional Staff on
+quarterly, half yearly & yearly contract
+basis like:
+• Project Managers
+• Delivery Managers
+• Business Analyst
+• Infrastructure Managers
+• Operations Managers
+• Developers
+• OS, Database & Apps Admins
+• Deskside support engineers etc.
+
+We
+
+Provide
+
+bulk
+
+IT
+
+Recruitment
+
+Shore Management hierarchy) to enable
+
+framework to deliver client’s Operation
+
+client’s service delivery like:
+
+services like:
+
+• eChannels 1st & 2nd level service
+
+• Development-team
+• Infrastructure-team
+• End-user support-team
+
+maintenance
+• Helpdesk & End-user support
+outsourcing
+
+• IT Operations-team
+
+• Development outsourcing
+
+• ITPMO & Project Management-team
+
+• ITPMO & Projects outsourcing
+
+• Information-Security-Management
+
+• IT Infrastructure Management
+
+• IT Audits, Governance & Complianceteam etc.
+
+outsourcing etc.
+
+WHY
+
+Choose us
+End to end
+Services Both
+in Networking
+and Software
+side
+
+Addressing
+your
+complete
+infrastructure
+land scape
+
+Ability to
+Scale
+
+Storage
+
+WHY
+
+Choose us
+Best People,
+Low Attrition
+and Steep
+ramp-up
+capability
+
+Sustainable
+Learning
+Curve
+Advantages
+
+Regional
+Presence
+and matured
+Delivery
+Models
+
+Quick Time to
+Market,
+Lower Cost
+
+Regional Partner Ship
+
+Regional Partner Ship
+
+Intellectual Creativity Foundation for Communications and Information Technology
+
+THANK YOU
+Contact us For Enquiries about Products, Services, Maintenance or
+Routine Check ups.
+
+Intellectual creatIvIty FoundatIon
+WWW.intellectualcf.com
+Riyadh Saudi Arabia
+Mir Wahed Ali
+Mobile: 0539055251
+wahed@intellectualcf.com
+
+=== try python PyPDF2 ===
+Requirement already satisfied: PyPDF2 in /home/z/.venv/lib/python3.12/site-packages (3.0.1)
+ مؤسسة اﻻبداع الفكري
+لﻼتصاﻻت و تقنية المعلومات
+تحويل اﻷعمال والخبرة 
+TRANSFORMATION OF BUSINESS & EXPERIENCE 
+INTELLECTUAL CREATIVITY FOUNDATION FOR 
+COMMUNICATIONS AND INFORMATION 
+TECHNOLOGYIntellectual Creativity Foundation for Communications and Information Technology
+
+ اﻻبتكار هو القدرة على اتخاذ
+التغيير، كفرصة.  
+INNOVATION
+IS THE ABILITY TO SEE CHANGE AS AN 
+OPPORTUNITY Intellectual Creativity Foundation for Communications and Information Technology
+
+STRENGHT
+We have over 150 of the region’s best-trained IT consultants sharing 
+the new information, being responsive to change, and working 
+through problems & solutions together and taking part to the 
+responsibilities towards the fast growing world of Technology. Intellectual Creativity Foundation for Communications and Information Technology
+
+Solution 
+WE OFFER BOTH SOFTWARE, SECURITY AND NETWORKING , SECURITY  
+CONSULTING –LED INTEGRATED PORTFOLIO OF IT, AND IT-ENABLED 
+SERVICES DELIVERED THROUGH ITS DISTINCTIVE BUSINESS DELIVERY 
+MODEL, WHICH IS THE STANDARD OF EXCELLENCE THROUGH STRONG 
+RELATIONSHIP AND VALUES.
+
+RESULTS
+Delivering competitively unmatched and guaranteed real business 
+solutions in IT services and consultancy in the region 
+
+Customer Centric Support
+Our Team deals in a variety of technology related platforms that 
+expand from provisingour end users with the best, transforming and 
+reliable solutions aliging to the organic need with vendor support.
+
+Business Strategy
+The Business strategy we have adopted is a long-term plan of action   
+designed to achieve a client’s satisfaction oriented business. Our 
+strategy is to strengthen the performance of the enterprise class 
+services to its clients in the region. We try and achieve the same 
+through:
+Growth
+Business Opportunities
+Operational efficiency
+New Initiatives.
+Aligned consulting
+Reputation Risk
+Operational Risk 
+Internal Efficiency
+Total cost of owner ship
+
+Business Solutions
+We provide the below business offerings in the region .
+Business Infrastructure Cloud Computing 
+•Infrastructure Performance Analysis •Private Deployment
+•Storage IOPS – GAP Analysis •Hybrid Deployment
+•Microsoft Infrastructure Review •Public Deployment
+•Virtualization – Business Strategy •Infrastructure as a Services
+•Adoption – Open Source •Software as a Services
+•Communication & Collaboration •Platform as a Services
+
+Business Solutions
+Business Impact Analysis Business Consulting IOT And SAP HANA 
+Initiatives
+•Disaster Recovery Consulting •Penetration Testing •SAP HANA
+•Business Continuity Strategy •Vulnerability Assessment •IoT Initiatives
+•Review of RTO/RPO •Network Design Audits •Business Intelligence
+•Traditional Backup •Network Design & Planning •HPC Solution
+•Appliance Backup •Data Center Design
+•Cloud Backup Services •Redundancy & Co-Location
+
+Business Solutions
+Risk Management Cybersecurity Initiatives
+•Risk Management •Web/email/Data Security •Mobile Device Security
+•Risk Detection •Firewall Solutions •Real-Time Classification
+•Risk Intelligence •Vulnerability Management •Anti-Malware Engines
+•Risk Landscape •Sandboxing •Reputation Analysis
+•IT Governance •Managed Security •Advanced Threat Dashboard
+IT Compliance •Incident Response •Advance Threat Dashboard
+•Anti – Phishing Services •SIEM
+
+Our IT service Portfolio
+1.NETWORK INFRASTRUCTURE.
+2.PHYSICAL SECURITY.
+3.NETWORK SOLUTIONS.
+4.DATA SECURITY.
+5.DATA CENTER SOLUTIONS.
+6.UNIFIED COMMUNICATION & COLLABORATION.
+
+Network infrastructure
+1.RACKS
+2.UPS SYSTEMS
+3.STRUCTURED CABLING
+4.ENVIRONMENT MONITORING
+5.RAISED FLOOR
+6.FIRE PROTECTION
+7.DATA CENTER DESIGN
+8.CRITICAL POWER COOLING.
+
+Physical security
+1.VIDEO SURVEILLANCE
+2.INTRUSION DETECTION
+3.UNIFIED REPORTING
+4.ACCESS CONTROL
+5.IDENTITY RECOGNITION
+6.SMS (SECURITY MANAGEMENT SYSTEM
+
+Network solutions
+1.LOAD BALANCING.
+2.NETWORK MANAGEMENT.
+3.WAN OPTIMIZATION ROUTING & SWITCHING.
+4.SDN (SOFTWARE DRIVEN NETWORKS).
+5.SDC (SOFTWARE DRIVEN DATA CENTER).
+
+Data security
+1.CONTENT MANAGEMENT.
+2.BYOD SOLUTIONS.
+3.DATA PROTECTION SOLUTIONS.
+4.DATA PROTECTION SERVICES
+5.SOFTWARE DEFINED DATA CENTER
+6.BUSINESS CONTINUITY & AVAILABILITY 
+
+Datacenter solution
+1.CLOUD SOLUTION.
+2.IT VIRTUALIZATION.
+3.ENTERPRISE SERVERS
+4.CONVERGED INFRASTRUCTURE
+5.VIRTUAL DATA CENTERS SECURITY
+6.NEXT GENERATION SECURITY SYSTEMS.
+7.DATA SCIENCE & BIG DATA ANALYTICS.
+
+Unified communication & 
+collaboration
+1.SMART OFFICES – CREATION.
+2.MOBILE COLLABORATION.
+3.IP TELEPHONY SOLUTIONS.
+4.CUSTOMER COLLABORATION.
+5.TELEPRESENCE SOLUTIONS.
+6.SOCIAL MEDIA COLLABORATION.
+
+Banking Architectures -Automation & Renovation Frameworks
+Resources, Portfolio & Operations -Automation
+• Project-Life-Cycle-Automation (Portfolio Programs ProjectsTasks), PMO’s Automation
+• Operations-Life-Cycle-Automation (Service-Strategy DesignTransition Operations CSI), ITSM Automation
+Geographical Architecture -Automation
+• Head Office Regional Offices Branches Contact-Centers Cash-Centers Investment-Centers 
+Remittance-Centers ATMsData-Centers Alternate-Data-Centers Disaster-Recovery-Centers
+IT InfrastructureArchitecture -Automation
+• Segments Hardware Software Firmware StorageDatabase Network BackupOSNOSetc.
+IT Application Architecture -Automation
+• Back-Office Front-Office Infra-Apps Security-Apps Governance-Apps Monitoring-Apps Business-Apps 
+(RBG, CBG etc.) Core & Non-Core-Banking Integrations ETLsMiddleware Batch Process Web-Services
+IT Business Architecture -Automation
+• Retail-Banking Corporate-Banking Investment-Banking Remittance-Banking Trade-Financeetc.
+Client & Customer Serving Architecture -Automation
+• Provisioning Professional Individuals Bulk-Recruitment Managed-Services Helpdesk-Management etc.
+
+Clients & Customers -Architecture is Managed by Business-Architecture is Managed by Applications -Architecture is Managed by Infrastructure -
+Architecture & Resides in Geographical -Architecture. All-Architectures are Managed by Organization’s Resources, Process & Functions.
+Resources &
+End-Users
+Geographical 
+architecture
+Infrastructure 
+architecture
+Applications 
+architecture
+Business 
+architecture
+Client & 
+Customer
+Organization’s  
+Resources, Process 
+and Functions
+Organization’s  
+Resources, Process 
+and Functions
+Head-Office,  
+Regional-Office,  
+Contact-Centers,  
+Cash-Centers,  
+Cheque-Processing-
+Centers, RBG/CBG-
+Branches,  
+Remittance-Centers,  
+Investment-Centers,  
+Data-Centers &  
+Alternate-Data-
+Centers: Is Operated 
+& and Managed by Its 
+Staff or Users.
+Head-Office,  
+Regional-Office,  
+Contact-Centers,  
+Cash-Centers,  
+Cheque-Processing-
+Centers, RBG/CBG-
+Branches,  
+Remittance-Centers,  
+Investment-Centers,  
+Data-Centers &  
+Alternate-Data-
+Centers: Is Operated 
+& and Managed by Its 
+Staff or Users.
+Hardware, Software, 
+Networking, Storage, 
+Information Security 
+and Compliance: IT-
+Infrastructure-
+Architecture resides 
+onto Geographical 
+Architecture.
+Hardware, Software, 
+Networking, Storage, 
+Information Security 
+and Compliance: IT-
+Infrastructure-
+Architecture resides 
+onto Geographical 
+Architecture.
+Core & Non-core 
+applications:
+Applications-
+Architecture resides 
+onto IT-Infrastructure 
+Architecture for its 
+compositions, 
+executions, 
+operations & 
+transformation.
+Core & Non-core 
+applications:
+Applications-
+Architecture resides 
+onto IT-Infrastructure 
+Architecture for its 
+compositions, 
+executions, 
+operations & 
+transformation.
+Business-
+Department/Entity 
+Strategies & 
+Architecture resides 
+onto Application 
+Architecture for its 
+compositions, 
+executions, 
+operations & 
+transformation.
+Business-
+Department/Entity 
+Strategies & 
+Architecture resides 
+onto Application 
+Architecture for its 
+compositions, 
+executions, 
+operations & 
+transformation.
+Client & Customer:
+Needs are fulfilled & 
+Delivered by Business 
+Department.
+Client & Customer:
+Needs are fulfilled & 
+Delivered by Business 
+Department.
+ A
+B
+C
+D
+ E
+F
+We Serve our clients to supplement their organization with implementing entire turnkey-systems & solutions as a solution provider or 
+undertaking programs & projects, maintaining IT services, operations, infrastructure & applications as a service-provider, providing 
+contract staff or completely outsource their department & units
+
+Banking Architecture -Automation & Renovation
+Clients & Customers -Architecture is Managed by Business-Architecture is Managed by Applications -Architecture is 
+Managed by Infrastructure -Architecture & Resides in Geographical -Architecture. All-Architectures are Managed by 
+Organization’s Resources, Process & Functi
+• Clients & Customers Interacts via eChannels, Branches, Remittance-Centers, Investment-
+Centers, ATMs and POS etc.
+• Our Managed-Services: Serve Entire Client/Customer Serving Bodies
+Clients & 
+Customers
+• Our Managed-Services serve Client in building its: Business Architectures 
+(Formation, Implementation & Maintenance)
+Business Dept.
+(Serve Clients / Business)
+RBG, CBG, Investment
+• Our Managed-Services serve Client in building its: Application 
+Farm/Architectures (Formation, Implementation & Maintenance)
+Apps Implementation & Support
+(Serve Organization’s Business)
+CBS, Back-Office & Business Apps
+• Our Managed-Services serve Client in building its: 
+Infrastructure Architectures (Formation, Implementation 
+& Maintenance)
+Infrastructure Implementation & Support
+(Serve Organization’s Applications)
+DC, ADC, DRC, Servers, Network, Storage etc.
+• Our Managed-Services serve Client in building its: 
+Geographical Architectures (Formation, 
+Implementation & Maintenance)
+Geographical Setup & Support
+(Holds Organization’s Infrastructure)
+Head Office, Regional Offices, Branches, Remittance-Centers, 
+Contact-Centers, Cash-Centers etc.
+• Our Managed-Services serve Client to 
+Automate (PMO & ITSM) & 
+Consolidate Resource, Process & 
+Function
+Resources, Portfolio & Operations Management
+(Resources, Manages the  all above Architectures & Operations)
+Resources, End-users, Teams, Departments Manages Portfolios & Operations
+A
+B
+C
+D
+E
+F
+
+Resources, Portfolios & Operations Automation
+Resources, Process (Portfolio & Operations) and Functions (hierarchy) Automation  -PMO  & 
+ITSM Automation & Consolidation
+For PMO’s: It’s quite time taking routine (daily, weekly, monthly, quarterly etc.) to manually Manage each & every delegate, Sequence, Compose & Distribute all “Portfolios & Operations” “Updates &
+Reports” to Management & Delegates, Hence We Provide a Complete Customized ITSM’s Flow Automation/Solution by which Management can trace/react with the latest/historic updates of their ongoing
+Portfolios&Operationswithasingleclick.
+a.PortfolioFlow(Programs,ProjectsandTasks)initsProject-Life-Cycle(PMI Methodology)
+b.OperationsFlow(Strategy,Design,Transition,OperationsandCSIinitsProduction-Life-Cycle(ITIL Methodology)
+Benefits:
+a.AccuratePortfolios&OperationsManagement,AccuratePMO’sProcessAutomation
+b.InstantManagement/Updates/Follow-ups/Escalations/Reportingofeach&everyindividualinvolved &allhappeningsinentirePortfolios&Operations.
+c.Root CauseAnalysis &PerformanceMeasurement Report: Knowledgeof each &every resources activities &their performance report with how each resourceis currently handling thetasks (latest)
+&howhewashandlingearlier(historic)
+d.Statistics:howmanyresourcesareinvolved ineachprogram/project(whoareallinvolved)&whichresourceisengagedinhowmanyprojects/tasks.
+e.Eliminatingthetracking/following-upsneedviaemails,documents&reportsetc.Eliminatingresourcesdedicatedtoperformreporting&follow-up&escalationactivities.
+f.CentralizedRepositorycontainingallinformationaboutentirePortfolios&OperationsincludingUpdates,Data,Documents/AttachmentsandEmailsetc.(ADIntegrated)
+
+Initialization
+Planning
+Execution
+Monitoring
+Closure
+Strategy
+Design
+Transition
+Operations
+CSIUpdatesUpdatesResourcesResourcesTasksTasksProjectsProjectsProgramsProgramsPortfolioPortfolio
+IT
+IT Infrastructure
+IT Infra 
+Upgradation
+Assessment
+A
+Latest Updates:
+1. Integration reviews ongoing
+Historic Updates
+1. Batch-Process reviewed & Report submitted
+2. Web-Services reviewed & Report submitted
+3. ETLs reviewed & Report submitted
+4. Middle-ware reviewed & Report submitted
+B
+Conclusions
+C
+ D
+Decisions
+E
+ F
+Implementations
+G
+ H
+IT Infra 
+Renovation
+IT Applications
+Core Banking 
+Revamp
+Non-Core 
+Banking Apps 
+Upgradation
+Per Project 
+Status
+Per Project 
+Status
+Resource-1 
+(Dev)
+Resource-2 
+(Infra)
+Resource-3 
+(Apps)
+Resource-4 
+(InfoSec)
+Resource-5 
+(Proc)
+Per Resources 
+Status
+Per Resources 
+Status
+Current 
+Activity in 
+Proj-A
+Current 
+Activity in 
+Proj-B
+Current 
+Activity in 
+Proj-c
+Historic 
+Record in 
+Proj-A
+Historic 
+Record in 
+Proj-B
+Historic 
+Record in 
+Proj-C
+Resources, Process (Portfolio & Operations) and Functions (hierarchy) Automation  -PMO -Department Automation & Consolidation
+A
+
+Head Office Regional Offices Branches Data-Centers Alternate-Data-Centers Disaster-Recovery Centers Automation & Consolidation
+ B
+Asanenterpriseindustry,bankingisabusinessthatindeedexecutesitsoperationsbygeographicallyspreadingitselfacross&operatesthroughEachPremisessegregatedintheformofDepartments
+with their relates, commitments & assignments, Each Department has its own nature of dedicated deliverables segregated in the form of multiple Groups & Units, Each Group has its own nature of
+dedicateddeliverablessegregatedtoeachStaffasroles/designations.Henceweinvolve&assistinestablishingoverallsetupsfromITperspectivesusingthefollowingstrategies:
+OSMasterImages,ProfilesStandardization&NamingConventions :forEfficiency&Enhancements,Remote-Support,InventoriesandAuditsActivitiesandeaseDeployments,EachProfileCompliance
+forStaffproductivity(byconfiguringtheirdesktops/profilesinawaybywhichtheycannot doanyfurtherthantheirassignments.
+Based upon Premises: Head-Office, Regional-Office, Contact-Centers, Cash-Centers, Processing-Centers, RBG/CBG-Branches, Remittance-Centers, Investment-Centers, Data-Centers and
+Alternate-Data-Centersetc.
+BaseduponRegions:Central-Region,Eastern-Region,Western-Region,Northern-RegionandSouthern-Regionetc.
+BaseduponCities:Makkah,Medina,Dammam,JeddahandRiyadhetc.
+BaseduponComputers:Managers,Supervisors,TellersandCustomer-Serviceetc.
+BaseduponUsers-Groups:Managers(Mr.A,Mr.Betc.),Supervisors(Mr.C,Mr.Detc.),Tellers(Mr.E,Mr.Fetc.)
+Premises Naming Convention
+Premises Naming ConventionHead Offices
+Regional Offices
+Contact-Centers
+Cash-Centers
+Cheque-Processing-
+Centers
+RBG/CBG Branches
+Remittance-Centers
+Investment-Centers
+Data-Centers
+Alternate-Data-
+CentersHead Offices
+Regional Offices
+Contact-Centers
+Cash-Centers
+Cheque-Processing-
+Centers
+RBG/CBG Branches
+Remittance-Centers
+Investment-Centers
+Data-Centers
+Alternate-Data-
+Centers
+Regional Naming Conventions
+Regional Naming ConventionsCentral-Region
+Eastern-Region
+Western-Region
+Northern-Region
+Southern-RegionCentral-Region
+Eastern-Region
+Western-Region
+Northern-Region
+Southern-Region
+Cities Naming Conventions
+Cities Naming ConventionsMakkah
+Medina
+Dammam
+Jeddah
+RiyadhMakkah
+Medina
+Dammam
+Jeddah
+Riyadh
+Computers Naming Conventions
+Computers Naming ConventionsManagers
+•wsruhb100m01
+•wsruhb100m02
+Supervisors
+•wsruhb100s01
+•wsruhb100s01
+Tellers
+•wsruhb100t01
+•wsruhb100t02
+Customer Support
+•wsruhb100c01
+•wsruhb100c02Managers
+•wsruhb100m01
+•wsruhb100m02
+Supervisors
+•wsruhb100s01
+•wsruhb100s01
+Tellers
+•wsruhb100t01
+•wsruhb100t02
+Customer Support
+•wsruhb100c01
+•wsruhb100c02
+Users Naming Conventions
+Users Naming ConventionsManagers
+•Mr. A
+•Mr. B
+Supervisors
+•Mr. C
+•Mr. D
+Tellers
+•Mr. E
+•Mr. F
+Customer Support
+•Mr. G
+•Mr. HManagers
+•Mr. A
+•Mr. B
+Supervisors
+•Mr. C
+•Mr. D
+Tellers
+•Mr. E
+•Mr. F
+Customer Support
+•Mr. G
+•Mr. H
+
+Head Office Regional Offices Branches Data-Centers Alternate-Data-Centers Disaster-Recovery Centers Automation & Consolidation
+ B
+Asanenterpriseindustry,bankingisabusinessthatindeedexecutesitsoperationsbygeographicallyspreadingitselfacross&operatesthroughEachPremisessegregatedintheformofDepartments
+with their relates, commitments & assignments, Each Department has its own nature of dedicated deliverables segregated in the form of multiple Groups & Units, Each Group has its own nature of
+dedicateddeliverablessegregatedtoeachStaffasroles/designations.Henceweinvolve&assistinestablishingoverallsetupsfromITperspectivesusingthefollowingstrategies:
+OSMasterImages,ProfilesStandardization&NamingConventions :forEfficiency&Enhancements,Remote-Support,InventoriesandAuditsActivitiesandeaseDeployments,EachProfileCompliance
+forStaffproductivity(byconfiguringtheirdesktops/profilesinawaybywhichtheycannot doanyfurtherthantheirassignments.
+Based upon Premises: Head-Office, Regional-Office, Contact-Centers, Cash-Centers, Processing-Centers, RBG/CBG-Branches, Remittance-Centers, Investment-Centers, Data-Centers and
+Alternate-Data-Centersetc.
+BaseduponRegions:Central-Region,Eastern-Region,Western-Region,Northern-RegionandSouthern-Regionetc.
+BaseduponCities:Makkah,Medina,Dammam,JeddahandRiyadhetc.
+BaseduponComputers:Managers,Supervisors,TellersandCustomer-Serviceetc.
+BaseduponUsers-Groups:Managers(Mr.A,Mr.Betc.),Supervisors(Mr.C,Mr.Detc.),Tellers(Mr.E,Mr.Fetc.)
+Premises Naming Convention
+Premises Naming ConventionHead Offices
+Regional Offices
+Contact-Centers
+Cash-Centers
+Cheque-Processing-
+Centers
+RBG/CBG Branches
+Remittance-Centers
+Investment-Centers
+Data-Centers
+Alternate-Data-
+CentersHead Offices
+Regional Offices
+Contact-Centers
+Cash-Centers
+Cheque-Processing-
+Centers
+RBG/CBG Branches
+Remittance-Centers
+Investment-Centers
+Data-Centers
+Alternate-Data-
+Centers
+Regional Naming Conventions
+Regional Naming ConventionsCentral-Region
+Eastern-Region
+Western-Region
+Northern-Region
+Southern-RegionCentral-Region
+Eastern-Region
+Western-Region
+Northern-Region
+Southern-Region
+Cities Naming Conventions
+Cities Naming ConventionsMakkah
+Medina
+Dammam
+Jeddah
+RiyadhMakkah
+Medina
+Dammam
+Jeddah
+Riyadh
+Computers Naming Conventions
+Computers Naming ConventionsManagers
+•wsruhb100m01
+•wsruhb100m02
+Supervisors
+•wsruhb100s01
+•wsruhb100s01
+Tellers
+•wsruhb100t01
+•wsruhb100t02
+Customer Support
+•wsruhb100c01
+•wsruhb100c02Managers
+•wsruhb100m01
+•wsruhb100m02
+Supervisors
+•wsruhb100s01
+•wsruhb100s01
+Tellers
+•wsruhb100t01
+•wsruhb100t02
+Customer Support
+•wsruhb100c01
+•wsruhb100c02
+Users Naming Conventions
+Users Naming ConventionsManagers
+•Mr. A
+•Mr. B
+Supervisors
+•Mr. C
+•Mr. D
+Tellers
+•Mr. E
+•Mr. F
+Customer Support
+•Mr. G
+•Mr. HManagers
+•Mr. A
+•Mr. B
+Supervisors
+•Mr. C
+•Mr. D
+Tellers
+•Mr. E
+•Mr. F
+Customer Support
+•Mr. G
+•Mr. H
+
+Active-Directory-Group-PolicyandOrganization-UnitsDesignCompositions: “Compliance&GovernanceFramework”
+To best manage resources time & efforts, security and compliance implementations: Like Head-Office though has multiple departments & groups, we leverage & can develop profiles based on the
+functionalities upon analysis & standardize: Non-technical-profiles like: Managers, Supervisors & Users (users couldn’t be able to perform else other than they are supposed to work on: This will
+increase the productivity, efficiencies & decrease time/efforts). We’ll deliver so via Active-Directory-Group-Policy-Configurations. Technical-profiles like: Developers (SIT & UAT), Implementers
+(Production),OS,Applications&DBAdminsProfiles,Remote-Users(Internal-Staff/Consultants/Vendors-National/International)tosecureenvironments(SIT,UAT,Production,DR&DMZetc.)
+StandardizationofDepartmentProfiles:Information-Technology,Retail-Banking-GroupandCorporate-Banking-Groupetc.
+StandardizationofGroup’sProfiles:IT(Production-Support,UAT-Support,SIT-SupportandDBAs,etc.)
+StandardizationofComputer’sProfiles:OS-Configurations,Network-ConfigurationsandApplications-Configurationsetc.
+StandardizationofUser’sProfiles:Managers-Profiles,Supervisors-ProfilesandUsers-Profilesetc.
+Active-Directory-Groups (Security-Groups) & Email-Groups (Distribution-List) Formation: 
+ToStreamline,OptimizeandStandardizeData,FilesandShared-Foldersaccess,sincebankingisanentityconsistofhundredsandthousandsofUsers.Hencewe uponanalysisuponuniquelyreviewing
+stafffunctionstoenabledatasecurity,easymanagementviaeasedistributionofDataandemailsassinceanestablishmentneedtohaveessentiallyanappropriate&flexiblegroupsstructuretosecure
+Dataandgrantaccessaccordingtothehierarchystructureonly.Uponsuccessfullycollectinginfo,we willdevelopandimplementActive-Directory-GroupsalongtheShare-FolderStructure&Personal
+Folders in the storage farms like NAS/SAN etc. to assign appropriate permissions. We will even contribute in consolidating the existing scattered data to re-organize and streamline access-
+managementanddocumentmanagementsolutions...
+Head Office Regional Offices Branches Data-Centers Alternate-Data-Centers Disaster-Recovery Centers Automation & Consolidation
+ B
+
+Data Centers
+Alternate Data Centers
+Disaster Recovery Centers 
+etc.Operating Systems
+Building Management System
+Cameras & Door Access Systems
+Back-Office Systems (Active Directory, 
+Share-point & Exchange, etc.Firewalls
+Cyber-Security
+Information-Security
+Group-Policies
+Governance, Risk & Compliance etc.Routers
+Hubs & Switches
+Gateways
+Cabling
+LAN / WAN / WIFI etc.Servers
+Desktops & Laptops
+Printers & Scanners
+Backup & Storage elements
+Power & Cooling elements etc.
+We provide clients with complete, latest & robust infrastructure setup framework resulting in  enhancement of business efficiency, security, 
+and growth in today’s digital landscape.
+C
+Key Benefits of a well-designed IT infrastructure: 
+Improved efficiency, Productivity, Enhanced Protection & data security, Increased scalability to accommodate growth, Reduced IT costs through better resource 
+management, Improved collaboration and communication within the company, Instant response resolutions to IT issues and emergencies
+
+Outsourcing: We provide clients with entire hassles free Infrastructure outsourcing framework via beneath,  enabling client focusing entirely
+towards business growth, enhancements, expansions & remain competitive.
+C
+Offers best Infrastructure Assessment 
+Consideration Options Upon 
+reviewing the unique needs of Client, 
+its goals, and budget.Infrastructure Assessment
+We provide clients with complete, latest 
+& robust infrastructure setup 
+framework resulting in  enhancement of 
+business efficiency, security, and growth 
+in today’s digital landscape.Infrastructure Implementation
+We provide clients with not just 
+maintenance, but Transform Managed 
+Services Architecture & Consolidate 
+Infrastructure, for enhanced business 
+availability & continuity via Innovation, 
+Automation & OptimizationInfrastructure Maintenance
+Turnkey-System: We Provide Entire 
+Infrastructure Assessment, 
+Implementation, Maintenance & 
+Management from Start Till End, From 
+Initialization till Closure, From Project 
+Life-Cycle to Operations Life-CycleInfrastructure Management
+
+IT-Infrastructure CompositionIT-Infrastructure MaintenanceIT-Infrastructure Outsourcing
+Infrastructure Managed-Service provide
+clients with complete, latest & robust
+infrastructure setup resulting in
+enhancement of business efficiency,
+security, and growth in today’s digital
+landscape.
+Adapting:Project-Life-Cycle(PMP)We provide clients with not just complete
+infrastructure maintenance, but
+Transforming Managed Services
+Architecture & Consolidating backend
+services platform, for enhanced business
+availability & continuity via Innovation,
+AutomationandOptimization
+Adapting:Operations-Life-Cycle(ITIL)We provide clients with complete,
+efficient IT Infrastructure Management
+enabling organizations perform better
+and adopt the latest technologies better
+suited to their needs, helping them
+survive in complex environments and
+remain competitive via either Onsite or
+OffshoreInfrastructure(IAAS &PAAS)
+Adapting:InformationTechnologyService
+Management(ITSM)
+IT infrastructure is the core on which the success of a business is built. Security and flexibility of organization depends & comprised in its IT 
+infrastructure. We do Analysis Implementations Maintenance Management (Outsourcing / Managed Services)
+C
+2
+1
+3
+We Serve our clients to supplement their organization with implementing entire turnkey-systems & solutions as a solution provider or undertaking programs & projects, maintaining IT
+services,operations,infrastructure&applicationsasaservice-provider,providingcontractstafforcompletelyoutsourcetheirdepartment&units
+
+We Design, Propose, Demonstrate and Deliver with Latest Microsoft frontend, backend & back-office renovation Infrastructure Architecture as part of Continues-Service-
+Improvement:comprises of multi-site,multi-environment& virtualization/cloud computing to:Accommodateexisting needsatits best & futuregrowing business overloads.To
+enable day-to-day support staffs well understand easy & meaningful infrastructure concepts instead remembering it. Maintain & enhance uniformity. Latest Infrastructure
+ArchitectureDesign,Improvements&EnhancementswiththebestsuitablestrategiesIncludesbutnotlimitedto:
+Renovation: We provide clients with not just complete infrastructure maintenance, but Transforming Managed Services Architecture& 
+Consolidating backend services platform, for enhanced business availability & continuity via Innovation, Automation & Optimization
+C
+Renovating, Upgrading & Migrating from the existing to latest Back-end AD & Back-Office, Backend & Front-ends upgradation, Implement latest comprehensive front-end &
+backend Analytical & comprehensive naming conventions & IP Schemes, Servers Physical, Logical SAN Disks/storage segregations, Mailbox Sizes Grouping & segregations,
+configurations standardizations, re-organize Groups, Group-policies & Security policies, Organization-Units, Assigned Rights. Cross-checking/delivering all business-related
+apps functionalities & integration with other platforms in co-ordination with multiple vendors, Department, Teams, Management, Process and Functions. Virtualization/Cloud:
+Tominimizethe physical maintenance & enhance management & support: implemented Virtualization/Cloud Migration ofAll Physical Back Office,Apps and Resource Servers
+to Virtual/Cloud Enhanced Capacity servers &workstations as Migration from Physical to Virtual Servers (virtualization).
+Security & Compliance Hardening: enabled auditing of Enterprise & Domain Admin credentials to track & maintained approved controls. Re-evaluate Local Admin Access by
+the concerned staff direct manager, management & information security management to justify the need & grant or reject the privileges. Integration-Layer
+Uniformity/Standardization with other apps, services & shares standardization using only service account to enhance security & uninterruptable functionality (due to the non-
+expiry & other dependencies unlike normal user accounts. Composition of Baseline Standard forms, Preventive Maintenance Checklists, Procedure Manuals, Organized Assets
+Inventory & Release/Patch Management Process & Implementation for Domain, DNS, DHCP, Messaging System & Document Management system hosting.
+Updates & Releases Automation, Apps, Antivirus. H/W & S/W Inventory of IT Assets, Automated Monitoring Critical Services and Resources Alerts Generations, Incident
+Creations & automated resolutions upon approvals. Enhance Alerts, Event & Incident Management. Storage Segregation and allotment: as Dedicated Software Repository,
+Department File Repository, Users Home Drives Mapped to back up their important data on centralized & safe location in SAN. Standardization of daily, weekly, monthly
+backups.
+
+• Reducing cost for IT Projects
+• Simplifying scaling
+• Increasing the organization's productivity
+We understand the Client's Core 
+Purpose of an IT infrastructure & 
+aids to solve by composing it to 
+achieve goals & implement the 
+business strategy via 
+• Convenient, secure storage and data management
+• Network interaction support, collaborating devices and users
+• Optimal distribution of computing resources
+• Data Protection:  unauthorized access and leaks
+• Providing core & noncore applications/services for business execution.
+For well-building client’s IT 
+Infrastructure: we implies
+• TraditionalInfrastructureFramework:implies anon-premises/on-siteapproach,Provisioningwithhardware,software,network&security.
+• Cloud Infra: we provides the placement of IT infrastructure components with a cloud provider & maintain uninterrupted operation, along
+technicalsupportandmanaging itremotely.
+• Hybrid Infra: we provide combined traditional and cloud IT infrastructure “partial infrastructure on client’s premises and partial in cloud services.
+allowingclienttoevenlydistributetheavailablecapacity.
+Provide the following IT 
+Infrastructure frameworks Types
+• Assessment & Variation of Organization’s technological needs depending upon domains (Banking, Telecom, Government/Military, Oil & Gas,
+Hospitals,Mid& Smallsizedetc.) Data/ResourceManagement
+• DevelopingcomprehensiveIT Architecturesetup:hardware,software,networketc.Procuringapprovedassets/renting/cloudservice.
+• Deploymentofentire ITinfrastructureusingbestprofessionals&testing/evaluatingto ensureoptimalperformance,security,andfunctionality.
+IT Infrastructure Creation from 
+Scratch by considering the 
+unique needs of the company, 
+its goals, and budget.
+We provide clients with complete, latest & robust infrastructure setup framework resulting in  enhancement of business efficiency, security, 
+and growth in today’s digital landscape.
+C
+
+EfficientITInfrastructureManagementServicesiskeyfortheefficientoperationofmodernbusinesses.Henceweprovisionsupportingdailyoperations,enhancingsecurity,and
+ensuring scalability, enabling client meeting evolving technological demands. As businesses depend more on technology for service delivery, data management, and
+collaboration,awell-optimizedITinfrastructureiscrucialformaintainingcompetitivenessandachievinglong-termsuccess.HenceourServiceinfrastructuremanagementplaysa
+vitalroleinensuringthatsystemsaresecure,reliable,andefficient,contributingdirectlytobusinesscontinuityandgrowth.Keyservicesinclude:
+We provide clients with not just complete infrastructure maintenance, but Transforming Managed Services Architecture & Consolidating 
+backend services platform, for enhanced business availability & continuity via Innovation, Automation & Optimization
+C
+Ensures Business Continuity
+Downtime can be 
+devastating for businesses, 
+leading to lost revenue and 
+a damaged reputation. 
+Hence our IT infrastructure 
+management ensures that 
+systems are consistently 
+monitored and maintained, 
+minimizing the risk of 
+outages and ensuring 
+business continuity. With 
+proactive management, 
+issues can be detected and 
+resolved before they 
+escalate.Downtime can be 
+devastating for businesses, 
+leading to lost revenue and 
+a damaged reputation. 
+Hence our IT infrastructure 
+management ensures that 
+systems are consistently 
+monitored and maintained, 
+minimizing the risk of 
+outages and ensuring 
+business continuity. With 
+proactive management, 
+issues can be detected and 
+resolved before they 
+escalate.
+Enhances Security
+As businesses become more 
+dependent on digital 
+technologies, the risk of 
+cyber threats increases. 
+Thus our IT Infrastructure 
+Management Services 
+incorporates robust security 
+practices, such as regular 
+updates, firewall protection, 
+and data encryption, to 
+protect sensitive information 
+and ensure compliance with 
+regulatory standards. This is 
+crucial to maintain customer 
+trust and prevent costly 
+security breaches.As businesses become more 
+dependent on digital 
+technologies, the risk of 
+cyber threats increases. 
+Thus our IT Infrastructure 
+Management Services 
+incorporates robust security 
+practices, such as regular 
+updates, firewall protection, 
+and data encryption, to 
+protect sensitive information 
+and ensure compliance with 
+regulatory standards. This is 
+crucial to maintain customer 
+trust and prevent costly 
+security breaches.
+Optimizes Performance and 
+Efficiency
+By monitoring the 
+performance of entire 
+infrastructure, businesses 
+can optimize resource 
+allocation, streamline 
+workflows, and ensure that 
+all infrastructure 
+components are operating 
+at peak efficiency. This leads 
+to improved productivity, 
+faster decision-making, and 
+reduced operational costs.By monitoring the 
+performance of entire 
+infrastructure, businesses 
+can optimize resource 
+allocation, streamline 
+workflows, and ensure that 
+all infrastructure 
+components are operating 
+at peak efficiency. This leads 
+to improved productivity, 
+faster decision-making, and 
+reduced operational costs.
+Supports Scalability and 
+Growth
+As businesses grow, their IT 
+needs evolve IT 
+Infrastructure Management 
+Services ensures that 
+infrastructure can scale to 
+meet growing demands, 
+whether that involves 
+adding more servers, 
+upgrading software, or 
+integrating cloud services. 
+As a scalable IT 
+infrastructure is key to 
+supporting business growth 
+without disruptions.As businesses grow, their IT 
+needs evolve IT 
+Infrastructure Management 
+Services ensures that 
+infrastructure can scale to 
+meet growing demands, 
+whether that involves 
+adding more servers, 
+upgrading software, or 
+integrating cloud services. 
+As a scalable IT 
+infrastructure is key to 
+supporting business growth 
+without disruptions.
+Reduces IT Costs
+Our Efficient Infrastructure 
+management allows 
+businesses to identify and 
+eliminate inefficiencies, 
+optimize resource usage, 
+and extend the life of 
+hardware. This results in 
+significant cost savings over 
+time, as businesses can 
+avoid costly downtime and 
+reduce the need for 
+frequent upgrades.Our Efficient Infrastructure 
+management allows 
+businesses to identify and 
+eliminate inefficiencies, 
+optimize resource usage, 
+and extend the life of 
+hardware. This results in 
+significant cost savings over 
+time, as businesses can 
+avoid costly downtime and 
+reduce the need for 
+frequent upgrades.
+
+IT Applications: Analysis Implementations Maintenance Management (Outsourcing / Managed Services), Banking-Applications-Framework: Retail-Banking 
+Corporate-Banking Investment-Banking Remittance-Banking Web-Services Batch-Process ETLsIntegration Automation & Consolidation
+D
+ComprehensivelyBankingApplications-Architectureprospectiveisentirely dominantbyBusiness-Delegates-Strategies viawhichit
+operates:Themostrobustapplications&itsarchitecture itpossesses:themostinfluentialitis.
+Enable its client’s Application Management shifts the focus of IT from technology performance to business performance by
+acquiring and Implementing client’s applications to production upon reviewing business needs, evaluating multiple vendors,
+solution & service providers, and evaluating software functionalities, Supporting and Maintaining in Production & Enhancing with
+several automations, batch process, services, settings & other configurations on timely basis in Co-Ordination with Vendors,
+SolutionProviders,ServiceProviders,VariousITdepartments &Teamsandbusinessrepresentatives.ComprehensivelyBankingApplications-Architectureprospectiveisentirely dominantbyBusiness-Delegates-Strategies viawhichit
+operates:Themostrobustapplications&itsarchitecture itpossesses:themostinfluentialitis.
+Enable its client’s Application Management shifts the focus of IT from technology performance to business performance by
+acquiring and Implementing client’s applications to production upon reviewing business needs, evaluating multiple vendors,
+solution & service providers, and evaluating software functionalities, Supporting and Maintaining in Production & Enhancing with
+several automations, batch process, services, settings & other configurations on timely basis in Co-Ordination with Vendors,
+SolutionProviders,ServiceProviders,VariousITdepartments &Teamsandbusinessrepresentatives.
+
+Banking & Telecom: Business-Analysis, Renovations & Transformations | Functions & Process Improvements
+E
+Extensively Banking Business-Delegates-Strategies prospective is entirely dominant by its Clients & Customer Satisfaction extent, To Achieve Best results, banking-business-delegates will
+struggletoenquire&deliverwhat theirClients&Customerneedsare. Thedigitalerademands anew approachtobusiness management.Companiesneedtocontinuouslyinnovate,evolve
+andintegratetheir strategies toachievebetter business outcomes.Inanera of consumerism,digitalanddatadisruption,clientsareexaminingtheirbusinessandoperatingmodels to finda
+solution that will enable a step change in performance. Superior decision making, business outcomes and customer experiences is being achieved by clients prepared to reinvent business
+processeswith“intelligentoperations”thatharnesstalent,data,andintelligencetodelivertherightinformationwhereandwhenit'sneeded.
+revolutionizing the way business strategies are developed and managed with Liquid Application Management. Our approach to New IT enables our clients to automate their business,
+consolidateITtoimproveefficienciesacrosspeople,applicationsandvendors,andtoachieveunparalleledspeed,agility,productivityandefficiencygains.
+As a liaison between Business & IT, Transformed numerous banking processes from Manual to web-based-Automations delivering in compliance with Business-Application-Infrastructure
+ArchitecturestobenefitbankBusinessbuildingresilience&tostaywiththeabreastofrenovation,toIncreasedAccuracy,Quality,Service&Operationalefficiencies(missed-entries,records,
+wrong-feeds, resource-absent or left), Accurate Calculations, Applying-Exact-Business-Rules per each & every record, Streamlined-Hierarchical-Reviews-Approvals,
+Validations/confidentiality,AutomatedgeneratedentriesaslogsforReviews,Audits&Governancetobeaccessedinstantly.Minimizehumanerroracrossawidearrayofactivities,Minimized
+Time&Effortsutilizedetc.
+will Interact with Business to Gather-Detailed-Requirements, Initiate-Process along Documentation-Compositions (like: PDMs, KOMs, BRDs, PIAs, Detailed-Project/Quality/Resource/Rollout-
+Plans, RFI/RFQs, Vendor-Evaluations/Contracts, Solutions/Technical-Design-Documents, Developments & UATs, Training/User/Operations-Manuals-Checklist-Procedures,
+Deployments/Implementations,Closure-Documentation/Process/Reporting)etc.Extensively Banking Business-Delegates-Strategies prospective is entirely dominant by its Clients & Customer Satisfaction extent, To Achieve Best results, banking-business-delegates will
+struggletoenquire&deliverwhat theirClients&Customerneedsare. Thedigitalerademands anew approachtobusiness management.Companiesneedtocontinuouslyinnovate,evolve
+andintegratetheir strategies toachievebetter business outcomes.Inanera of consumerism,digitalanddatadisruption,clientsareexaminingtheirbusinessandoperatingmodels to finda
+solution that will enable a step change in performance. Superior decision making, business outcomes and customer experiences is being achieved by clients prepared to reinvent business
+processeswith“intelligentoperations”thatharnesstalent,data,andintelligencetodelivertherightinformationwhereandwhenit'sneeded.
+revolutionizing the way business strategies are developed and managed with Liquid Application Management. Our approach to New IT enables our clients to automate their business,
+consolidateITtoimproveefficienciesacrosspeople,applicationsandvendors,andtoachieveunparalleledspeed,agility,productivityandefficiencygains.
+As a liaison between Business & IT, Transformed numerous banking processes from Manual to web-based-Automations delivering in compliance with Business-Application-Infrastructure
+ArchitecturestobenefitbankBusinessbuildingresilience&tostaywiththeabreastofrenovation,toIncreasedAccuracy,Quality,Service&Operationalefficiencies(missed-entries,records,
+wrong-feeds, resource-absent or left), Accurate Calculations, Applying-Exact-Business-Rules per each & every record, Streamlined-Hierarchical-Reviews-Approvals,
+Validations/confidentiality,AutomatedgeneratedentriesaslogsforReviews,Audits&Governancetobeaccessedinstantly.Minimizehumanerroracrossawidearrayofactivities,Minimized
+Time&Effortsutilizedetc.
+will Interact with Business to Gather-Detailed-Requirements, Initiate-Process along Documentation-Compositions (like: PDMs, KOMs, BRDs, PIAs, Detailed-Project/Quality/Resource/Rollout-
+Plans, RFI/RFQs, Vendor-Evaluations/Contracts, Solutions/Technical-Design-Documents, Developments & UATs, Training/User/Operations-Manuals-Checklist-Procedures,
+Deployments/Implementations,Closure-Documentation/Process/Reporting)etc.
+
+Operations Support Services -Automation
+Operations 4 phased Support: Acquire Stabilize Modernize Optimize Clients Services for Business Continuity
+ F
+Aligning the transition, migration
+and transformation of Client
+support management to your
+technology strategies and key
+business objectives enables you to
+achieve long-term cost reductions,
+service improvements and
+optimizedserviceuse.
+support management solution
+provides a combination of flexible
+services to help you transition to a
+stabilized environment and
+ultimately transform to fully
+optimized, leveraged end-user’s
+operations.Executive Abstract
+Precisely:uponacquisition,retainingitoverallwithcurrentongoingoperationslife-cycle.
+Secondly as part of continuous service improvement process CSI, with all deep analysis, root-
+cause-analysis,willgatherreviews fromclient’sexistingInfrastructure,Businessand applications
+architecture from various previous support summaries, reports, business delegates, IT
+departmentsandteams,Vendors,Solutionandserviceproviders,
+will re-establish, implement and segregate to streamline process, functions and resources with
+the entire front-end banking infrastructure management proficient to afford large branch
+network and operations by transforming business all collection requirements into well working
+systems, solutions to ease front-ends continues, daily, weekly, monthly and yearly tasks and
+operationsvia
+applying strict following the best support hierarchy (upon developing professional operations-
+flows, steps, procedures, checklist, forms and operations manual for Management, Technical-
+support&users).Technical Abstract
+
+When transitioning responsibility to a
+service provider, the most important
+thing is stabilizing the IT environment.
+Changes should be kept to a minimum
+until the existing support environment
+is stable.Matching servicelevelsto you
+needs, we manage and monitor your
+support in the stabilized environment
+24hoursaday,sevendays aweek.As a
+result, support reliability, security, and
+recoverabilityincrease.
+1 2Transitioning to a new service provider
+and services create an opportunity for
+you to make improvements to your
+existing front-end environment. When
+taking over support environment, we
+automate service delivery, standardize
+platforms, applications & provide
+decision-support tools for better
+managing your business. During the
+transition, we continue consolidating
+front-endstoeliminateredundancy.
+3Simplifyingandmodernizingyourfront-
+endinfrastructureandapplicationstack,
+creating a shared-services front-end
+environment, and making sure your
+users and customers have consistent
+access to data are key features of
+optimizingyourfront-endenvironment.
+We help you realize additional business
+value by automated and remote
+support to increase usage of existing
+assets.Operations Support Services -Automation
+Operations 4 phased Support: Acquire Stabilize Modernize Optimize Clients Services for Business Continuity
+ F
+
+Operations Support Services -Automations
+Helpdesk Process Management System Framework “End-user and Deskside support Service”
+F
+Asidefrom hardware and softwareorganizations,Weinteract withindustryleaders Microsoft,McAfee,Symantec,VMware,Intel,SQL,Oracleand business &client’s applications to provide
+best-in-class integrated business solutions consisting of hardware, software and services. The result is a top-performing environment for your business applications delivery maximum
+efficiency,security,productivity,andusersatisfactions-gearedtohowyoudobusiness.
+Wewillsuggest you withthebest uponwhichyou canselectand define which services touse,howto usethem,what productstoemploy,and whichsecuritypoliciesto enforce.Using our
+skills,experience,andresources,wenotonlyoptimizeyourcurrent environment,butalsoadviseonandimplement programstoimproveperformance,reduceyourtotalcost ofownership,
+andhelpenhancethequalityofyourprofessionalsupportsystems.Why We? Rather any Deskside support vendors maintain dedicated Deskside support only and rest various banking frontend products has
+additional support providers and contracts, in which bank’s hassles is to: Manage maintaining numerous solutions and service providers and
+contracts,SufferSupportlatencies:asoftenvendorswillnotaccepttheaccountabilityofexcepttheirproducts.
+Hence we brought a single overall frontend-support-solution to delivers end-user’s overall requirements and offers Implementation & Support Services platform
+(frontends & backend: Hardware-Setup, Network-Setup, OS-Setup, Applications-Setup including Information-Security/Compliance). We have assisted customers
+with the successful deployment of similar business solutions; we are committed to Banking’s success and is confident that our solution addresses Client’s critical
+businessrequirements.
+
+Operations Support Services
+Helpdesk System Framework “End-user and Deskside support Service”
+F
+Help Desk: A single point of contact (Management and consolidation of contract, Parts ordering and management, Single source for problemreporting, escalation and resolution). We’ll provide 
+you an online web based Helpdesk system:
+To log daily problems, track / monitor the status / progress, close them with confirmation.
+Review them monthly/quarterly/yearly know what was served & to improve further if you feel like.
+Maintaining Reporting kind of functionality. This will help each one of us to be in sync every often being anywhere.
+Auto escalation emails with every 3 hours if status left unchanged.
+Help Desk Professional: We’ll provide you with helpdesk personnel:
+On daily basis, they will be calling each branch every morning to inquire about the system.
+If there is any problem, they will immediately log the problem in the system & simultaneously arrange an engineer to work on it.
+Will call engineers every hour to know & update current status.
+To offer support in ladies & gents, we’ll assign ladies & gents to deal with Client’s personals comfortably. They will be eligible & fluent in English & Arabic speaking.
+They will enquire & close the logs by the branch personnel verbal, email & dully-form-user-signed confirmations.
+Support Professionals:
+•We’ll provide resident professional field engineers to support Client’s enterprise.
+•Client doesn’t have to guide on every visit with steps to resolve problems by phone spending their time & energy. 
+•If enterprise/organization/client provides them remote access, then they could solve their problems remotely with a less timesaving their travelling time.
+Support Professional Tools:
+•We’ll provide complete tool kit along including Cable tester, software & firmware etc. for each engineer to resolve Hardware,Software, Operating System, Application & configurations raised 
+issues.
+•If an engineer is visiting any branch, he doesn’t have to come back without user acceptance & signed confirmation.
+•We’ll provide complete Checklists, Forms, Procedures & Documents for professional smoother & convenient service delivery.
+In Precise Offers with:
+•Help-Desk System to Log a problem online being anywhere.
+•Help-Desk Members to enable efficient service delivery.
+•Resident Professionals of Solution to Support enterprise/client/organization in each region (Eastern, Central & Western Region).
+•the entire tool kit for each engineer to resolve problems in terms of LAN cabling, software Hardware, Software, firmware, Operating System & Applications level tools along with media to 
+resolve problems in single visit itself.
+
+Project Support Services
+Project Management & PMO, ITIL & ITSM, Business Continuity Framework
+F
+ITProjectsManagement:
+PMs Team wills establish relationship withvarious internal / external stakeholders, to garner support required for the projects. Analyze business and technical objectives.Plan,
+Segregate, Formulate & Scope business & systems requirements from Big Picture to detail level work breakdown structure. Executing, Monitoring & Delivering project plans
+keepingaclosetrackofthedevelopments&progresswithinpre-setbudgetsandscheduleddeadlinesbyselforbydirecting&monitoringstaffthroughouttheimplementation,
+updating the top management & ensure that all business requirements are incorporated into thedesign & delivered withintime, cost & effort parameters. Keeping abreast of
+SAMA, company strategy and policy and being able to identify its impact on projects & Testing business applications from business perspective. Perform ad hoc analysis and
+probleminvestigationasneededbyactingasaliaisonbetweenbusiness&technicalstakeholders.Documenting&writingbusinessrequirements,cases,statementsofworkand
+specificationsinamanageableandnon-intrusiveway.
+ITIL&ITSMManagement:
+HighlySkilled&ExperiencedinServiceDesign,Transition,Operations&ContinualServiceImprovementbestpractices&processesandalsohelpingtransitioningtheexistingset
+ofclientstotheGlobalprocess standard.Proficientinworkinginthedomains ofServiceLevelMgmt.,AvailabilityMgmt.,CapacityMgmt.,ChangeMgmt.,InformationSecurity,
+Release &Deployment Mgmt.,Evaluations,KnowledgeMgmt.,OperationsMgmt.,Technical Mgmt.,Service DeskMgmt.,Applications Mgmt.,Access Mgmt.,Incident,Event &
+ProblemMgmt.,ServiceReporting&Measurement.
+BusinessContinuity&DisasterRecoveryManagement:
+Possess Remarkable experience in managing & implementing business continuity plans & executions. Expertize in & creating a complete as such production banking
+applications replica in Disaster recovery center independently without intervention of any solution/service/support provider or vendor. Developing, designing & documenting
+various standards for performing tests on business continuity plans. Planning & coordinating all business continuity technical and user testing. Periodically testing & verifying
+eachandeveryareatoconfirmtheDRenvironmentissyncuptodate&isfunctional.
+
+Project Support Services
+Project Management & PMO, ITIL & ITSM, Business Continuity Framework
+F
+ITProjectsManagement:
+PMs Team wills establish relationship withvarious internal / external stakeholders, to garner support required for the projects. Analyze business and technical objectives.Plan,
+Segregate, Formulate & Scope business & systems requirements from Big Picture to detail level work breakdown structure. Executing, Monitoring & Delivering project plans
+keepingaclosetrackofthedevelopments&progresswithinpre-setbudgetsandscheduleddeadlinesbyselforbydirecting&monitoringstaffthroughouttheimplementation,
+updating the top management & ensure that all business requirements are incorporated into thedesign & delivered withintime, cost & effort parameters. Keeping abreast of
+SAMA, company strategy and policy and being able to identify its impact on projects & Testing business applications from business perspective. Perform ad hoc analysis and
+probleminvestigationasneededbyactingasaliaisonbetweenbusiness&technicalstakeholders.Documenting&writingbusinessrequirements,cases,statementsofworkand
+specificationsinamanageableandnon-intrusiveway.
+ITIL&ITSMManagement:
+HighlySkilled&ExperiencedinServiceDesign,Transition,Operations&ContinualServiceImprovementbestpractices&processesandalsohelpingtransitioningtheexistingset
+ofclientstotheGlobalprocess standard.Proficientinworkinginthedomains ofServiceLevelMgmt.,AvailabilityMgmt.,CapacityMgmt.,ChangeMgmt.,InformationSecurity,
+Release &Deployment Mgmt.,Evaluations,KnowledgeMgmt.,OperationsMgmt.,Technical Mgmt.,Service DeskMgmt.,Applications Mgmt.,Access Mgmt.,Incident,Event &
+ProblemMgmt.,ServiceReporting&Measurement.
+BusinessContinuity&DisasterRecoveryManagement:
+Possess Remarkable experience in managing & implementing business continuity plans & executions. Expertize in & creating a complete as such production banking
+applications replica in Disaster recovery center independently without intervention of any solution/service/support provider or vendor. Developing, designing & documenting
+various standards for performing tests on business continuity plans. Planning & coordinating all business continuity technical and user testing. Periodically testing & verifying
+eachandeveryareatoconfirmtheDRenvironmentissyncuptodate&isfunctional.
+
+Individual HiringBulk RecruitmentManaged Services
+We Provide IT Professional Staff on
+quarterly, half yearly & yearly contract
+basislike:
+•Project Managers
+•Delivery Managers
+•Business Analyst
+•Infrastructure Managers
+•Operations Managers
+•Developers
+•OS, Database & Apps Admins
+•Deskside support engineers etc.We Provide bulk IT Recruitment
+framework to deliver client’s Operation
+serviceslike:
+•Development-team 
+•Infrastructure-team
+•End-user support-team 
+•IT Operations-team
+•ITPMO & Project Management-team
+•Information-Security-Management
+•IT Audits, Governance & Compliance-
+team etc.We Provide IT Resource along
+Premises/Offices framework (Bulk Off-
+Shore Management hierarchy) to enable
+client’sservicedeliverylike:
+•eChannels 1st& 2ndlevel service 
+maintenance
+•Helpdesk & End-user support 
+outsourcing
+•Development outsourcing
+•ITPMO & Projects outsourcing
+•IT Infrastructure Management 
+outsourcing etc.Resource Provisioning
+Our Staffing Services Framework
+F
+
+WHY
+Choose us
+End to end 
+Services Both 
+in Networking 
+and Software 
+sideAddressing 
+your 
+complete 
+infrastructure 
+land scape
+Ability to 
+ScaleStorage
+
+WHY
+Choose us
+Best People, 
+Low Attrition 
+and Steep 
+ramp-up 
+capability Sustainable 
+Learning 
+Curve 
+Advantages
+Regional 
+Presence 
+and matured 
+Delivery 
+ModelsQuick Time to 
+Market, 
+Lower Cost
+
+Regional Partner Ship    
+
+Regional Partner Ship
+
+THANK YOU
+Contact us For Enquiries about Products, Services, Maintenance or 
+Routine Check ups.
+Intellectual creatIvIty FoundatIon
+WWW.intellectualcf.com
+Riyadh Saudi Arabia
+Mir Wahed Ali
+Mobile: 0539055251
+wahed@intellectualcf.comIntellectual Creativity Foundation for Communications and Information Technology

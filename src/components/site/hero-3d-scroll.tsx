@@ -23,7 +23,7 @@ export function Hero3DScroll() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
               From telephony and structured cabling to AI-assisted threat
-              protection — engineered for Dubai&rsquo;s most demanding
+              protection — engineered for Riyadh&rsquo;s most demanding
               environments.
             </p>
           </>
