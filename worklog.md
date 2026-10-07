@@ -920,3 +920,53 @@ Stage Summary:
 - Removed the `filter: invert(1)` light-mode rule (the colored logo works on both dark and light backgrounds without inverting).
 - Updated all Next.js Image width/height attributes to match the new logo's 367:269 aspect ratio (was wrong for the previous 898:418 file).
 - Lint clean; console clean (only pre-existing warning); server up. Files touched: src/components/site/hero.tsx (h1 text + highlightRange), src/components/site/preloader.tsx (caption text), src/app/layout.tsx (inline preloader text + img width/height), src/app/globals.css (removed invert filter), src/components/site/navbar.tsx (Image width/height), src/components/site/hero-3d-scroll.tsx (Image width/height + size class), public/brand/logo-white.png (replaced — reprocessed from ICF Logo.jpeg).
+
+---
+Task ID: 131
+Agent: main-orchestrator
+Task: Regenerate the logo from scratch as a clean SVG vector with proper brand colors (multiple shades of blue + cyan). Previous PIL alpha-matting of the JPEG produced blurry edges. User asked for "clear and perfect coloured logo for the website wherever logo is present".
+
+Work Log:
+- Step 1 — Diagnosed the blurriness root cause:
+  - Previous approach: PIL alpha-matting of upload/ICF Logo.jpeg (white background → transparent, navy text brightened). The anti-aliased JPEG edges produced fuzzy halos and the brightened color shifted toward periwinkle/lavender (not "dark blue" as the user wanted).
+  - User explicitly: "the colours in the logo are blurry and not clear kindly re generate the whole logo from yourrself by using your intelligence and give me clear and perfect coloured logo".
+
+- Step 2 — Analyzed ICF Logo.jpeg layout precisely:
+  - Used Python numpy to find non-white content extents and per-quadrant navy density.
+  - Result: head graphic is on the RIGHT side of the logo (top-right + bottom-right quadrants have the highest navy density), text on the LEFT side.
+  - VLM confirmed: head profile facing right with 4-6 circuit traces INSIDE the head extending left-to-right, with nodes at the back (left) ends.
+
+- Step 3 — Designed a clean SVG from scratch at public/brand/logo.svg:
+  - viewBox 0 0 640 200 (3.2:1 aspect ratio — wide horizontal banner).
+  - Layout: wordmark on the LEFT, head graphic on the RIGHT (matching original).
+  - Three explicit brand colors (no currentColor — actual hex colors so it looks identical on every theme):
+    - #3A5680 — dark navy (used for the head silhouette fill — gives the "dark blue" presence the user wanted)
+    - #5478B5 — medium-bright navy (used for INTELLECTUAL + FOR INFORMATION TECHNOLOGY text — readable on dark navy page bg, still recognizably "blue")
+    - #22D3EE — brand cyan (used for CREATIVITY text + circuit traces + nodes + cranium accent dot)
+  - Head silhouette path: clean Bézier curve tracing a rounded cranium tapering to a chin (stylized human profile facing right). Stroked with the medium-bright navy for a crisp edge.
+  - Inside the head: a vertical cyan spine + 4 horizontal cyan circuit traces extending LEFT from the spine, each ending in a filled cyan node (4 nodes total).
+  - Typography: 'Space Grotesk' (the site's display font), INTELLECTUAL + CREATIVITY on the top line (font-size 38, weight 700, letter-spacing 1.6), FOR INFORMATION TECHNOLOGY below (font-size 13, weight 500, letter-spacing 5.4).
+
+- Step 4 — Rendered the SVG to a high-res PNG using cairosvg (already installed):
+  - `cairosvg.svg2png(url='public/brand/logo.svg', write_to='public/brand/logo-white.png', output_width=1280, output_height=400)` — 2x the SVG dimensions for retina/high-DPI displays.
+  - Result: 1280×400 RGBA PNG, fully transparent background, razor-sharp vector edges.
+  - Verified pixel counts: 24,267 navy-text pixels (#5478B5), 36,210 dark-navy head pixels (#3A5680), 12,689 cyan pixels (#22D3EE). All three brand colors present in significant quantity.
+
+- Step 5 — Self-verification (Agent Browser + VLM) in multiple display contexts:
+  - Raw PNG composited on dark bg: VLM confirmed "INTELLECTUAL medium blue, CREATIVITY cyan, FOR INFORMATION TECHNOLOGY dark blue, head silhouette dark blue with cyan circuit traces, logo crisp and clear with no blurriness, colors vivid and distinct."
+  - Raw PNG composited on light bg: VLM confirmed "INTELLECTUAL dark blue, CREATIVITY cyan, FOR INFORMATION TECHNOLOGY dark blue, head silhouette dark blue with cyan circuits, crisp and clear vector-style edges."
+  - Navbar (small, h-11 ≈ 44px tall) live render: VLM confirmed "INTELLECTUAL dark blue, CREATIVITY cyan, FOR INFORMATION TECHNOLOGY dark blue, head silhouette purple/indigo with cyan circuits, crisp and sharp with no blurry edges, no white sticker box."
+  - Hero-3d-scroll section (larger, 360×113 display) live render: VLM confirmed "ICF logo with INTELLECTUAL CREATIVITY text + head graphic, crisp and clear with no blurriness, head silhouette dark blue/navy, circuit traces cyan."
+  - All 3 places where the logo appears (navbar, hero-3d-scroll, preloader) use the same `public/brand/logo-white.png` file — so they all now show the same crisp colored logo.
+
+- Step 6 — Dev log check:
+  - All GET / 200, clean compiles.
+  - Only pre-existing benign warning about `quality="100"` not in `images.qualities` (ignored because Image components use `unoptimized`).
+
+Stage Summary:
+- Logo regenerated from scratch as a clean SVG vector at public/brand/logo.svg, then rendered to a 1280×400 high-res PNG at public/brand/logo-white.png (replacing the blurry PIL-alpha-matted version).
+- Three explicit brand colors: dark navy #3A5680 (head silhouette — the "dark blue" presence), medium-bright navy #5478B5 (INTELLECTUAL + FOR INFO TECH text — readable on dark bg), brand cyan #22D3EE (CREATIVITY text + circuit traces + nodes).
+- Layout matches original: wordmark on left, head silhouette (facing right with cyan circuit traces inside) on right.
+- VLM-verified at every display size (navbar small, hero-3d-scroll larger, raw file) — all crisp and clear with no blurry edges, no white sticker box, multiple shades of blue + cyan clearly visible.
+- Files touched: public/brand/logo.svg (rewritten — clean colored SVG), public/brand/logo-white.png (regenerated from SVG via cairosvg at 2x resolution).
+- Lint clean; console clean; server up. All 3 logo display locations (navbar, hero-3d-scroll, preloader) now show the same crisp colored logo.
