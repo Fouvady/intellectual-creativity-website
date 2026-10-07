@@ -57,3 +57,7 @@ server.log
 # Dev logs
 dev.log
 server.log
+
+# Local SQLite DB (contains user submissions)
+db/*.db
+db/*.db-journal
