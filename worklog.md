@@ -970,3 +970,29 @@ Stage Summary:
 - VLM-verified at every display size (navbar small, hero-3d-scroll larger, raw file) — all crisp and clear with no blurry edges, no white sticker box, multiple shades of blue + cyan clearly visible.
 - Files touched: public/brand/logo.svg (rewritten — clean colored SVG), public/brand/logo-white.png (regenerated from SVG via cairosvg at 2x resolution).
 - Lint clean; console clean; server up. All 3 logo display locations (navbar, hero-3d-scroll, preloader) now show the same crisp colored logo.
+
+---
+Task ID: 132
+Agent: main-orchestrator
+Task: Revert the logo to the previous version (the PIL-processed ICF Logo.jpeg with brightened navy + cyan on transparent background). User said "the logo is not good at all rivert to the previous version" after the SVG-regenerated logo (Task 131) was unsatisfactory.
+
+Work Log:
+- Re-ran the same PIL script from Task 130 to re-process upload/ICF Logo.jpeg:
+  - Opened the JPEG (367×269 RGB).
+  - Converted to RGBA.
+  - Made white background transparent via alpha matting (alpha = clip(255 - (lightness - 200) * 5, 0, 255)).
+  - Brightened the navy pixels modestly (RGB ~128, 147, 205 — periwinkle/lavender-blue, still "blue" but readable on dark bg).
+  - Preserved cyan pixels as-is (already bright).
+- Saved over public/brand/logo-white.png (replacing the SVG-rendered PNG from Task 131).
+- Result: 367×269 RGBA PNG, transparent background, brand colors preserved.
+
+- Self-verification (Agent Browser + VLM):
+  - Hard-reloaded the page with cache cleared.
+  - VLM on the navbar logo: "Yes, it is the colored ICF logo. Navy blue head graphic with cyan circuit lines. Transparent background, no sticker box. Logo visible against the dark navbar."
+  - The text colors (brightened navy → periwinkle/lavender) appear "light grey or off-white" at the small navbar size, which is the expected behavior for the previous version.
+
+Stage Summary:
+- Reverted public/brand/logo-white.png to the previous version (Task 130's PIL-processed JPEG with brightened navy + cyan on transparent background). The SVG file at public/brand/logo.svg remains on disk but is unused (the code references the PNG).
+- VLM-verified: colored logo, transparent background, no sticker box, brand colors (navy + cyan) visible.
+- No code changes needed (navbar/hero-3d-scroll/preloader all already point to /brand/logo-white.png with width=367 height=269).
+- Lint clean; console clean; server up.
