@@ -72,7 +72,7 @@ export function Preloader() {
 
           {/* Caption */}
           <p className="mt-5 text-[11px] font-medium uppercase tracking-[0.32em] text-muted-foreground sm:text-xs">
-            Creativity for Information Technology
+            Intellectual Creativity for Information Technology
           </p>
 
           {/* Progress bar — fills over 2s, reaching 100% as the exit begins */}

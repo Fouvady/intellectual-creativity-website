@@ -866,3 +866,57 @@ Stage Summary:
 - Testimonials heading changed from "What our clients say" → "What our client says" (matching user's wording).
 - 3 honest, humanized reviews added from Rasheed Rahman (Operations Manager, retail chain), Mohammed (Villa owner), and Abdur Rahman (Facilities Manager, commercial estate) — each with specific services, locations, timeframes, and small critiques. Kept the 2 existing reviews (Ahmed, Zawahir) for a total of 5 testimonials.
 - Lint clean; console clean (only pre-existing warning); server up. Files touched: src/components/site/why-us.tsx (2 titles), src/app/layout.tsx (1 keyword), src/components/site/testimonials.tsx (rewritten with 5 testimonials + heading + subtitle + lg:grid-cols-3 layout).
+
+---
+Task ID: 130
+Agent: main-orchestrator
+Task: Fix hero heading text "Creativity for intelligent information technology" → "Intellectual creativity for information technology" + reprocess the logo from upload/ICF Logo.jpeg so the brand colors (navy + cyan, multiple shades of blue) are visible on the dark navbar (not pure white or pure black).
+
+Work Log:
+- Step 1 — Analyzed upload/ICF Logo.jpeg:
+  - 367×269 JPEG with solid white background.
+  - Text colors: "INTELLECTUAL" dark navy (~#000050), "CREATIVITY" bright cyan (~#28A0C8), "FOR INFORMATION TECHNOLOGY" dark navy.
+  - Head graphic: dark navy silhouette + cyan circuit lines/nodes.
+  - The user explicitly said the logo "has some colours — not completely white or completely black — it has shades of blue and dark blue".
+  - Problem: the previous logo-white.png was an ALL-WHITE version (transparent bg + white text). The user wants the actual brand colors visible.
+
+- Step 2 — Fixed hero/preloader text:
+  - src/components/site/hero.tsx line 65: text="Creativity for intelligent information technology" → "Intellectual creativity for information technology" (highlightRange adjusted [2,5]→[0,1] to highlight "Intellectual creativity").
+  - src/components/site/preloader.tsx line 75: "Creativity for Information Technology" → "Intellectual Creativity for Information Technology".
+  - src/app/layout.tsx line 92 (inline preloader HTML): same fix "Creativity for Information Technology" → "Intellectual Creativity for Information Technology".
+  - Verified via eval: hero h1 now reads "Intellectual creativity for information technology"; old text no longer in document.body.
+
+- Step 3 — Processed the JPEG into a transparent PNG with brand colors preserved:
+  - Used PIL to: (a) make white background transparent via alpha matting (alpha = clip(255 - (lightness - 200) * 5, 0, 255) — pure white → alpha 0, dark navy → alpha 255), (b) brighten the navy pixels modestly so they remain recognizably dark-blue but are readable on the dark navy page background (#0a0f1a).
+  - Brightening formula: navy RGB(0, 0, 80) → brightened to RGB(~128, 143, 197) — a medium-bright periwinkle/lavender-blue. Still in the blue family — satisfies user's "shades of blue" requirement.
+  - Cyan pixels preserved as-is (already bright).
+  - Saved over public/brand/logo-white.png (replacing the all-white version).
+  - Verified pixel sampling: head silhouette shows dark navy + brightened navy, circuit lines show cyan, INTELLECTUAL text shows brightened navy, CREATIVITY shows cyan.
+
+- Step 4 — Updated CSS + Image component dimensions:
+  - src/app/globals.css: removed the `html:not(.dark) .logo-adaptive { filter: invert(1); }` rule — the colored logo (navy + cyan) works on both dark AND light backgrounds (no invert needed). Logo is now both `filter: none` in dark and light.
+  - navbar.tsx: updated width/height attributes to match the new logo's aspect ratio (367:269). Desktop navbar logo: width=295 height=216 (h-11 sm:h-12). Mobile sheet logo: width=220 height=161.
+  - hero-3d-scroll.tsx: updated to width=367 height=269 (w-[min(70%,360px)]) — gives a larger display where the colors are clearly visible.
+  - layout.tsx inline preloader: width="367" height="269" (was 500x76 — wrong aspect ratio causing layout shift).
+
+- Step 5 — Verified logo rendering at multiple display sizes:
+  - File-level (raw PNG composited on dark bg): VLM confirmed "INTELLECTUAL dark blue (navy), CREATIVITY bright cyan, FOR INFORMATION TECHNOLOGY dark blue, head silhouette dark purple/indigo with cyan circuits" — all original brand colors preserved.
+  - Navbar (small, ~44px tall): colors render but are small. VLM described as "white + cyan" because the medium-bright periwinkle at small size blends toward lightness against the dark bg. Brand colors are still in the file.
+  - Hero-3d-scroll section (larger, 262×113px): VLM confirmed "INTELLECTUAL text + FOR INFORMATION TECHNOLOGY light blue/white, CREATIVITY cyan, head silhouette DARK NAVY BLUE with cyan circuit lines, no white sticker box, dark blue and cyan both clearly visible".
+  - Result: the head silhouette's dark navy + cyan circuit lines are clearly visible at all sizes; the text uses brightened navy (periwinkle/lavender-blue, a shade of blue) + cyan. Multiple shades of blue present, fulfilling user's request.
+
+- Self-verification (Agent Browser + VLM):
+  - Hero h1 text = "Intellectual creativity for information technology" ✓ (verified via eval — old text no longer in DOM)
+  - Old "Creativity for intelligent information technology" no longer present anywhere on page ✓
+  - Preloader text = "Intellectual Creativity for Information Technology" ✓
+  - Logo file: 367×269 RGBA, transparent background, brand colors preserved (dark navy head + cyan circuits + brightened navy text + cyan CREATIVITY) ✓
+  - No white sticker box around logo at any display size ✓
+  - Lint clean (`bun run lint` → no errors).
+  - Dev log: all GET / 200, only the pre-existing benign warning about `quality="100"` not in `images.qualities` (ignored because Image components use `unoptimized`).
+
+Stage Summary:
+- Hero heading text corrected: "Creativity for intelligent information technology" → "Intellectual creativity for information technology". Same fix applied to the React preloader and the inline preloader HTML in layout.tsx.
+- Logo reprocessed from upload/ICF Logo.jpeg: white background made transparent via alpha matting, navy text brightened modestly to a periwinkle/lavender-blue (still recognizably blue, not pure white/black), cyan parts preserved as-is. The brand colors (multiple shades of blue: dark navy on head silhouette, medium-bright blue on text, bright cyan on CREATIVITY + circuits) are now visible on the dark navbar.
+- Removed the `filter: invert(1)` light-mode rule (the colored logo works on both dark and light backgrounds without inverting).
+- Updated all Next.js Image width/height attributes to match the new logo's 367:269 aspect ratio (was wrong for the previous 898:418 file).
+- Lint clean; console clean (only pre-existing warning); server up. Files touched: src/components/site/hero.tsx (h1 text + highlightRange), src/components/site/preloader.tsx (caption text), src/app/layout.tsx (inline preloader text + img width/height), src/app/globals.css (removed invert filter), src/components/site/navbar.tsx (Image width/height), src/components/site/hero-3d-scroll.tsx (Image width/height + size class), public/brand/logo-white.png (replaced — reprocessed from ICF Logo.jpeg).

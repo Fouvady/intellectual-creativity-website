@@ -37,12 +37,12 @@ export function Hero3DScroll() {
               <Image
                 src="/brand/logo-white.png"
                 alt="Intellectual Creativity — for Information Technology"
-                width={500}
-                height={233}
+                width={367}
+                height={269}
                 quality={100}
                 unoptimized
                 priority
-                className="logo-adaptive h-auto w-[min(80%,450px)]"
+                className="logo-adaptive h-auto w-[min(70%,360px)]"
               />
               <span className="inline-flex items-center gap-1.5 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.22em] text-accent-cyan">
                 <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan animate-status" />

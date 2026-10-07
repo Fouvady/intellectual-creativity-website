@@ -254,12 +254,13 @@
 }
 
 @layer utilities {
-  /* Logo: white-text PNG on transparent. Invert in light mode so it stays readable on white. */
+  /* Logo: now a colored PNG (navy + cyan on transparent). The original brand
+     colors are readable on both dark and light backgrounds — no invert needed. */
   .logo-adaptive {
     filter: none;
   }
   html:not(.dark) .logo-adaptive {
-    filter: invert(1);
+    filter: none;
   }
 
   /* Adaptive accent text colors — deep in light, neon in dark */

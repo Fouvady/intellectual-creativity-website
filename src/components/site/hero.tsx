@@ -62,8 +62,8 @@ export function Hero() {
 
           <AnimatedText
             as="h1"
-            text="Creativity for intelligent information technology"
-            highlightRange={[2, 5]}
+            text="Intellectual creativity for information technology"
+            highlightRange={[0, 1]}
             delay={0.05}
             className="text-balance font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
           />
