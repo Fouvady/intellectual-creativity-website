@@ -1241,3 +1241,119 @@ Stage Summary:
 - Navbar logo size increased from h-11 (44px) to h-14/h-16 (56px/64px) — 45% larger on desktop. All elements (head graphic + INTELLECTUAL CREATIVITY + FOR INFORMATION TECHNOLOGY) now clearly visible at a glance.
 - Footer logo fully corrected: fixed the wrong aspect ratio (was 300:46, now 449:209 matching the 898:418 source), added `unoptimized` to preserve transparency, increased size from h-12 (48px) to h-20/h-24 (80px/96px) — doubled.
 - Lint clean; console clean; server up. Files touched: src/components/site/navbar.tsx (desktop + mobile sheet logo size increased, width/height attributes updated), src/components/site/footer.tsx (fixed aspect ratio + added unoptimized + increased size).
+
+---
+Task ID: 5-D
+Agent: image-regen-batch4
+Task: Regenerate Time-Attendance and AI-Analytics-VoIP service images with user-provided detailed prompts
+
+Work Log:
+- Read worklog.md to confirm prior context and target output directory `/home/z/my-project/public/services/`.
+- Generated time-1.png via z-ai CLI using the exact user-provided prompt for the RFID/biometric face-recognition time-clock scene at size 1344x768. Command completed successfully (saved to `/home/z/my-project/public/services/time-1.png`).
+- Waited 15 seconds between generations to avoid 429 rate limits.
+- Generated aivoip-1.png via z-ai CLI using the exact user-provided prompt for the dual-screen AI video analytics + VoIP softphone workspace at size 1344x768. Command completed successfully (saved to `/home/z/my-project/public/services/aivoip-1.png`).
+- Verified both files with `ls -la`: time-1.png = 77,171 bytes (~75KB), aivoip-1.png = 122,398 bytes (~120KB). Both well above the 50KB minimum threshold.
+
+Stage Summary:
+- Generated 2 images: time-1.png, aivoip-1.png (each 1344x768)
+- File sizes verified
+
+---
+Task ID: 5-C
+Agent: image-regen-batch3
+Task: Regenerate Signage/POS/ELV service images with user-provided detailed prompts
+
+Work Log:
+- Read existing worklog and confirmed services directory state (existing images already present).
+- Verified `z-ai` CLI is available at /usr/local/bin/z-ai and confirmed image command syntax (supports `-s 1344x768`).
+- Generated signage-1.png with exact prompt for outdoor LED video wall on modern glass building facade. Success: 187,095 bytes saved to /home/z/my-project/public/services/signage-1.png.
+- Waited 15 seconds to avoid 429 rate limits, then generated pos-1.png with exact prompt for sleek commercial POS checkout counter with dual-screen terminal and contactless payment. Success: 92,692 bytes saved.
+- Waited another 15 seconds, then generated elv-1.png with exact prompt for organized ELV equipment room with fire alarm panels, access control, and technician with tablet. Success: 145,247 bytes saved.
+- Verified all 3 files with `ls -la`: signage-1.png = 187,095 bytes (~183KB), pos-1.png = 92,692 bytes (~90KB), elv-1.png = 145,247 bytes (~142KB). All well above the 50KB minimum threshold.
+
+Stage Summary:
+- Generated 3 images: signage-1.png, pos-1.png, elv-1.png (each 1344x768)
+- File sizes verified
+
+---
+Task ID: 5-A
+Agent: image-regen-batch1
+Task: Regenerate PABX/AVC/Network service images with user-provided detailed prompts
+
+Work Log:
+- Read worklog.md to review prior agent work; confirmed existing pabx-1.png (85KB low-quality), avc-1.png (919KB old version), network-1.png (1.3MB old version) in /home/z/my-project/public/services/.
+- Verified z-ai CLI available at /usr/local/bin/z-ai; confirmed image subcommand and -s 1344x768 size flag.
+- Generated pabx-1.png using EXACT user prompt (Cisco IP desk phone + call center + PABX server cabinets, cool blue lighting, photorealistic 8k) at 1344x768. Took ~30s.
+- Waited 15s to avoid HTTP 429 rate limit.
+- Generated avc-1.png using EXACT user prompt (corporate auditorium, PA speakers, AV control console, warm/cool balanced lighting, photorealistic 8k) at 1344x768. Took ~30s.
+- Waited 15s to avoid HTTP 429 rate limit.
+- Generated network-1.png using EXACT user prompt (IT technician hands terminating blue/yellow Ethernet patch cables, server rack, glowing LEDs, photorealistic 8k) at 1344x768. Took ~30s.
+- Verified all 3 files exist with `ls -la`; all exceed the 50KB threshold (pabx-1.png=95105B, avc-1.png=116395B, network-1.png=109576B).
+- Appended this work record to /home/z/my-project/worklog.md in append mode.
+
+Stage Summary:
+- Generated 3 images: pabx-1.png, avc-1.png, network-1.png (each 1344x768 landscape)
+- File sizes verified: pabx-1.png=95KB, avc-1.png=116KB, network-1.png=110KB (all >50KB)
+
+---
+Task ID: 5-B
+Agent: image-regen-batch2
+Task: Regenerate CCTV/Smart/Automation service images with user-provided detailed prompts
+
+Work Log:
+- Read worklog.md to understand prior project context (existing 33 service images in /home/z/my-project/public/services/ from earlier Task 35 work, plus subsequent logo/UI work in Tasks 134/135).
+- Verified z-ai CLI is installed at /usr/local/bin/z-ai and listed existing target files: cctv-1.png (75KB), smart-1.png (134KB), automation-1.png (99KB) — all old low-quality versions to be overwritten.
+- Generated image 1 — cctv-1.png: Ran z-ai image with EXACT prompt "A high-tech security operations center (SOC) with an operator monitoring a massive curved multi-screen wall displaying live HD CCTV feeds, heatmaps, and facial recognition overlays. Foreground features a 360-degree ceiling-mounted IP dome camera with a glowing blue indicator ring. Cinematic corporate tech style, photorealistic, 8k resolution." at -s 1344x768 to /home/z/my-project/public/services/cctv-1.png. SDK confirmed success.
+- Waited 15 seconds (sleep 15) to avoid 429 rate limit, then verified cctv-1.png on disk = 93,457 bytes.
+- Generated image 2 — smart-1.png: Ran z-ai image with EXACT prompt "A modern luxury apartment entrance featuring a sleek brushed-aluminum video door intercom station mounted on a stone wall. In front, a hand holds a smartphone displaying a crisp live door camera feed and remote unlock interface app. Clean smart home interior lifestyle photography, natural ambient light, photorealistic, 8k resolution." at -s 1344x768 to /home/z/my-project/public/services/smart-1.png. SDK confirmed success.
+- Waited 15 seconds (sleep 15), then verified smart-1.png on disk = 180,812 bytes.
+- Generated image 3 — automation-1.png: Ran z-ai image with EXACT prompt "A wall-mounted smart building automation touchscreen panel displaying interactive controls for HVAC climate, smart lighting scenes, motorized shades, and energy management. Background shows a modern glass-partitioned corporate office with ambient LED lighting. Clean commercial architectural photography, photorealistic, 8k resolution." at -s 1344x768 to /home/z/my-project/public/services/automation-1.png. SDK confirmed success.
+- Final verification via ls -la on all 3 files:
+  - /home/z/my-project/public/services/automation-1.png → 144,153 bytes (~141KB) ✓ >50KB
+  - /home/z/my-project/public/services/cctv-1.png       →  93,457 bytes (~91KB) ✓ >50KB
+  - /home/z/my-project/public/services/smart-1.png      → 180,812 bytes (~177KB) ✓ >50KB
+- All 3 images regenerated successfully, each well above the 50KB threshold, each at the requested 1344×768 dimensions, overwriting the previous low-quality versions.
+
+Stage Summary:
+- Generated 3 images: cctv-1.png, smart-1.png, automation-1.png (each 1344x768)
+- File sizes verified: cctv-1.png=93KB, smart-1.png=177KB, automation-1.png=141KB — all >50KB ✓
+
+---
+Task ID: 136
+Agent: main-orchestrator
+Task: Add "Gallery" heading to the gallery section (was missing) + regenerate all 11 service images using the user's detailed photorealistic prompts (replacing the previous AI-generated images which the user said were "not proper images for the given services").
+
+Work Log:
+- Step 1 — Launched 4 parallel subagents (Task IDs 5-A through 5-D) to regenerate 11 service images using the EXACT user-provided prompts:
+  - 5-A: pabx-1.png (call center + Cisco IP phone + PABX server cabinets), avc-1.png (auditorium + PA speakers + AV control console), network-1.png (technician hands terminating patch cables in data center)
+  - 5-B: cctv-1.png (SOC + curved multi-screen wall + dome camera), smart-1.png (luxury apartment entrance + video intercom + smartphone), automation-1.png (smart BMS touchscreen + HVAC/lighting/shades controls)
+  - 5-C: signage-1.png (massive outdoor LED video wall on glass facade), pos-1.png (POS checkout counter + dual-screen terminal + contactless reader), elv-1.png (ELV equipment room + fire alarm + access control + technician with tablet)
+  - 5-D: time-1.png (employee tapping RFID card on biometric face-recognition terminal), aivoip-1.png (dual-screen AI video analytics + VoIP softphone)
+  - All 11 images generated at 1344×768, photorealistic 8k quality per user's prompts. Prompts used verbatim with no modifications.
+  - Each subagent ran commands sequentially with 15-second pauses to avoid HTTP 429 rate limits (no errors encountered).
+
+- Step 2 — Added "Gallery" heading to the gallery section:
+  - Updated src/components/site/gallery-section.tsx from a bare wrapper to a full section with:
+    - Eyebrow badge "Portfolio" (with cyan status dot)
+    - H2 heading "Gallery" (with gradient highlight)
+    - Subtitle: "A 3D parallax showcase of our work — telephony, networking, surveillance, smart systems, digital signage and beyond."
+  - Heading appears above the existing 3D parallax Gallery component.
+
+- Step 3 — Updated the gallery image array (src/components/ui/3d-parallax-unfurling-gallery.tsx):
+  - Reduced SERVICE_IMAGES from 33 entries (3 per service × 11 services, including -2/-3 variants) to 11 entries (one per service, only the regenerated -1.png files).
+  - Removed all -2.png and -3.png variants from the array (the files still exist on disk but are no longer referenced).
+  - Comment updated: "11 high-quality photorealistic service images (one per service sector). Regenerated using detailed user-provided prompts (photorealistic, 8k)."
+
+- Self-verification (Agent Browser + VLM):
+  - Eval confirmed: gallery section now has `<h2>Gallery</h2>` heading + "Portfolio" eyebrow + subtitle.
+  - All 11 unique service images present in the gallery (pabx-1, avc-1, network-1, cctv-1, smart-1, automation-1, signage-1, pos-1, elv-1, time-1, aivoip-1). The marquee intentionally doubles each column for the parallax scroll effect, so total instances > 11 but underlying URLs are all unique.
+  - VLM on the gallery heading: "Yes, there is a large 'Gallery' heading visible. Yes, there is an eyebrow 'Portfolio' badge. Yes, there is a subtitle below the heading: 'A 3D parallax showcase of our work — telephony, networking, surveillance, smart systems, digital signage and beyond.'"
+  - VLM on the new images: "Real photographic images visible (not AI cartoons). Clear and high-quality. Types visible: telephony/intercom, server racks, CCTV dome camera, NOC, digital signage, control room/call center, building interior. Colors vivid and realistic (no oversaturation)."
+  - Lint clean (`bun run lint` → no errors).
+  - Dev log: all GET / 200, clean compiles.
+
+Stage Summary:
+- Gallery heading added: "Gallery" H2 with "Portfolio" eyebrow badge + subtitle, placed at the top of the gallery section (was previously missing entirely — the section started directly with the 3D parallax effect).
+- All 11 service images regenerated using the user's exact detailed prompts (photorealistic 8k quality). Each image replaced the previous low-quality AI-generated version. Files at /home/z/my-project/public/services/{pabx,avc,network,cctv,smart,automation,signage,pos,elv,time,aivoip}-1.png.
+- Gallery image array reduced from 33 → 11 unique images (removed the -2 and -3 variants). Each service now represented by exactly one high-quality photorealistic image.
+- Lint clean; console clean; server up. Files touched: src/components/site/gallery-section.tsx (rewritten with heading + eyebrow + subtitle), src/components/ui/3d-parallax-unfurling-gallery.tsx (SERVICE_IMAGES reduced from 33 to 11 entries + updated comment), public/services/*-1.png (11 images regenerated using user's exact prompts).
