@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     'Intellectual Creativity for Information Technology — a Riyadh-based IT & telecommunications company delivering telephone systems, structured cabling, CCTV, smart electronics and building automation across Saudi Arabia.',
   keywords: [
     'Intellectual Creativity',
-    'Intellectual CF',
+    'Intellectual Creativity for Information Technology',
     'IT company Riyadh',
     'telecommunications Saudi Arabia',
     'PABX systems',

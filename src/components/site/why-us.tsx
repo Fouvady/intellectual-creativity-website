@@ -23,13 +23,13 @@ const DIFFS: Diff[] = [
   },
   {
     icon: Sparkles,
-    title: 'IntellectualCf Property',
+    title: 'Intellectual Creativity for Information Technology',
     desc: 'AI for Advanced Threat Protection — signature + behavioural detection that keeps networks ahead of attackers.',
     featured: true,
   },
   {
     icon: ShieldCheck,
-    title: 'Why Intellectual Cf',
+    title: 'Why Intellectual Creativity for Information Technology',
     desc: 'Engineers and technicians with deep field experience across the brands we support.',
   },
   {

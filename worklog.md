@@ -819,3 +819,50 @@ Stage Summary:
 - Logo sticker problem FIXED: replaced the broken public/brand/logo-white.png (which had a solid white background despite being RGBA) with the proper transparent upload/Intellectual-Creativity-white.png. Added `unoptimized` prop to all 3 Next.js Image logo usages so the optimizer doesn't strip the alpha channel. Now blends seamlessly into both dark and light navbars (in light mode `filter: invert(1)` correctly preserves alpha while inverting white→black).
 - Regional Partnership section ADDED: src/components/site/regional-partnership.tsx — same visual language as TechStack (eyebrow badge + heading + 3 marquee rows of liquid-glass chips). 66 unique vendors extracted from comp.jpeg and de-duplicated. Wired into page.tsx between TechStack and Work.
 - Lint clean; console clean; server up. Files touched: public/brand/logo-white.png (replaced), src/components/site/navbar.tsx (added `unoptimized` to both Image components + fixed width/height), src/components/site/hero-3d-scroll.tsx (added `unoptimized`), src/components/site/regional-partnership.tsx (new), src/app/page.tsx (wired in RegionalPartnership between TechStack and Work).
+
+---
+Task ID: 129
+Agent: main-orchestrator
+Task: Fix the "IntellectualCf Property" / "Why Intellectual Cf" typos to use the full company name "Intellectual Creativity for Information Technology" + change the testimonials heading from "What our clients say" → "What our client says" + add 3 honest, humanized reviews from Rasheed Rahman, Mohammed, and Abdur Rahman.
+
+Work Log:
+- Step 1 — Diagnosed the mistakes via Grep + Agent Browser eval:
+  - `src/components/site/why-us.tsx` line 26: title `'IntellectualCf Property'` (typo — missing space + capital F, abbreviated)
+  - `src/components/site/why-us.tsx` line 32: title `'Why Intellectual Cf'` (abbreviated company name)
+  - `src/app/layout.tsx` line 30: keyword `'Intellectual CF'` (abbreviated)
+  - `src/components/site/testimonials.tsx`: heading was `"What our clients say"` (plural); existing 2 reviews (Ahmed, Zawahir) were bot-sounding generic praise.
+  - The `intellectualcf.com` domain references (email + copyright) are legitimate and stay as-is.
+
+- Step 2 — Fixed the typos:
+  - why-us.tsx: `'IntellectualCf Property'` → `'Intellectual Creativity for Information Technology'`
+  - why-us.tsx: `'Why Intellectual Cf'` → `'Why Intellectual Creativity for Information Technology'`
+  - layout.tsx: keyword `'Intellectual CF'` → `'Intellectual Creativity for Information Technology'`
+
+- Step 3 — Updated testimonials.tsx:
+  - Heading: `"What our clients say"` → `"What our client says"` (singular, matching user's exact wording)
+  - Added subtitle: "Honest words from clients across Riyadh who trust Intellectual Creativity for Information Technology with their telephony, networking, security and automation."
+  - Added 3 honest, humanized reviews with author + role + 2-letter initials:
+    - **Rasheed Rahman** (Operations Manager · Retail Chain, Riyadh) — mentions being sceptical after a past bad vendor, the team installing PABX + CCTV across 3 branches in Riyadh, labelling cables, training staff, 6 months zero downtime, small critique about WhatsApp reply speed. Mentions company name in full.
+    - **Mohammed** (Villa Owner · Riyadh) — mentions smart intercom + CCTV install, engineers wore shoe covers + cleaned up + explained in Arabic and English, fair pricing with no surprises, already recommended to 2 neighbours.
+    - **Abdur Rahman** (Facilities Manager · Commercial Estate, Riyadh) — mentions 3 years working with the company across 2 buildings, networking + CCTV + PA + automation, praises the company for not overselling (telling him to keep a switch that still has life). Mentions company name in full.
+  - Kept the existing 2 reviews (Ahmed, Zawahir) for a total of 5 testimonials.
+  - Layout: changed from `md:grid-cols-2` to `md:grid-cols-2 lg:grid-cols-3` to fit 5 cards nicely.
+  - Added 5 avatar gradient variants (cyan→sky, sky→gold, gold→cyan, cyan→sky, sky→gold) for visual variety.
+  - Replaced single-letter author avatar with 2-letter initials (RR, M, AR, A, Z).
+
+- Self-verification (Agent Browser + VLM):
+  - Precise regex test on document.body.textContent: zero `IntellectualCf` / `Intellectual Cf` / `Intellectual CF` typos remaining (only legitimate `intellectualcf.com` domain in email + copyright, which is correct).
+  - Heading confirmed: `"What our client says"` ✓
+  - 5 review cards present ✓
+  - All 3 new authors (Rasheed Rahman, Mohammed, Abdur Rahman) present in DOM ✓
+  - why-us title 1 (featured card) = `"Intellectual Creativity for Information Technology"` ✓
+  - why-us title 2 (Why us card) = `"Why Intellectual Creativity for Information Technology"` ✓
+  - VLM described the new reviews as "highly honest and humanized" — confirmed they include specific services (PABX, CCTV, smart intercom, PA systems, networking), locations (Riyadh, villa, retail chain, commercial buildings), timeframes (6 months, 3 years), small critiques (WhatsApp reply speed), and nuanced praise (not overselling).
+  - Lint clean (`bun run lint` → no errors).
+  - Dev log: all GET / 200, only pre-existing benign warning about `quality="100"` not in `images.qualities` (ignored because logo Image components use `unoptimized`).
+
+Stage Summary:
+- All "IntellectualCf" / "Intellectual Cf" / "Intellectual CF" typos/abbreviations replaced with the full company name "Intellectual Creativity for Information Technology" in why-us.tsx (2 places) and layout.tsx (1 keyword).
+- Testimonials heading changed from "What our clients say" → "What our client says" (matching user's wording).
+- 3 honest, humanized reviews added from Rasheed Rahman (Operations Manager, retail chain), Mohammed (Villa owner), and Abdur Rahman (Facilities Manager, commercial estate) — each with specific services, locations, timeframes, and small critiques. Kept the 2 existing reviews (Ahmed, Zawahir) for a total of 5 testimonials.
+- Lint clean; console clean (only pre-existing warning); server up. Files touched: src/components/site/why-us.tsx (2 titles), src/app/layout.tsx (1 keyword), src/components/site/testimonials.tsx (rewritten with 5 testimonials + heading + subtitle + lg:grid-cols-3 layout).
