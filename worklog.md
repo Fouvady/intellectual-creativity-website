@@ -1203,3 +1203,41 @@ Stage Summary:
 - Fixed loading bar centering: added `margin: 0 auto` to the bar div (and caption <p>) in the inline HTML preloader. Bar was previously left-aligned because text-align:center doesn't center block elements.
 - Updated all Next.js Image width/height attributes to match the new 898:418 aspect ratio (was 367:269 from the previous JPEG-derived version).
 - Lint clean; console clean; server up. Files touched: public/brand/logo-white.png (replaced with clean white-text transparent version), src/app/globals.css (restored invert(1) for light mode), src/app/layout.tsx (fixed loading bar centering + img width/height), src/components/site/navbar.tsx (Image width/height for desktop + mobile), src/components/site/hero-3d-scroll.tsx (Image width/height), src/components/site/preloader.tsx (added unoptimized).
+
+---
+Task ID: 135
+Agent: main-orchestrator
+Task: Increase the navbar logo size + fix the footer logo (was using wrong aspect ratio 300:46 instead of the new 898:418, missing `unoptimized` prop, and was too small at h-12).
+
+Work Log:
+- Step 1 — Diagnosed the footer logo issues in src/components/site/footer.tsx:
+  - width={300} height={46} → WRONG aspect ratio (6.52:1). The current logo file is 898×418 (2.149:1). The 300:46 dimensions were from an older logo file and were squishing/stretching the new logo.
+  - Missing `unoptimized` prop → Next.js Image optimizer was processing the RGBA transparent PNG and converting it to a palette PNG, stripping the alpha channel (same issue we hit in Task 128 for the navbar).
+  - className="logo-adaptive h-12 w-auto" → 48px tall, too small for a footer brand mark.
+
+- Step 2 — Fixed the footer logo:
+  - width=449 height=209 (449/209 = 2.149 — matches the new 898:418 aspect ratio exactly).
+  - Added `unoptimized` prop to preserve the alpha channel.
+  - Updated className to `logo-adaptive h-20 w-auto sm:h-24` (80px on mobile, 96px on desktop — doubled from the previous 48px).
+  - VLM-verified: "Clean white-text version on transparent background, no sticker box, all elements clearly visible, not distorted/stretched, edges crisp."
+  - Verified via eval: `logoDisplayHeight: 96, logoDisplayWidth: 206` (matches h-24 = 96px).
+
+- Step 3 — Increased the navbar logo size:
+  - Desktop: `className="logo-adaptive h-11 w-auto sm:h-12"` → `className="logo-adaptive h-14 w-auto sm:h-16"` (44px → 56px on mobile, 48px → 64px on desktop — ~45% larger).
+  - Mobile sheet (in the slide-out menu): `className="logo-adaptive h-11 w-auto"` → `className="logo-adaptive h-14 w-auto"` (44px → 56px).
+  - Updated Image width/height attributes proportionally to match the new aspect ratio:
+    - Desktop: width=300 height=140 → width=420 height=196 (matches 2.149:1).
+    - Mobile sheet: width=220 height=102 → width=300 height=140.
+  - Verified via eval: `displayHeight: 64, displayWidth: 137` on desktop (was 44px — 45% larger).
+  - VLM-verified: "Logo appears significantly larger than a typical small navbar logo. Crisp and easily legible. All elements clearly present: head graphic, INTELLECTUAL CREATIVITY text, FOR INFORMATION TECHNOLOGY subtitle. Transparent background, no sticker box."
+
+- Self-verification:
+  - Navbar logo: 64px tall (was 44px) — 45% larger, all elements visible, no sticker box, crisp edges.
+  - Footer logo: 96px tall (was 48px) — doubled, proper aspect ratio (no distortion), `unoptimized` preserves transparency, no sticker box, crisp edges.
+  - Lint clean (`bun run lint` → no errors).
+  - Dev log: all GET / 200, only the pre-existing benign warning about `quality="100"` not in `images.qualities`.
+
+Stage Summary:
+- Navbar logo size increased from h-11 (44px) to h-14/h-16 (56px/64px) — 45% larger on desktop. All elements (head graphic + INTELLECTUAL CREATIVITY + FOR INFORMATION TECHNOLOGY) now clearly visible at a glance.
+- Footer logo fully corrected: fixed the wrong aspect ratio (was 300:46, now 449:209 matching the 898:418 source), added `unoptimized` to preserve transparency, increased size from h-12 (48px) to h-20/h-24 (80px/96px) — doubled.
+- Lint clean; console clean; server up. Files touched: src/components/site/navbar.tsx (desktop + mobile sheet logo size increased, width/height attributes updated), src/components/site/footer.tsx (fixed aspect ratio + added unoptimized + increased size).

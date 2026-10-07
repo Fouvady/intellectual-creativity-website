@@ -35,10 +35,11 @@ export function Footer() {
               <Image
                 src="/brand/logo-white.png"
                 alt="Intellectual Creativity"
-                width={300}
-                height={46}
+                width={449}
+                height={209}
+                unoptimized
                 loading="lazy"
-                className="logo-adaptive h-12 w-auto"
+                className="logo-adaptive h-20 w-auto sm:h-24"
               />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
