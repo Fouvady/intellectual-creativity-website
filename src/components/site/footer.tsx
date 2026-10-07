@@ -40,7 +40,7 @@ export function Footer() {
                 width={220}
                 height={52}
                 loading="lazy"
-                className="logo-adaptive h-9 w-auto"
+                className="logo-adaptive h-12 w-auto"
               />
             </Link>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">

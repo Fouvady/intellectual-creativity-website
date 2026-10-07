@@ -104,9 +104,10 @@ export function Navbar() {
           <Image
             src="/brand/logo-white.png"
             alt="Intellectual Creativity"
-            width={180}
-            height={42}
-            className="logo-adaptive h-7 w-auto sm:h-9"
+            width={240}
+            height={56}
+            quality={100}
+            className="logo-adaptive h-12 w-auto sm:h-14"
             priority
           />
         </a>
@@ -168,7 +169,7 @@ export function Navbar() {
                     alt="Intellectual Creativity"
                     width={160}
                     height={38}
-                    className="logo-adaptive h-8 w-auto"
+                    className="logo-adaptive h-12 w-auto"
                   />
                 </SheetTitle>
                 <SheetDescription className="sr-only">
