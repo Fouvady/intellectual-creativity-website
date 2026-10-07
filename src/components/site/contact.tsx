@@ -238,7 +238,7 @@ export function Contact() {
                   required
                   register={register}
                   error={errors.firstName?.message}
-                  placeholder="Ahmed"
+                  placeholder="Mir"
                 />
                 <Field
                   id="lastName"
@@ -246,7 +246,7 @@ export function Contact() {
                   required
                   register={register}
                   error={errors.lastName?.message}
-                  placeholder="Khan"
+                  placeholder="Wahed Ali"
                 />
               </div>
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -256,7 +256,7 @@ export function Contact() {
                   type="tel"
                   register={register}
                   error={errors.phone?.message}
-                  placeholder="+971 …"
+                  placeholder="+966 …"
                 />
                 <Field
                   id="email"
