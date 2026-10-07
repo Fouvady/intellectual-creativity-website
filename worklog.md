@@ -773,3 +773,49 @@ Stage Summary:
 - Services section redesigned: WhatsApp-style cards (photo on top + dark navy banner with icon + label at bottom). All 6 services wired with their primary image variant.
 - Gallery de-duplicated: replaced 28-entry array (which had ~11 duplicate CDN URLs) with 18 unique local AI images. Each visible gallery image is now distinct.
 - Lint clean; console clean; server up (HTTP 200). Browser-verified visually via VLM. Files touched: src/components/site/hero-3d-scroll.tsx, src/components/site/why-us.tsx, src/app/layout.tsx, src/components/site/services.tsx (rewritten), src/components/ui/3d-parallax-unfurling-gallery.tsx, public/services/* (18 new images).
+
+---
+Task ID: 128
+Agent: main-orchestrator
+Task: Fix the logo "sticker" problem (logo had white background, didn't blend with dark page) + add a new "Regional Partnership" section directly below "Technologies we deploy" listing the companies from the uploaded comp.jpeg image.
+
+Work Log:
+- Step 1 — Diagnosed logo problem via VLM analysis of upload/icf logo prob.png:
+  - The current public/brand/logo-white.png (2639×400, RGBA) had alpha=255 EVERYWHERE — i.e. it was a colored logo (navy + cyan text, navy/cyan head graphic) on a SOLID WHITE/light-gray background, NOT actually transparent.
+  - On the dark navy page background this showed as an ugly white "sticker" rectangle behind the logo.
+  - The logo-adaptive CSS (`filter: invert(1)` in light mode) was a workaround that didn't fix the underlying sticker problem.
+
+- Step 2 — Replaced logo file:
+  - Copied upload/Intellectual-Creativity-white.png (898×418, properly transparent — alpha=0 in background, white text + white head graphic) over public/brand/logo-white.png.
+  - Verified file replacement via MD5 (matches upload) + PIL pixel check (alpha=0 in corners).
+  - BUT initial VLM check still showed the "sticker" because Next.js Image optimizer was processing the RGBA PNG through `/_next/image?...` and converting it to palette (P) mode — losing alpha. Verified by direct curl of the optimizer URL: returned 640×298 P-mode PNG, no alpha.
+  - FIX: added `unoptimized` prop to all 3 Next.js Image components that render the logo (navbar desktop, navbar mobile sheet, hero-3d-scroll main card). Also adjusted the explicit width/height to match the new file's true 898×418 aspect ratio (was 400×61 which was wrong, causing layout shift warnings).
+  - Also cleared browser caches and hard-reloaded with `?v=<timestamp>` query string.
+  - VLM-verified (after fix): "The logo is on a transparent background with NO white box. White text + white head graphic for dark mode. Blends seamlessly with the dark navbar." And in light mode: "Logo uses dark color (black) which creates high contrast against the white background, no sticker box." The existing `filter: invert(1)` CSS now does the right thing (white→black, alpha preserved) for light mode.
+
+- Step 3 — Analyzed comp.jpeg (regional partnership image):
+  - VLM extracted 72 company names from 2 slides of a presentation (HP, Dell, IBM, Cisco, Microsoft, Intel, Samsung, Huawei, Lenovo, Oracle, Adobe, Canon, Fujitsu, NetApp, Juniper Networks, Palo Alto Networks, SonicWall, Kaspersky, Trend Micro, Symantec, Blue Coat, EATON, APC, ATEN, Avocent, HID Global, Pelco, Zebra Technologies, Motorola Solutions, etc.)
+  - De-duplicated to 66 unique brands (HP/Dell/IBM appeared on both slides; Blue Coat appeared twice; SonicWall × 2).
+
+- Step 4 — Created src/components/site/regional-partnership.tsx:
+  - Same visual style as the existing TechStack section (eyebrow badge + heading + 3 marquee rows of chips) for design consistency.
+  - 3 marquee rows × 22 chips each = 66 unique vendors (ROW_A: enterprise hardware + software, ROW_B: networking + UC, ROW_C: security + specialty).
+  - Each chip: liquid-glass pill with a small cyan dot + brand name.
+  - Same marquee animation (animate-marquee / animate-marquee-reverse alternating).
+  - Same gradient edge mask as TechStack.
+  - Eyebrow: "REGIONAL PARTNERSHIP" with a Handshake icon (Lucide). Heading: "Trusted vendor & brand partnerships".
+
+- Step 5 — Wired into page.tsx between TechStack and Work:
+  - Verified section order via eval: #tech-stack (top: 5244px) → #partners (top: 5659px) → #work (top: 6192px). Correct order.
+  - 133 chip elements in the partners section (66 unique × 2 for marquee doubling) ✓.
+
+- Self-verification (Agent Browser + VLM):
+  - Dark mode logo: VLM confirms "transparent background, white text + white head graphic, blends seamlessly into the dark navbar" — no more sticker box.
+  - Light mode logo: VLM confirms "black text + black graphic on transparent background, high contrast, no sticker box" — `filter: invert(1)` correctly inverts the white-text logo to black while preserving alpha.
+  - Regional Partnership section: VLM confirms "Heading 'Trusted vendor & brand partnerships', eyebrow 'REGIONAL PARTNERSHIP', same chip aesthetic and dark background as the Technologies we deploy section, with Samsung, Huawei, Lenovo, Oracle, Adobe, Canon, Fujitsu, NetApp, Kingston, Western Digital, Toshiba, Kodak, 3M, Polycom, Plantronics, Jabra, Logitech, Snom, Sonus, Lifesize, Citrix, Juniper Networks, Palo Alto Networks, SonicWall, Avocent, HID Global, Pelco, Zebra Technologies, Datalogic, Datamax-O'Neil, Motorola Solutions, SMART Technologies visible".
+  - Lint clean (`bun run lint` → no errors). Page loads cleanly (HTTP 200).
+
+Stage Summary:
+- Logo sticker problem FIXED: replaced the broken public/brand/logo-white.png (which had a solid white background despite being RGBA) with the proper transparent upload/Intellectual-Creativity-white.png. Added `unoptimized` prop to all 3 Next.js Image logo usages so the optimizer doesn't strip the alpha channel. Now blends seamlessly into both dark and light navbars (in light mode `filter: invert(1)` correctly preserves alpha while inverting white→black).
+- Regional Partnership section ADDED: src/components/site/regional-partnership.tsx — same visual language as TechStack (eyebrow badge + heading + 3 marquee rows of liquid-glass chips). 66 unique vendors extracted from comp.jpeg and de-duplicated. Wired into page.tsx between TechStack and Work.
+- Lint clean; console clean; server up. Files touched: public/brand/logo-white.png (replaced), src/components/site/navbar.tsx (added `unoptimized` to both Image components + fixed width/height), src/components/site/hero-3d-scroll.tsx (added `unoptimized`), src/components/site/regional-partnership.tsx (new), src/app/page.tsx (wired in RegionalPartnership between TechStack and Work).

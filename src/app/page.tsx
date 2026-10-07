@@ -9,6 +9,7 @@ import { Stats } from '@/components/site/stats'
 import { WhyUs } from '@/components/site/why-us'
 import { Process } from '@/components/site/process'
 import { TechStack } from '@/components/site/tech-stack'
+import { RegionalPartnership } from '@/components/site/regional-partnership'
 import { Work } from '@/components/site/work'
 import { Testimonials } from '@/components/site/testimonials'
 import { About } from '@/components/site/team'
@@ -48,6 +49,7 @@ export default function Home() {
         <WhyUs />
         <Process />
         <TechStack />
+        <RegionalPartnership />
         <Work />
         <Testimonials />
         <About />

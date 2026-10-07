@@ -40,6 +40,7 @@ export function Hero3DScroll() {
                 width={500}
                 height={233}
                 quality={100}
+                unoptimized
                 priority
                 className="logo-adaptive h-auto w-[min(80%,450px)]"
               />
