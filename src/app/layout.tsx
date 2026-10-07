@@ -24,15 +24,15 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Intellectual — Creativity for Information Technology',
   description:
-    'Intellectual Creativity for Information Technology — a Dubai-based IT & telecommunications company delivering telephone systems, structured cabling, CCTV, smart electronics and building automation across the UAE.',
+    'Intellectual Creativity for Information Technology — a Riyadh-based IT & telecommunications company delivering telephone systems, structured cabling, CCTV, smart electronics and building automation across Saudi Arabia.',
   keywords: [
     'Intellectual Creativity',
     'Intellectual CF',
-    'IT company Dubai',
-    'telecommunications UAE',
+    'IT company Riyadh',
+    'telecommunications Saudi Arabia',
     'PABX systems',
-    'Cisco partners Dubai',
-    'CCTV installation Dubai',
+    'Cisco partners Riyadh',
+    'CCTV installation Riyadh',
     'structured cabling',
     'smart building automation',
     'AVC audio video communication',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Intellectual — Creativity for Information Technology',
     description:
-      'Dubai-based IT & telecommunications partner. Telephone systems, networking, CCTV, smart electronics and building automation.',
+      'Riyadh-based IT & telecommunications partner. Telephone systems, networking, CCTV, smart electronics and building automation.',
     siteName: 'Intellectual Creativity for Information Technology',
     type: 'website',
     locale: 'en_US',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Intellectual — Creativity for Information Technology',
     description:
-      'Dubai-based IT & telecommunications partner. Telephone systems, networking, CCTV, smart electronics and building automation.',
+      'Riyadh-based IT & telecommunications partner. Telephone systems, networking, CCTV, smart electronics and building automation.',
   },
   robots: { index: true, follow: true },
 }

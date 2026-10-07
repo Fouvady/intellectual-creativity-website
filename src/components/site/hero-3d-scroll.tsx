@@ -50,8 +50,8 @@ export function Hero3DScroll() {
             </div>
 
             <p className="max-w-xl font-display text-xl font-medium text-foreground sm:text-2xl md:text-3xl">
-              Engineering intelligent systems for ambitious companies across the
-              UAE.
+              Engineering intelligent systems for ambitious companies across
+              Saudi Arabia, Riyadh.
             </p>
 
             <div className="mt-2 flex flex-wrap items-center justify-center gap-3 text-xs text-foreground/70">

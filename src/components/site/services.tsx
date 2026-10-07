@@ -11,7 +11,9 @@ import { cn } from '@/lib/utils'
 type Service = {
   icon: React.ComponentType<{ className?: string }>
   title: string
+  shortLabel: string
   desc: string
+  image: string
   accent: 'cyan' | 'sky' | 'gold'
 }
 
@@ -19,37 +21,49 @@ const SERVICES: Service[] = [
   {
     icon: Phone,
     title: 'Telephone IP / Analog, Call Centers & PABX System',
-    desc: 'Telephone system installation, supply and maintenance. Experienced engineers & technicians. Brands: Cisco, Nokia, Siemens-Unify, Lucent-Alcatel & Avaya.',
+    shortLabel: 'PABX & Call Centers',
+    desc: 'Telephone system installation, supply and maintenance. Brands: Cisco, Nokia, Siemens-Unify, Lucent-Alcatel & Avaya.',
+    image: '/services/pabx-1.png',
     accent: 'cyan',
   },
   {
     icon: AudioLines,
     title: 'AVC Audio-Video Communication & PA Public Address',
-    desc: 'Audio & video systems, conference theaters, home music systems, music control, and public address systems for commercial buildings, shopping malls, private halls, masjids and offices.',
+    shortLabel: 'AVC & PA Systems',
+    desc: 'Audio & video systems, conference theaters, public address systems for commercial buildings, shopping malls, masjids and offices.',
+    image: '/services/avc-1.png',
     accent: 'sky',
   },
   {
     icon: Network,
     title: 'Networking / Structured Cabling',
-    desc: 'We set up your voice and data infrastructure to the highest standards — from a small office install to a large-scale installation.',
+    shortLabel: 'Networking & Cabling',
+    desc: 'Voice and data infrastructure to the highest standards — from a small office install to large-scale deployment.',
+    image: '/services/network-1.png',
     accent: 'gold',
   },
   {
     icon: Cctv,
     title: 'CCTV System',
-    desc: 'With our innovations and use of the latest technology available, we design multifaceted systems to meet all your business needs.',
+    shortLabel: 'CCTV & Surveillance',
+    desc: 'Innovations using the latest technology — we design multifaceted systems to meet all your business needs.',
+    image: '/services/cctv-1.png',
     accent: 'cyan',
   },
   {
     icon: HouseWifi,
     title: 'Smart Electronic System',
-    desc: 'Luxury villa intercom solutions and multi-apartment solutions, in IP and analog modes, with mobile app support for your devices.',
+    shortLabel: 'Smart Electronics',
+    desc: 'Luxury villa intercom and multi-apartment solutions, IP and analog, with mobile app support.',
+    image: '/services/smart-1.png',
     accent: 'sky',
   },
   {
     icon: LifeBuoy,
     title: 'Help & Support / Building Automation',
-    desc: 'Lighting control, A/C control, curtain control, music control, and pump control.',
+    shortLabel: 'Building Automation',
+    desc: 'Lighting, A/C, curtain, music and pump control — integrated building automation.',
+    image: '/services/automation-1.png',
     accent: 'gold',
   },
 ]
@@ -59,16 +73,19 @@ const ACCENT = {
     chip: 'from-brand-cyan/30 to-brand-cyan/5 text-accent-cyan',
     icon: 'text-accent-cyan',
     glow: 'shadow-brand-cyan/30',
+    ring: 'ring-brand-cyan/40',
   },
   sky: {
     chip: 'from-brand-sky/30 to-brand-sky/5 text-accent-sky',
     icon: 'text-accent-sky',
     glow: 'shadow-brand-sky/30',
+    ring: 'ring-brand-sky/40',
   },
   gold: {
     chip: 'from-brand-gold/30 to-brand-gold/5 text-accent-gold',
     icon: 'text-accent-gold',
     glow: 'shadow-brand-gold/30',
+    ring: 'ring-brand-gold/40',
   },
 } as const
 
@@ -95,7 +112,7 @@ export function Services() {
           <SectionReveal delay={0.1}>
             <p className="mx-auto max-w-2xl text-balance text-base text-muted-foreground sm:text-lg">
               From telephony and structured cabling to security and smart
-              automation — engineered to the highest standards.
+              automation — engineered to the highest standards across Riyadh.
             </p>
           </SectionReveal>
         </div>
@@ -106,32 +123,56 @@ export function Services() {
             return (
               <StaggerItem key={s.title}>
                 <TiltCard max={5} className="h-full">
-                  <SpotlightCard className="card-airy group h-full">
-                    <div className="relative z-[2] flex h-full flex-col gap-4 p-6">
+                  <SpotlightCard className="card-airy group h-full overflow-hidden">
+                    {/* Top: hero photo (WhatsApp-style) */}
+                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                      <img
+                        src={s.image}
+                        alt={s.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                      {/* Subtle gradient veil to blend into the card */}
                       <div
-                        className={cn(
-                          'inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br shadow-lg',
-                          a.chip,
-                          a.glow,
-                        )}
-                      >
-                        <s.icon className={cn('h-6 w-6', a.icon)} aria-hidden />
-                      </div>
-                      <h3 className="font-display text-lg font-semibold leading-snug">
-                        {s.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-muted-foreground">
-                        {s.desc}
-                      </p>
-                      <div className="mt-auto flex items-center justify-between pt-2">
-                        <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-foreground/45">
-                          0{i + 1}
-                        </span>
+                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent"
+                        aria-hidden
+                      />
+                      {/* Numbered chip on photo */}
+                      <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full border border-foreground/15 bg-background/60 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-foreground/85 backdrop-blur-md font-display">
+                        0{i + 1}
+                      </span>
+                    </div>
+
+                    {/* Bottom: dark navy banner with icon + label (WhatsApp reference) */}
+                    <div className="relative z-[2] flex h-full flex-col gap-3 p-5">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className={cn(
+                            'inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br shadow-lg ring-1',
+                            a.chip,
+                            a.glow,
+                            a.ring,
+                          )}
+                        >
+                          <s.icon className={cn('h-5 w-5', a.icon)} aria-hidden />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-display text-[11px] uppercase tracking-[0.18em] text-foreground/55">
+                            {s.shortLabel}
+                          </p>
+                          <h3 className="font-display text-base font-semibold leading-tight">
+                            {s.title}
+                          </h3>
+                        </div>
                         <ArrowUpRight
-                          className="h-4 w-4 text-foreground/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground/80"
+                          className="ml-auto h-4 w-4 shrink-0 text-foreground/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground/80"
                           aria-hidden
                         />
                       </div>
+                      <p className="text-[13px] leading-relaxed text-muted-foreground">
+                        {s.desc}
+                      </p>
                     </div>
                   </SpotlightCard>
                 </TiltCard>

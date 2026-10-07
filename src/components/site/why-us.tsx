@@ -19,7 +19,7 @@ const DIFFS: Diff[] = [
   {
     icon: Award,
     title: 'Distinguished References',
-    desc: 'A portfolio of trusted clients across commercial, retail, masjid and enterprise estates in the UAE.',
+    desc: 'A portfolio of trusted clients across commercial, retail, masjid and enterprise estates in Saudi Arabia.'
   },
   {
     icon: Sparkles,

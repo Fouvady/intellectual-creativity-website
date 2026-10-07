@@ -9,43 +9,34 @@ import React, {
 } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
-const UNSPLASH_IMAGES = [
-  // UPS Hardware
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a28e4b1fa0e7.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1d18d7c7dc1e.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/967d3848db58.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/29a53995e8d9.jpg",
-  // Data Center
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/aabfb61a031b.png",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3b690e4c7a3a.png",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7a1b8466d655.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/0accaa40b459.jpg",
-  // Software Development Team
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c1a51b419548.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/889d90a8838e.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/379944346091.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/ded47e6c3e0d.jpg",
-  // Business Presentation
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1f7d2af73e91.png",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8d3fc5955644.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3a0c8c2b78d8.jpg",
-  // Network Cabling
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/67f797ba864a.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3acc4ababf60.jpg",
-  // Extra UPS + DC repeats for the 4th column
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/a28e4b1fa0e7.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/aabfb61a031b.png",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/c1a51b419548.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1f7d2af73e91.png",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/67f797ba864a.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/1d18d7c7dc1e.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/7a1b8466d655.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/379944346091.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/8d3fc5955644.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3b690e4c7a3a.png",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/3acc4ababf60.jpg",
-  "https://z-cdn.chatglm.cn/image-search-mcp/images-ppt/967d3848db58.jpg",
-];
+// 18 unique AI-generated service images (3 per service × 6 services).
+// No duplicates — each image is a distinct visual of one of our service sectors.
+const SERVICE_IMAGES = [
+  // 1. PABX / Telephone systems
+  "/services/pabx-1.png",
+  "/services/pabx-2.png",
+  "/services/pabx-3.png",
+  // 2. AVC Audio-Video & PA
+  "/services/avc-1.png",
+  "/services/avc-2.png",
+  "/services/avc-3.png",
+  // 3. Networking / Structured cabling
+  "/services/network-1.png",
+  "/services/network-2.png",
+  "/services/network-3.png",
+  // 4. CCTV / Security
+  "/services/cctv-1.png",
+  "/services/cctv-2.png",
+  "/services/cctv-3.png",
+  // 5. Smart electronic systems
+  "/services/smart-1.png",
+  "/services/smart-2.png",
+  "/services/smart-3.png",
+  // 6. Building automation
+  "/services/automation-1.png",
+  "/services/automation-2.png",
+  "/services/automation-3.png",
+] as const;
 
 interface ImageCardProps {
   src: string;
@@ -83,10 +74,10 @@ export default function Component() {
   }, []);
 
   const colMedia = useMemo(() => {
-    const col1Base = UNSPLASH_IMAGES.filter((_, i) => i % 4 === 0);
-    const col2Base = UNSPLASH_IMAGES.filter((_, i) => i % 4 === 1);
-    const col3Base = UNSPLASH_IMAGES.filter((_, i) => i % 4 === 2);
-    const col4Base = UNSPLASH_IMAGES.filter((_, i) => i % 4 === 3);
+    const col1Base = SERVICE_IMAGES.filter((_, i) => i % 4 === 0);
+    const col2Base = SERVICE_IMAGES.filter((_, i) => i % 4 === 1);
+    const col3Base = SERVICE_IMAGES.filter((_, i) => i % 4 === 2);
+    const col4Base = SERVICE_IMAGES.filter((_, i) => i % 4 === 3);
 
     return {
       col1: [...col1Base, ...col1Base],
