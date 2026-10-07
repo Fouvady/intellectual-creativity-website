@@ -104,8 +104,8 @@ export function Navbar() {
           <Image
             src="/brand/logo-white.png"
             alt="Intellectual Creativity"
-            width={295}
-            height={216}
+            width={300}
+            height={140}
             unoptimized
             quality={100}
             className="logo-adaptive h-11 w-auto sm:h-12"
@@ -169,7 +169,7 @@ export function Navbar() {
                     src="/brand/logo-white.png"
                     alt="Intellectual Creativity"
                     width={220}
-                    height={161}
+                    height={102}
                     unoptimized
                     className="logo-adaptive h-11 w-auto"
                   />

@@ -254,13 +254,13 @@
 }
 
 @layer utilities {
-  /* Logo: now a colored PNG (navy + cyan on transparent). The original brand
-     colors are readable on both dark and light backgrounds — no invert needed. */
-  .logo-adaptive {
-    filter: none;
-  }
+  /* Logo: white-text PNG on transparent background. In light mode, invert
+     so the white text becomes black and stays readable on a white navbar.
+     invert(1) preserves the alpha channel — transparent pixels stay
+     transparent, so no "sticker box" appears in either theme.
+     In dark mode (default), no filter is applied — white text on dark bg. */
   html:not(.dark) .logo-adaptive {
-    filter: none;
+    filter: invert(1);
   }
 
   /* Adaptive accent text colors — deep in light, neon in dark */

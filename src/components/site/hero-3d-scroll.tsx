@@ -37,8 +37,8 @@ export function Hero3DScroll() {
               <Image
                 src="/brand/logo-white.png"
                 alt="Intellectual Creativity — for Information Technology"
-                width={367}
-                height={269}
+                width={500}
+                height={233}
                 quality={100}
                 unoptimized
                 priority

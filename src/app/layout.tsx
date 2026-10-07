@@ -88,9 +88,9 @@ export default function RootLayout({
             __html: `
               <div id="initial-preloader" style="position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0a0f1a;transition:opacity 0.6s ease;">
                 <div style="padding:0 1.5rem;text-align:center;">
-                  <img src="/brand/logo-white.png" alt="Intellectual Creativity" width="367" height="269" style="width:min(80vw,400px);height:auto;margin:0 auto;" />
-                  <p style="margin-top:1.25rem;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.32em;color:#94a3b8;font-family:system-ui,sans-serif;">Intellectual Creativity for Information Technology</p>
-                  <div style="margin-top:1.75rem;height:3px;width:192px;border-radius:999px;background:rgba(148,163,184,0.15);overflow:hidden;">
+                  <img src="/brand/logo-white.png" alt="Intellectual Creativity" width="898" height="418" style="width:min(80vw,400px);height:auto;margin:0 auto;display:block;" />
+                  <p style="margin:1.25rem auto 0;text-align:center;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.32em;color:#94a3b8;font-family:system-ui,sans-serif;">Intellectual Creativity for Information Technology</p>
+                  <div style="margin:1.75rem auto 0;height:3px;width:192px;border-radius:999px;background:rgba(148,163,184,0.15);overflow:hidden;">
                     <div id="icf-pl-bar" style="height:100%;width:100%;transform:scaleX(0);transform-origin:0% 50%;background:linear-gradient(120deg,#22d3ee,#38bdf8);border-radius:999px;"></div>
                   </div>
                 </div>

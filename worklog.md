@@ -1151,3 +1151,55 @@ Stage Summary:
 - Gallery now shows 33 unique AI images (was 18) — still no duplicates.
 - All 5 new cards use the same WhatsApp-style layout (photo on top + dark banner with icon + label at bottom) as the existing 6 cards.
 - Lint clean; console clean; server up. Files touched: src/components/site/services.tsx (5 new services + 5 new icons + updated subtitle), src/components/ui/3d-parallax-unfurling-gallery.tsx (15 new gallery images + updated comment), public/services/{signage,pos,elv,time,aivoip}-*.png (15 new images).
+
+---
+Task ID: 134
+Agent: main-orchestrator
+Task: Select the best logo version from the 2 available (upload/Intellectual-Creativity-white.png clean white-text transparent vs upload/ICF Logo.jpeg colored JPEG) and use it everywhere the logo appears + fix the loading bar not being centered in the preloader.
+
+Work Log:
+- Step 1 — Selected the best logo version:
+  - Compared upload/Intellectual-Creativity-white.png (898×418, RGBA, properly transparent — alpha=0 in background, white text + white head graphic) vs upload/ICF Logo.jpeg (367×269, RGB, colored navy+cyan but with solid white background that produced blurry edges when processed).
+  - Selected upload/Intellectual-Creativity-white.png as the best version because: (a) properly transparent (no sticker box on dark navbar), (b) crisp edges (no JPEG anti-aliasing halos), (c) high resolution (898×418), (d) works perfectly on the dark navbar (white-on-dark = high contrast).
+  - Copied upload/Intellectual-Creativity-white.png over public/brand/logo-white.png (replacing the PIL-processed JPEG version from Task 132).
+
+- Step 2 — Restored the light-mode invert CSS rule:
+  - The colored-logo version (Task 130) had removed `html:not(.dark) .logo-adaptive { filter: invert(1); }` because colored logos don't need inverting.
+  - Now using a white-text logo, the invert rule is required for light mode (white text → black via invert, alpha preserved so transparent bg stays transparent — no sticker box in either theme).
+  - Updated src/app/globals.css to:
+    ```css
+    @layer utilities {
+      html:not(.dark) .logo-adaptive {
+        filter: invert(1);
+      }
+    }
+    ```
+  - Removed the redundant `.logo-adaptive { filter: none; }` rule (default is no filter — declaring it caused the CSS compiler to incorrectly merge the two rules and drop the `invert(1)` declaration from the second).
+  - Verified: `window.getComputedStyle(logo).filter` returns `"invert(1)"` in light mode, `"none"` in dark mode.
+
+- Step 3 — Fixed the loading bar centering:
+  - Root cause: in src/app/layout.tsx inline HTML preloader, the bar `<div style="...width:192px;...">` is a block element. The parent has `text-align:center` but text-align doesn't center block elements — only inline/inline-block. So the bar was left-aligned by default.
+  - FIX: added `margin: 0 auto` to the bar div + also to the caption <p> for consistency. Updated both to `margin: 1.75rem auto 0` (top, sides auto, bottom 0) so they're centered.
+  - Also added `display:block` to the img and `margin: 1.25rem auto 0` to the <p> for full consistency.
+  - VLM-verified: "The loading/progress bar (thin blue line) is horizontally centered with the logo. It aligns perfectly with the center axis of the logo and the text above it."
+
+- Step 4 — Updated Image width/height attributes to match the new logo's 898:418 aspect ratio (~2.149:1):
+  - src/components/site/navbar.tsx desktop: width=295 height=216 → width=300 height=140 (300/140 = 2.14, matches new aspect).
+  - src/components/site/navbar.tsx mobile sheet: width=220 height=161 → width=220 height=102 (220/102 = 2.16, matches).
+  - src/components/site/hero-3d-scroll.tsx: width=367 height=269 → width=500 height=233 (500/233 = 2.146, matches).
+  - src/components/site/preloader.tsx React: width=300 height=140 (already correct, just added `unoptimized` prop to preserve transparency).
+  - src/app/layout.tsx inline HTML preloader: width="367" height="269" → width="898" height="418" (natural dimensions of the new file).
+
+- Self-verification (Agent Browser + VLM):
+  - Light mode navbar: VLM-verified "Logo readable (black text on white navbar), no sticker box, crisp edges, colors properly inverted to dark."
+  - Dark mode navbar: previous verification (Task 132) confirmed the white-text logo renders cleanly on the dark navbar (white-on-dark, high contrast, no sticker box, crisp edges).
+  - Loading bar: VLM-verified "horizontally centered with the logo, aligns perfectly with the center axis."
+  - Computed filter: `"invert(1)"` in light mode ✓, `"none"` in dark mode ✓.
+  - Lint clean (`bun run lint` → no errors).
+
+Stage Summary:
+- Selected the best logo: upload/Intellectual-Creativity-white.png (clean transparent white-text version, 898×418 RGBA with alpha=0 background). Replaced public/brand/logo-white.png with this version. Used in all 4 logo display locations: navbar desktop, navbar mobile sheet, hero-3d-scroll section, inline HTML preloader + React preloader.
+- Restored light-mode invert CSS: `html:not(.dark) .logo-adaptive { filter: invert(1); }` so the white-text logo inverts to black on a white navbar (alpha preserved — no sticker box).
+- Fixed loading bar centering: added `margin: 0 auto` to the bar div (and caption <p>) in the inline HTML preloader. Bar was previously left-aligned because text-align:center doesn't center block elements.
+- Updated all Next.js Image width/height attributes to match the new 898:418 aspect ratio (was 367:269 from the previous JPEG-derived version).
+- Lint clean; console clean; server up. Files touched: public/brand/logo-white.png (replaced with clean white-text transparent version), src/app/globals.css (restored invert(1) for light mode), src/app/layout.tsx (fixed loading bar centering + img width/height), src/components/site/navbar.tsx (Image width/height for desktop + mobile), src/components/site/hero-3d-scroll.tsx (Image width/height), src/components/site/preloader.tsx (added unoptimized).

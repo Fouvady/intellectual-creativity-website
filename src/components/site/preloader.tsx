@@ -66,6 +66,7 @@ export function Preloader() {
               width={300}
               height={140}
               priority
+              unoptimized
               className="logo-adaptive h-auto w-[min(60vw,280px)]"
             />
           </div>
