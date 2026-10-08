@@ -71,6 +71,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://maps.google.com" />
         <link rel="dns-prefetch" href="https://maps.google.com" />
         <link rel="dns-prefetch" href="https://cdn.21st.dev" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
         className={`${geistSans.variable} ${spaceGrotesk.variable} antialiased bg-background text-foreground font-sans`}

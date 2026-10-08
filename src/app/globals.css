@@ -324,8 +324,8 @@
       radial-gradient(120% 120% at 0% 0%, color-mix(in oklch, var(--brand-cyan) 16%, transparent), transparent 50%),
       radial-gradient(100% 100% at 50% 50%, color-mix(in oklch, var(--brand-teal) 8%, transparent), transparent 60%),
       radial-gradient(120% 120% at 100% 100%, color-mix(in oklch, var(--brand-gold) 14%, transparent), transparent 50%);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     box-shadow:
       inset 0 1px 0 0 color-mix(in oklch, var(--brand-cyan) 8%, transparent),
       0 6px 20px -8px color-mix(in oklch, var(--brand-navy) 30%, transparent);
@@ -346,8 +346,8 @@
   .liquid-glass {
     position: relative;
     background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow), inset 0 1px 0 0 color-mix(in oklch, var(--foreground) 10%, transparent);
     contain: layout style;
@@ -483,8 +483,8 @@
   /* Nav glass plate */
   .nav-glass {
     background: var(--nav-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--nav-border);
   }
   html:not(.dark) .nav-glass {

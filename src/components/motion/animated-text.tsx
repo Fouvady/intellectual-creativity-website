@@ -46,16 +46,15 @@ export function AnimatedText({
           <React.Fragment key={`${w}-${i}`}>
             <motion.span
               className={cn(
-                'inline-block will-change-transform',
+                'inline-block',
                 inRange && 'gradient-text',
               )}
               variants={{
-                hidden: { opacity: 0, y: '0.45em', filter: 'blur(8px)' },
+                hidden: { opacity: 1, y: '0.2em' },
                 visible: {
                   opacity: 1,
                   y: '0em',
-                  filter: 'blur(0px)',
-                  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                  transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
                 },
               }}
             >
