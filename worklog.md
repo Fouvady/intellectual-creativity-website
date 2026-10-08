@@ -1663,3 +1663,47 @@ Stage Summary:
 - File sizes verified — all 6 are between 94KB and 190KB (well above the 50KB minimum threshold).
 - Used `z-ai image -p "<prompt>" -o "<path>" -s 1344x768` for each, run sequentially with 15s waits to avoid 429 rate limits. No errors encountered.
 - These variations are visually distinct from the -1.png originals: pabx-2 (wide call center floor vs. pabx-1), pabx-3 (hands-on server cabinet close-up), avc-2 (masjid interior), avc-3 (auditorium theater), network-2 (data center aisle overhead), network-3 (NOC video wall). Each prompt specifies different angles, settings, and scenes for visual diversity in the gallery.
+
+---
+Task ID: 140
+Agent: main-orchestrator
+Task: Properly fix mobile layout issue (StaggerItem opacity:0 was hiding cards indefinitely on mobile) + add more unique photorealistic gallery images (no duplicates).
+
+Work Log:
+- Step 1 — Diagnosed the real root cause of the mobile "blank cards" issue:
+  - The previous fix (Task 139: added `contain-intrinsic-size` to cv-auto) helped but didn't fully solve the problem. On mobile, framer-motion's IntersectionObserver still failed to fire reliably for sections using `content-visibility: auto`, leaving StaggerItem motion.div parents stuck at `opacity: 0` (their initial "hidden" state).
+  - User explicitly: "i am still facing the same problem that it is not working in phone optimization like few contents and not availlbale in phone".
+
+- Step 2 — Fixed the StaggerItem + SectionReveal animations to NEVER hide content (src/components/motion/stagger-group.tsx):
+  - `itemVariants.hidden`: was `{ opacity: 0, y: 28, filter: 'blur(6px)' }` → now `{ opacity: 1, y: 16 }`. Content is ALWAYS visible (opacity 1) — only a small 16px y-offset animates in.
+  - Removed the `filter: 'blur(6px)'` from hidden state (blur was causing additional rendering issues on mobile).
+  - `SectionReveal` `initial`: was `{ opacity: 0, y }` → now `{ opacity: 1, y }`. Same fix — content always visible.
+  - Changed `viewport.amount` from 0.25 to 0.1 (animation fires sooner — at 10% visibility instead of 25%).
+  - Result: cards render immediately on page load with full opacity. The "rise-up" animation still plays when scrolled into view, but content is NEVER invisible. Even if IntersectionObserver fails entirely, content shows.
+
+- Step 3 — Generated 22 NEW photorealistic images via 4 parallel subagents (Task IDs 6-A through 6-D):
+  - 6-A: pabx-2, pabx-3, avc-2, avc-3, network-2, network-3 (6 images)
+  - 6-B: cctv-2, cctv-3, smart-2, smart-3, automation-2, automation-3 (6 images)
+  - 6-C: signage-2, signage-3, pos-2, pos-3, elv-2, elv-3 (6 images)
+  - 6-D: time-2, time-3, aivoip-2, aivoip-3 (4 images)
+  - All 22 images at 1344×768, photorealistic 8k quality using detailed prompts similar to the user's original 11 prompts but with DIFFERENT angles/settings (call center wide shot, PABX server rack close-up, masjid interior, auditorium, data center aisle, NOC, dome CCTV, bullet CCTV exterior, smart home panel, smart lobby dashboard, thermostat with curtains, mechanical room, NOC video wall, mall signage, restaurant tablet POS, self-service kiosk, ELV distribution cabinets, ELV dashboard, workforce dashboard, RFID card tap, VoIP softphone, retail heatmap).
+  - Each image is visually distinct from its sibling variants.
+  - Total gallery now has 33 unique images (11 services × 3 variants each).
+
+- Step 4 — Updated gallery to use all 33 unique images with NO array doubling (src/components/ui/3d-parallax-unfurling-gallery.tsx):
+  - SERVICE_IMAGES array: expanded from 11 → 33 entries (added all -2.png and -3.png variants).
+  - Removed the `[...col1Base, ...col1Base]` doubling pattern that was creating "duplicate" instances in the rendered DOM (user explicitly: "i dont want fucking duplicates imagess at all").
+  - Each column now gets a unique subset (~8 images per column, no doubling).
+  - Verified via eval: gallery has 33 image instances, 33 unique URLs, `galleryHasDuplicates: false`.
+
+- Self-verification:
+  - Lint clean (`bun run lint` → no errors).
+  - Mobile viewport test (390×844): scrolled to Services section (scrollY=1784), verified StaggerItem parent opacity = "1" (was "0" before this fix). Card at top=347, height=441 (visible in viewport 0-844).
+  - Screenshot pixel sampling: card area (y=350-800) now shows 75-77 non-bg pixels per row (was 0 before this fix). Cards are visibly rendered.
+  - Gallery: 33 unique images, 33 instances, `galleryHasDuplicates: false` ✓.
+
+Stage Summary:
+- Mobile layout issue FULLY fixed: StaggerItem + SectionReveal animations no longer hide content with opacity:0 initial state. Cards render immediately on page load with full opacity. The "rise-up" animation still plays but content is never invisible — even if IntersectionObserver fails on mobile.
+- Gallery expanded from 11 → 33 unique photorealistic images (3 per service × 11 services). All photorealistic 8k quality using detailed prompts with distinct angles per variant.
+- Removed the array doubling pattern (`[...col, ...col]`) from the gallery — no duplicate image instances in the rendered DOM.
+- Lint clean; console clean; server up. Files touched: src/components/motion/stagger-group.tsx (itemVariants + SectionReveal initial state), src/components/ui/3d-parallax-unfurling-gallery.tsx (33 unique images + no doubling), public/services/*-2.png + *-3.png (22 new photorealistic images).
