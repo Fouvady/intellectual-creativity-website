@@ -1544,3 +1544,122 @@ Stage Summary:
   3. 3D parallax gallery: 600vh → 300vh on mobile (halved scroll duration).
   4. Services section gap: mt-12 → mt-8 on mobile (smaller gap between subtitle and cards).
 - Lint clean; console clean; server up. Files touched: src/app/globals.css (cv-auto + contain-intrinsic-size), src/components/ui/container-scroll-animation.tsx (mobile heights), src/components/ui/3d-parallax-unfurling-gallery.tsx (mobile gallery height), src/components/site/services.tsx (mobile gap).
+
+---
+Task ID: 6-D
+Agent: general-purpose
+Task: Generate 4 NEW photorealistic images — 2 variations per service for services 10-11 (Time & Attendance, AI Analytics & VoIP) using z-ai CLI at 1344x768, run sequentially with 15s waits between each generation.
+
+Work Log:
+- Confirmed z-ai CLI is installed at `/usr/local/bin/z-ai` and image subcommand is available.
+- Verified output directory `/home/z/my-project/public/services/` exists with sibling service image sets already present (elv-1/2/3, cctv-1/2/3, etc.).
+- Generated 4 images sequentially (each followed by a 15s cooldown wait to throttle the image API):
+  1. `time-2.png` — Service 10 variation A: Workforce management dashboard on ultrawide monitor (calendar with color-coded present/absent/late statuses, total hours graphs, employee check-in/out list, department summary; dark navy UI theme with cyan and gold accents; modern office desk). 116,527 bytes.
+  2. `time-3.png` — Service 10 variation B: Close-up of a hand tapping a white RFID access card on a sleek wall-mounted biometric time-clock terminal at a modern Riyadh glass office entrance; display reads "Welcome, Ahmed — Check-in 08:32" with green LED indicator; marble wall; hand and card only (no face). 87,549 bytes.
+  3. `aivoip-2.png` — Service 11 variation A: VoIP softphone application interface on a desktop screen showing active call (contact name, duration timer, hold/transfer/mute buttons), call history sidebar, small video feed of remote caller, headset resting on desk, cyan ambient office lighting. 100,756 bytes.
+  4. `aivoip-3.png` — Service 11 variation B: Retail heatmap analytics on a wall-mounted display showing store floor plan with color-coded heat zones (cyan = low traffic, gold = high traffic), people-counting graphs, dwell-time charts, dark navy theme with cyan/gold accents. 100,350 bytes.
+
+- Verification (ls -la on all 4 files): all files are well above the 50KB minimum threshold:
+  - aivoip-2.png  100,756 bytes (~98 KB) ✅
+  - aivoip-3.png  100,350 bytes (~98 KB) ✅
+  - time-2.png    116,527 bytes (~114 KB) ✅
+  - time-3.png     87,549 bytes (~85 KB) ✅
+
+Stage Summary:
+- 4 new photorealistic service variation images successfully generated for services 10-11 (Time & Attendance: time-2.png, time-3.png; AI Analytics & VoIP: aivoip-2.png, aivoip-3.png) at 1344x768 resolution.
+- All 4 files saved to `/home/z/my-project/public/services/` and verified >50KB.
+- Each generation was followed by a 15-second wait as instructed, keeping the image API properly throttled.
+- Total runtime: ~3 minutes (4 generations × ~30s each including the 15s waits and API latency).
+- Files touched: public/services/time-2.png, public/services/time-3.png, public/services/aivoip-2.png, public/services/aivoip-3.png (all freshly overwritten with new z-ai CLI output).
+
+---
+Task ID: 6-B
+Agent: general-purpose
+Task: Generate 6 NEW photorealistic images — 2 variations per service for services 4-6 (CCTV & Surveillance, Smart Electronics, Building Automation) using z-ai CLI at 1344x768, run sequentially with 15s waits between each generation.
+
+Work Log:
+- Read worklog.md to confirm context (sub-agent pattern from Task ID 6-D for the same image-generation workflow).
+- Verified output directory `/home/z/my-project/public/services/` exists and confirmed existing service image sets already present (cctv-1/2/3, smart-1/2/3, automation-1/2/3 etc.) — task is to overwrite the 6 target files with fresh z-ai CLI output.
+- Generated 6 images sequentially (each followed by a 15s cooldown wait to throttle the image API):
+  1. `cctv-2.png` — Service 4 variation A: Close-up of a modern white dome CCTV camera with a glowing blue indicator ring, mounted on the ceiling of a luxury hotel lobby in Riyadh (polished marble floor, glass walls, modern chandelier). 88,285 bytes.
+  2. `cctv-3.png` — Service 4 variation B: Modern commercial building exterior in Riyadh at dusk with multiple bullet-style CCTV cameras mounted at corners, glass facade reflecting blue hour sky, dramatic lighting. 135,646 bytes.
+  3. `smart-2.png` — Service 5 variation A: Close-up of a sleek wall-mounted smart home touchscreen panel displaying lighting, climate, audio, and security controls with cyan accent UI; luxury Riyadh villa interior with marble walls and warm gold accent lighting. 93,811 bytes.
+  4. `smart-3.png` — Service 5 variation B: Modern luxury apartment lobby in Riyadh with a central smart-building dashboard display showing apartment access status, elevator control, and package lockers; marble floor, glass walls, premium cyan and gold accent lighting. 155,418 bytes.
+  5. `automation-2.png` — Service 6 variation A: Close-up of a smart thermostat with a touch interface on a wall, motorized curtains half-open revealing a Riyadh city skyline at golden hour, recessed ceiling smart lighting fixtures glowing warm gold; luxury office interior. 87,082 bytes.
+  6. `automation-3.png` — Service 6 variation B: Modern commercial building mechanical room with HVAC equipment, water pumps, and electrical control panels; neat row of pump motors with pressure gauges, color-coded pipes, control cabinet with small touchscreen; cool lighting. 157,372 bytes.
+
+- Verification (ls -la on all 6 files): all files are well above the 50KB minimum threshold:
+  - automation-2.png   87,082 bytes (~85 KB) ✅
+  - automation-3.png   157,372 bytes (~154 KB) ✅
+  - cctv-2.png         88,285 bytes (~86 KB) ✅
+  - cctv-3.png        135,646 bytes (~132 KB) ✅
+  - smart-2.png        93,811 bytes (~92 KB) ✅
+  - smart-3.png       155,418 bytes (~152 KB) ✅
+
+Stage Summary:
+- 6 new photorealistic service variation images successfully generated for services 4-6 (CCTV & Surveillance: cctv-2.png, cctv-3.png; Smart Electronics: smart-2.png, smart-3.png; Building Automation: automation-2.png, automation-3.png) at 1344x768 resolution.
+- All 6 files saved to `/home/z/my-project/public/services/` and verified >50KB (range 85KB–154KB).
+- Each generation was followed by a 15-second wait as instructed, keeping the image API properly throttled.
+- Total runtime: ~5 minutes (6 generations × ~50s each including the 15s waits and API latency).
+- Files touched: public/services/cctv-2.png, public/services/cctv-3.png, public/services/smart-2.png, public/services/smart-3.png, public/services/automation-2.png, public/services/automation-3.png (all freshly overwritten with new z-ai CLI output).
+
+---
+Task ID: 6-C
+Agent: general-purpose
+Task: Generate 6 NEW photorealistic images — 2 variations per service for services 7-9 (Digital Signage & Video Walls, POS Solutions, ELV Systems) using z-ai CLI at 1344x768, run sequentially with 15s waits between each generation.
+
+Work Log:
+- Read worklog.md to confirm context (sub-agent pattern from Task IDs 6-D, 6-A, 6-B for the same image-generation workflow on services 10-11, 1-3, and 4-6 respectively).
+- Verified output directory `/home/z/my-project/public/services/` exists and confirmed existing service image sets already present (signage-1/2/3, pos-1/2/3, elv-1/2/3 etc.) — task is to overwrite the 6 target files with fresh z-ai CLI output.
+- Generated 6 images sequentially (each followed by a 15s cooldown wait to throttle the image API):
+  1. `signage-2.png` — Service 7 variation A: Modern Network Operations Center with a 4x3 bezel-less video wall displaying maps, dashboards, KPI metrics, and live camera feeds; operator silhouetted at workstations in foreground; cool blue ambient lighting; cinematic control room photography. 157,577 bytes.
+  2. `signage-3.png` — Service 7 variation B: Modern Riyadh retail mall interior with a large ceiling-suspended digital signage display showing vibrant promotional content; polished marble floor, glass storefronts, escalator visible; warm ambient lighting with cyan accents. 147,051 bytes.
+  3. `pos-2.png` — Service 8 variation A: Modern restaurant POS setup with a tablet-based ordering system on a wooden table; server silhouette holds a tablet showing menu/order interface, receipt printer and card reader on side; warm wood accents with cyan ambient lighting from screens. 95,717 bytes.
+  4. `pos-3.png` — Service 8 variation B: Vertical touchscreen self-service kiosk in a modern Riyadh fast-food restaurant showing vibrant food menu; card reader and receipt slot visible; modern interior with cyan and gold accent lighting. 142,374 bytes.
+  5. `elv-2.png` — Service 9 variation A: ELV distribution room with multiple wall-mounted gray cabinets containing ELV subsystems (network switches, CCTV NVR, access control panels, PA amplifiers, fire alarm panel); conduits and cable trays neatly organized with color-coded cables; industrial technical photography. 161,370 bytes.
+  6. `elv-3.png` — Service 9 variation B: Wall-mounted touchscreen ELV management dashboard showing subsystem status tiles (CCTV, Access Control, PA System, Fire Alarm, HVAC, Network) with live status indicators and floor plan; modern Riyadh office interior, dark navy theme with cyan accents. 117,187 bytes.
+
+- Verification (ls -la on all 6 files): all files are well above the 50KB minimum threshold:
+  - elv-2.png     161,370 bytes (~158 KB) ✅
+  - elv-3.png     117,187 bytes (~114 KB) ✅
+  - pos-2.png      95,717 bytes (~93 KB) ✅
+  - pos-3.png     142,374 bytes (~139 KB) ✅
+  - signage-2.png 157,577 bytes (~154 KB) ✅
+  - signage-3.png 147,051 bytes (~144 KB) ✅
+
+Stage Summary:
+- 6 new photorealistic service variation images successfully generated for services 7-9 (Digital Signage & Video Walls: signage-2.png, signage-3.png; POS Solutions: pos-2.png, pos-3.png; ELV Systems: elv-2.png, elv-3.png) at 1344x768 resolution.
+- All 6 files saved to `/home/z/my-project/public/services/` and verified >50KB (range 93KB–158KB).
+- Each generation was followed by a 15-second wait as instructed, keeping the image API properly throttled.
+- Total runtime: ~6 minutes (6 generations × ~60s each including the 15s waits and API latency).
+- Files touched: public/services/signage-2.png, public/services/signage-3.png, public/services/pos-2.png, public/services/pos-3.png, public/services/elv-2.png, public/services/elv-3.png (all freshly overwritten with new z-ai CLI output).
+
+---
+Task ID: 6-A
+Agent: image-gen-batch1
+Task: Generate 6 photorealistic variations (PABX/AVC/Networking × 2 each)
+
+Work Log:
+- Read worklog.md to review previous agent activity (Tasks 125-139 + earlier sub-agent batches 3/4/5). Confirmed z-ai CLI available at /usr/local/bin/z-ai.
+- Noted that target files (-2.png/-3.png variants) existed from earlier generation rounds (per Task 137/138 worklog notes), but were leftover/unused; this task regenerates them with the user's specific detailed photorealistic prompts to overwrite the older versions.
+- Generated images sequentially via `z-ai image -s 1344x768` with 15s waits between calls to avoid 429 rate limits:
+  1. pabx-2.png — wide-angle modern enterprise call center floor, 20+ agents with headsets at dual-monitor workstations, Riyadh skyline through floor-to-ceiling windows, cool blue ambient lighting.
+  2. pabx-3.png — close-up telecom engineer's hands configuring Cisco PABX server cabinet, yellow/cyan Cat6 cables bundled, blue LED status lights, shallow depth of field.
+  3. avc-2.png — modern Riyadh masjid interior with recessed ceiling PA speakers, ornate Islamic geometric patterns, warm wood + white marble, discreet mixing console panel, soft cyan + gold lighting.
+  4. avc-3.png — luxury auditorium theater hall with red velvet seats facing projection screen, side-wall PA speakers, mixing console in back, cinematic gold + cyan stage lighting.
+  5. network-2.png — overhead shot of modern data center aisle, server racks, color-coded blue/yellow Ethernet cable trays overhead, glowing LED status lights, cool blue ambient lighting.
+  6. network-3.png — network operations center with curved video wall showing world map with glowing network nodes, real-time traffic graphs/dashboards, two operators silhouetted, deep blue ambient lighting.
+- Verified all 6 files with `ls -la` — all >50KB:
+  - pabx-2.png: 174,897 bytes
+  - pabx-3.png: 94,523 bytes
+  - avc-2.png: 167,238 bytes
+  - avc-3.png: 113,372 bytes
+  - network-2.png: 190,077 bytes
+  - network-3.png: 140,156 bytes
+- All 6 z-ai calls returned success ("✅ File saved to" + "🎉 Image generation completed!"). No 429 rate-limit errors encountered — the 15s sequential pacing worked.
+
+Stage Summary:
+- Generated 6 images: pabx-2, pabx-3, avc-2, avc-3, network-2, network-3 (each 1344x768), overwriting the older leftover -2/-3 files from earlier generation rounds.
+- File sizes verified — all 6 are between 94KB and 190KB (well above the 50KB minimum threshold).
+- Used `z-ai image -p "<prompt>" -o "<path>" -s 1344x768` for each, run sequentially with 15s waits to avoid 429 rate limits. No errors encountered.
+- These variations are visually distinct from the -1.png originals: pabx-2 (wide call center floor vs. pabx-1), pabx-3 (hands-on server cabinet close-up), avc-2 (masjid interior), avc-3 (auditorium theater), network-2 (data center aisle overhead), network-3 (NOC video wall). Each prompt specifies different angles, settings, and scenes for visual diversity in the gallery.

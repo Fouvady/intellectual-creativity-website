@@ -35,9 +35,9 @@ export function SectionReveal({
   return (
     <MotionTag
       className={cn(className)}
-      initial={{ opacity: 0, y }}
+      initial={{ opacity: 1, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.1 }}
       transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
@@ -51,12 +51,16 @@ const containerVariants = (stagger: number, delay: number): Variants => ({
 })
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 28, filter: 'blur(6px)' },
+  // CRITICAL: do NOT use opacity: 0 in the hidden state. On mobile, with
+  // content-visibility: auto + IntersectionObserver, the animation may never
+  // fire (the observer doesn't trigger reliably for offscreen-then-onscreen
+  // sections). Cards would stay invisible forever. Keep opacity: 1 so
+  // content is ALWAYS visible — only the y-offset and blur animate in.
+  hidden: { opacity: 1, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
   },
 }
 

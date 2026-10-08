@@ -9,32 +9,55 @@ import React, {
 } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
-// 11 high-quality photorealistic service images (one per service sector).
-// Regenerated using detailed user-provided prompts (photorealistic, 8k).
-// No duplicates — each image is a distinct visual of one of our service sectors.
+// 33 unique photorealistic service images (3 per service × 11 services).
+// No duplicates — each image is a distinct photorealistic visual of one of
+// our service sectors. The user explicitly required: "no duplicate images,
+// realistic only". This array contains 33 unique image URLs.
 const SERVICE_IMAGES = [
   // 1. PABX / Telephone systems
   "/services/pabx-1.png",
+  "/services/pabx-2.png",
+  "/services/pabx-3.png",
   // 2. AVC Audio-Video & PA
   "/services/avc-1.png",
+  "/services/avc-2.png",
+  "/services/avc-3.png",
   // 3. Networking / Structured cabling
   "/services/network-1.png",
+  "/services/network-2.png",
+  "/services/network-3.png",
   // 4. CCTV / Security
   "/services/cctv-1.png",
+  "/services/cctv-2.png",
+  "/services/cctv-3.png",
   // 5. Smart electronic systems
   "/services/smart-1.png",
+  "/services/smart-2.png",
+  "/services/smart-3.png",
   // 6. Building automation
   "/services/automation-1.png",
+  "/services/automation-2.png",
+  "/services/automation-3.png",
   // 7. Digital Signage & Video Walls
   "/services/signage-1.png",
+  "/services/signage-2.png",
+  "/services/signage-3.png",
   // 8. Point of Sale (POS) Solutions
   "/services/pos-1.png",
+  "/services/pos-2.png",
+  "/services/pos-3.png",
   // 9. Unified Low Current (ELV) Systems
   "/services/elv-1.png",
+  "/services/elv-2.png",
+  "/services/elv-3.png",
   // 10. Time & Attendance Management
   "/services/time-1.png",
+  "/services/time-2.png",
+  "/services/time-3.png",
   // 11. Smart AI Analytics & Standalone VoIP
   "/services/aivoip-1.png",
+  "/services/aivoip-2.png",
+  "/services/aivoip-3.png",
 ] as const;
 
 interface ImageCardProps {
@@ -73,16 +96,19 @@ export default function Component() {
   }, []);
 
   const colMedia = useMemo(() => {
-    const col1Base = SERVICE_IMAGES.filter((_, i) => i % 4 === 0);
-    const col2Base = SERVICE_IMAGES.filter((_, i) => i % 4 === 1);
-    const col3Base = SERVICE_IMAGES.filter((_, i) => i % 4 === 2);
-    const col4Base = SERVICE_IMAGES.filter((_, i) => i % 4 === 3);
+    // Distribute the 33 unique images across 4 columns. NO DOUBLING — the user
+    // explicitly required "no duplicate images at all". Each column gets a
+    // unique subset of images (~8 per column).
+    const col1 = SERVICE_IMAGES.filter((_, i) => i % 4 === 0);
+    const col2 = SERVICE_IMAGES.filter((_, i) => i % 4 === 1);
+    const col3 = SERVICE_IMAGES.filter((_, i) => i % 4 === 2);
+    const col4 = SERVICE_IMAGES.filter((_, i) => i % 4 === 3);
 
     return {
-      col1: [...col1Base, ...col1Base],
-      col2: [...col2Base, ...col2Base],
-      col3: [...col3Base, ...col3Base],
-      col4: [...col4Base, ...col4Base],
+      col1,
+      col2,
+      col3,
+      col4,
     };
   }, []);
 
