@@ -115,7 +115,7 @@ export default function Component() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-[600vh] bg-background text-foreground font-sans selection:bg-foreground selection:text-background"
+      className="relative w-full h-[300vh] md:h-[600vh] bg-background text-foreground font-sans selection:bg-foreground selection:text-background"
     >
       <div className="sticky top-0 h-screen w-full flex justify-center items-center overflow-hidden z-10">
         <motion.div

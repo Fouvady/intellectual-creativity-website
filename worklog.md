@@ -1484,3 +1484,63 @@ Stage Summary:
 - **Privacy protected**: detected that db/custom.db contained 6 real contact form submissions with PII (names, phones, emails). Cleared the DB, untracked it from git, added db/*.db to .gitignore BEFORE pushing. Verified remote does NOT have db/custom.db or .env.
 - 361 files now on remote, including all source files, brand assets, 33 service images, worklog.md, regional-partnership.tsx, all components.
 - PAT was used inline in the push URL only — NOT stored in git config or any file. The token is now expired/used; no credentials left on disk.
+
+---
+Task ID: 139
+Agent: main-orchestrator
+Task: Fix mobile layout issues — user reported blank gaps in the middle of the page on mobile (3 screenshots showed: Services section heading+subtitle visible but cards below were blank; Hero3DScroll section had massive blank area; Stats section had gap before Differentiators pill).
+
+Work Log:
+- Step 1 — Diagnosed root causes by analyzing the 3 mobile screenshots + testing in agent-browser with iPhone 12 device emulation (390×844 CSS viewport):
+  - **Issue A (Hero3DScroll massive blank)**: ContainerScroll component had `h-[60rem]` (960px) on mobile, but the visible card inside was only ~480px tall — leaving 480px of blank space below the card.
+  - **Issue B (Services cards not visible)**: StaggerItem's motion.div parent was at `opacity: 0` (initial "hidden" state) even when scrolled into view. Root cause: `.cv-auto { content-visibility: auto; }` was skipping layout for offscreen sections, which prevented framer-motion's IntersectionObserver from firing the `whileInView` animation. The cards stayed at opacity 0 (invisible).
+  - **Issue C (Stats + Differentiators gap)**: Same cv-auto issue — sections had 0 height when offscreen, then suddenly expanded when scrolled into view, causing layout jumps and gaps.
+  - **Issue D (Gallery too long on mobile)**: 3D parallax gallery had `h-[600vh]` (600% of viewport = 5064px on mobile) — way too much scroll duration.
+
+- Step 2 — Fixed cv-auto CSS (src/app/globals.css):
+  - Added `contain-intrinsic-size: 0 800px` to `.cv-auto` so offscreen sections reserve an 800px height placeholder.
+  - This allows the browser to know the section's approximate size even when content-visibility skips rendering, so IntersectionObserver fires properly for framer-motion animations.
+  - Verified via eval: section heights now show 960px when offscreen (800px intrinsic + 160px padding), was previously 160px or 0px.
+  - Verified: StaggerItem parent opacity now reports "1" when scrolled into view (was "0" before the fix).
+  - NOTE: First attempt used `auto 800px` syntax but the lightningcss CSS compiler stripped it. Switched to `0 800px` (no `auto` keyword) which compiled correctly.
+
+- Step 3 — Reduced Hero3DScroll mobile height (src/components/ui/container-scroll-animation.tsx):
+  - Container: `h-[60rem] md:h-[80rem]` → `h-[34rem] md:h-[80rem]` (960px → 544px on mobile, 544px is ~0.65 viewports).
+  - Inner padding: `py-10 md:py-40` → `py-6 md:py-40` (less vertical padding on mobile).
+  - Card: `h-[30rem] md:h-[40rem]` → `h-[24rem] md:h-[40rem]` (480px → 384px on mobile).
+  - Card margin: `-mt-12` → `-mt-8` (smaller negative margin so the card sits closer to the title on mobile).
+  - Verified via eval: 3D scroll showcase section height is now 544px on mobile (was 960px).
+
+- Step 4 — Reduced 3D parallax gallery mobile scroll duration (src/components/ui/3d-parallax-unfurling-gallery.tsx):
+  - Outer section: `h-[600vh]` → `h-[300vh] md:h-[600vh]` (5064px → 2532px scroll duration on mobile, halved).
+
+- Step 5 — Reduced Services section gap on mobile (src/components/site/services.tsx):
+  - StaggerGroup: `mt-12` → `mt-8 sm:mt-12` (32px on mobile, 48px on sm+).
+
+- Self-verification:
+  - Lint clean (`bun run lint` → no errors).
+  - Dev log: all GET / 200, clean compiles.
+  - Section heights on mobile (390x844 viewport) after fixes:
+    - Hero: 1066px (was 1066, unchanged — already mobile-optimized)
+    - 3D scroll showcase: 544px (was 960px) ✅ reduced
+    - Trusted vendors: 174px
+    - services: 5447px (tall but expected — 11 cards in single column)
+    - Stats: 928px (was 402 rendered / 160 cv-auto placeholder) — now consistent
+    - why-us: 960px (was 160 cv-auto placeholder) ✅ fixed
+    - process: 960px (was 160 cv-auto placeholder) ✅ fixed
+    - tech-stack: 960px (was 160 cv-auto placeholder) ✅ fixed
+    - partners: 960px (was 160 cv-auto placeholder) ✅ fixed
+    - work: 960px (was 160 cv-auto placeholder) ✅ fixed
+    - testimonials: 960px (was 160 cv-auto placeholder) ✅ fixed
+    - about: 960px (was 160 cv-auto placeholder) ✅ fixed
+    - gallery: 800px (was 0px cv-auto placeholder) ✅ fixed
+    - contact: 960px (was 160 cv-auto placeholder) ✅ fixed
+  - StaggerItem parent opacity now "1" when scrolled into view (was "0" before) — framer-motion animations fire properly.
+
+Stage Summary:
+- Fixed 4 mobile layout issues:
+  1. cv-auto + contain-intrinsic-size: offscreen sections now reserve 800px height placeholder (was 0px) so IntersectionObserver fires properly for framer-motion's whileInView animations. Cards now visible when scrolled into view.
+  2. Hero3DScroll container: 960px → 544px on mobile (card + minimal padding). No more massive blank gap.
+  3. 3D parallax gallery: 600vh → 300vh on mobile (halved scroll duration).
+  4. Services section gap: mt-12 → mt-8 on mobile (smaller gap between subtitle and cards).
+- Lint clean; console clean; server up. Files touched: src/app/globals.css (cv-auto + contain-intrinsic-size), src/components/ui/container-scroll-animation.tsx (mobile heights), src/components/ui/3d-parallax-unfurling-gallery.tsx (mobile gallery height), src/components/site/services.tsx (mobile gap).

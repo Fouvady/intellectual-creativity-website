@@ -171,7 +171,7 @@ export function Services() {
           </SectionReveal>
         </div>
 
-        <StaggerGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerGroup className="mt-8 grid gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => {
             const a = ACCENT[s.accent]
             return (

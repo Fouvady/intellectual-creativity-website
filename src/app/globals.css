@@ -494,6 +494,11 @@
 
   .cv-auto {
     content-visibility: auto;
+    /* Reserve a 800px height placeholder when section is offscreen so the
+       browser doesn't collapse it to 0px. Without this, framer-motion's
+       whileInView IntersectionObserver animations never fire on initial
+       page load for below-the-fold sections (they stay at opacity 0). */
+    contain-intrinsic-size: 0 800px;
   }
   .contain-paint {
     contain: paint;
