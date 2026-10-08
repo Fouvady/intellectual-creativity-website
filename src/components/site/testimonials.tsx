@@ -17,21 +17,21 @@ type Testimonial = {
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      'Honestly, I was sceptical at first — we had been burned by another IT vendor in Riyadh before. But the team at Intellectual Creativity for Information Technology showed up on time, installed our PABX and CCTV across three branches, labelled every single cable, and trained my staff. Six months in, zero downtime. The only small thing — they could be a touch quicker on WhatsApp replies. But when you call, they pick up. That matters more to me.',
+      'Honestly I was sceptical at first because we had been burned by another IT vendor in Riyadh before. But the team at Intellectual Creativity for Information Technology showed up on time, installed our PABX and CCTV across three branches, labelled every single cable, and trained my staff. Six months in and zero downtime. The only small thing is they could be quicker on WhatsApp replies. But when you call, they pick up. That matters more to me.',
     author: 'Rasheed Rahman',
     role: 'Operations Manager · Retail Chain, Riyadh',
     initials: 'RR',
   },
   {
     quote:
-      'I had them install a smart intercom and CCTV at my villa. The engineers were respectful of the house — wore shoe covers, cleaned up after the install, and explained everything in Arabic and English. Pricing was fair, no surprises on the invoice. Would I recommend them? Already did, to two of my neighbours.',
+      'I had them install a smart intercom and CCTV at my villa. The engineers were respectful of the house, wore shoe covers, cleaned up after the install, and explained everything in Arabic and English. Pricing was fair with no surprises on the invoice. Would I recommend them? Already did, to two of my neighbours.',
     author: 'Mohammed',
     role: 'Villa Owner · Riyadh',
     initials: 'M',
   },
   {
     quote:
-      "Three years working with Intellectual Creativity for Information Technology across two of our commercial buildings — networking, CCTV, PA system, building automation. What I appreciate most is that they don't oversell. If a switch still has life left, they tell you to keep it. If it's time to replace, they explain why. That kind of honesty is rare in this market.",
+      "Three years working with Intellectual Creativity for Information Technology across two of our commercial buildings covering networking, CCTV, PA system, and building automation. What I appreciate most is that they don't oversell. If a switch still has life left, they tell you to keep it. If it's time to replace, they explain why. That kind of honesty is rare in this market.",
     author: 'Abdur Rahman',
     role: 'Facilities Manager · Commercial Estate, Riyadh',
     initials: 'AR',
